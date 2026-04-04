@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Lyndishes Culinary School | Abuja — Culinary Training & Food Business Education</title>
+<meta name="description" content="Lyndishes Culinary School in Abuja offers hands-on culinary training, pastry classes, and food entrepreneurship programs. Founded by Chef Lynda Nnamani."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+/* ═══════════════════════
+   DESIGN TOKENS
+═══════════════════════ */
+:root {
+  --crimson:      #C8013E;
+  --crimson-deep: #A0012F;
+  --crimson-pale: #FFF0F4;
+  --wine:         #5C0120;
+  --gold:         #BF8A2E;
+  --gold-light:   #D4A843;
+  --cream:        #FDFAF5;
+  --cream-2:      #F7F1E8;
+  --cream-3:      #EFE6D6;
+  --warm-white:   #FFFDF8;
+  --ink:          #1C0A12;
+  --ink-soft:     #3A1A26;
+  --muted:        #7C5866;
+  --lime:         #7DB82A;
+  --max:          1260px;
+  --header-h:     76px;
+  --radius:       20px;
+  --radius-lg:    32px;
+  --t:            all 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+  --shadow-sm:    0 4px 16px rgba(28,10,18,0.08);
+  --shadow:       0 16px 48px rgba(28,10,18,0.12);
+  --shadow-lg:    0 32px 80px rgba(28,10,18,0.16);
+  --shadow-red:   0 12px 40px rgba(200,1,62,0.22);
+  --shadow-gold:  0 10px 32px rgba(191,138,46,0.2);
+}
+
+/* ═══════════════════════
+   RESET & BASE
+═══════════════════════ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.7; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+.container { width: min(92%, var(--max)); margin: 0 auto; }
+
+/* ═══════════════════════
+   HEADER
+═══════════════════════ */
+#header {
+  position: fixed; top: 0; left: 0; width: 100%;
+  z-index: 900; transition: var(--t);
+}
+#header.scrolled {
+  background: rgba(253,250,245,0.96);
+  backdrop-filter: blur(24px);
+  box-shadow: 0 2px 28px rgba(28,10,18,0.09);
+  border-bottom: 1px solid rgba(191,138,46,0.18);
+}
+.nav {
+  height: var(--header-h);
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+}
+.brand { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+.brand-mark {
+  width: 46px; height: 46px; border-radius: 14px;
+  background: var(--crimson); display: grid; place-items: center;
+  box-shadow: 0 4px 18px rgba(200,1,62,0.38); overflow: hidden; flex-shrink: 0;
+}
+.brand-mark img { width: 100%; height: 100%; object-fit: cover; }
+.brand-name { line-height: 1.1; }
+.brand-name strong {
+  font-family: 'Playfair Display', serif; font-size: 1.35rem;
+  font-weight: 700; color: #fff; display: block;
+}
+#header.scrolled .brand-name strong { color: var(--ink); }
+.brand-name small {
+  font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold-light); font-weight: 600; display: block; margin-top: 2px;
+}
+.nav-menu { display: flex; align-items: center; gap: 32px; }
+.nav-menu a {
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.07em;
+  text-transform: uppercase; color: rgba(255,255,255,0.8);
+  position: relative; transition: color 0.3s;
+}
+#header.scrolled .nav-menu a { color: var(--muted); }
+.nav-menu a:hover { color: var(--crimson) !important; }
+.nav-menu a::after {
+  content: ""; position: absolute; bottom: -5px; left: 0;
+  width: 0; height: 1.5px; background: var(--crimson);
+  border-radius: 2px; transition: width 0.3s;
+}
+.nav-menu a:hover::after { width: 100%; }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.hamburger {
+  display: none; background: none; border: none; cursor: pointer;
+  color: #fff; font-size: 1.7rem; line-height: 1; transition: color 0.3s;
+}
+#header.scrolled .hamburger { color: var(--ink); }
+
+/* ═══════════════════════
+   BUTTONS
+═══════════════════════ */
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 26px; border-radius: 999px;
+  font-family: 'DM Sans', sans-serif; font-weight: 700;
+  font-size: 0.875rem; letter-spacing: 0.03em;
+  border: none; cursor: pointer; transition: var(--t);
+  white-space: nowrap; text-decoration: none;
+}
+.btn-crimson {
+  background: linear-gradient(135deg, var(--crimson), var(--crimson-deep));
+  color: #fff; box-shadow: var(--shadow-red);
+}
+.btn-crimson:hover { transform: translateY(-2px); box-shadow: 0 20px 48px rgba(200,1,62,0.36); }
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #fff; box-shadow: var(--shadow-gold);
+}
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 18px 44px rgba(191,138,46,0.36); }
+.btn-lime {
+  background: linear-gradient(135deg, #8DC63F, var(--lime));
+  color: #0d2200; font-weight: 800;
+}
+.btn-lime:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(125,184,42,0.32); }
+.btn-outline {
+  background: transparent; color: var(--crimson);
+  border: 1.5px solid rgba(200,1,62,0.3);
+}
+.btn-outline:hover { background: var(--crimson-pale); border-color: var(--crimson); transform: translateY(-2px); }
+.btn-outline-white {
+  background: rgba(255,255,255,0.12); color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.32); backdrop-filter: blur(8px);
+}
+.btn-outline-white:hover { background: rgba(255,255,255,0.22); transform: translateY(-2px); }
+.btn-outline-dark {
+  background: transparent; color: var(--ink);
+  border: 1.5px solid rgba(28,10,18,0.22);
+}
+.btn-outline-dark:hover { border-color: var(--crimson); color: var(--crimson); transform: translateY(-2px); }
+.btn-sm { padding: 9px 20px; font-size: 0.8rem; }
+.btn-group { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+
+/* ═══════════════════════
+   HERO CAROUSEL
+═══════════════════════ */
+.hero { position: relative; height: 100vh; min-height: 700px; overflow: hidden; }
+.hero-track {
+  display: flex; height: 100%;
+  transition: transform 0.95s cubic-bezier(0.77, 0, 0.175, 1);
+}
+.hero-slide {
+  min-width: 100%; height: 100%;
+  position: relative; flex-shrink: 0; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transform: scale(1.07); transition: transform 8s ease;
+}
+.hero-slide.active .hero-bg { transform: scale(1); }
+
+/* ┌────────────────────────────────────────────────────┐
+   │  SWAP YOUR CAROUSEL PHOTOS HERE                   │
+   │  Just change the filename inside url('...')       │
+   │  Make sure the image file is in the same folder   │
+   │  as this HTML file.                               │
+   └────────────────────────────────────────────────────┘ */
+.s1 .hero-bg {
+  background-image:
+    linear-gradient(110deg, rgba(28,10,18,0.78) 0%, rgba(92,1,32,0.48) 55%, rgba(28,10,18,0.38) 100%),
+    url('carousel1.jpeg');
+}
+.s2 .hero-bg {
+  background-image:
+    linear-gradient(118deg, rgba(28,10,18,0.72) 0%, rgba(92,1,32,0.52) 50%, rgba(28,10,18,0.42) 100%),
+    url('carousel2.jpeg');
+}
+.s3 .hero-bg {
+  background-image:
+    linear-gradient(125deg, rgba(28,10,18,0.70) 0%, rgba(92,1,32,0.46) 55%, rgba(28,10,18,0.45) 100%),
+    url('carousel3.jpeg');
+}
+.s4 .hero-bg {
+  background-image:
+    linear-gradient(112deg, rgba(28,10,18,0.74) 0%, rgba(92,1,32,0.44) 52%, rgba(28,10,18,0.50) 100%),
+    url('carousel4.jpeg');
+}
+.s5 .hero-bg {
+  background-image:
+    linear-gradient(128deg, rgba(28,10,18,0.72) 0%, rgba(191,138,46,0.14) 48%, rgba(28,10,18,0.72) 100%),
+    url('carousel5.jpeg');
+}
+
+.hero-inner {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; padding-top: var(--header-h);
+}
+.hero-grid {
+  display: grid; grid-template-columns: 1.2fr 0.8fr;
+  gap: 48px; align-items: center; width: 100%;
+}
+.hero-text {
+  color: #fff; opacity: 0; transform: translateX(-44px);
+  transition: opacity 0.9s ease 0.25s, transform 0.9s ease 0.25s;
+}
+.hero-slide.active .hero-text { opacity: 1; transform: translateX(0); }
+.hero-chip {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.72rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.24em; color: var(--gold-light); margin-bottom: 22px;
+}
+.hero-chip::before { content: ""; width: 26px; height: 1.5px; background: var(--gold-light); border-radius: 2px; }
+.hero-h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.6rem, 5.2vw, 5rem);
+  line-height: 1.03; font-weight: 700; margin-bottom: 22px;
+}
+.hero-h1 em { font-style: italic; color: var(--gold-light); }
+.hero-p {
+  font-size: 1.06rem; color: rgba(255,255,255,0.82);
+  max-width: 520px; margin-bottom: 34px; line-height: 1.78;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+
+.hero-card {
+  background: rgba(253,250,245,0.10);
+  border: 1px solid rgba(255,255,255,0.17);
+  border-radius: 28px; padding: 32px 28px;
+  backdrop-filter: blur(24px);
+  opacity: 0; transform: translateX(44px) translateY(14px);
+  transition: opacity 0.9s ease 0.5s, transform 0.9s ease 0.5s;
+  position: relative; overflow: hidden;
+}
+.hero-slide.active .hero-card { opacity: 1; transform: translateX(0) translateY(0); }
+.hero-card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold-light), var(--crimson), #7DB82A);
+}
+.hero-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #fff; margin-bottom: 8px; }
+.hero-card .card-sub { color: rgba(255,255,255,0.65); font-size: 0.88rem; margin-bottom: 20px; }
+.hero-card ul { display: grid; gap: 11px; margin-bottom: 24px; }
+.hero-card li { display: flex; align-items: center; gap: 12px; color: rgba(255,255,255,0.88); font-size: 0.9rem; }
+.hero-card li .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold-light); flex-shrink: 0; }
+
+.hero-dots {
+  position: absolute; bottom: 38px; left: 50%;
+  transform: translateX(-50%); display: flex; gap: 10px; z-index: 20;
+}
+.hdot {
+  width: 8px; height: 8px; border-radius: 999px;
+  background: rgba(255,255,255,0.35); border: none;
+  cursor: pointer; padding: 0; transition: all 0.4s ease;
+}
+.hdot.active { width: 28px; background: var(--gold-light); }
+.hero-arrows { position: absolute; bottom: 30px; right: 5%; display: flex; gap: 10px; z-index: 20; }
+.harrow {
+  width: 46px; height: 46px; border-radius: 50%;
+  background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.22);
+  color: #fff; font-size: 1.1rem; cursor: pointer;
+  display: grid; place-items: center; transition: var(--t); backdrop-filter: blur(8px);
+}
+.harrow:hover { background: var(--crimson); border-color: var(--crimson); transform: scale(1.1); }
+.hero-counter {
+  position: absolute; top: calc(var(--header-h) + 20px); right: 5%;
+  color: rgba(255,255,255,0.5); font-size: 0.78rem;
+  font-weight: 600; letter-spacing: 0.14em; z-index: 20;
+}
+.hero-counter span { color: rgba(255,255,255,0.88); }
+.hero-progress { position: absolute; bottom: 0; left: 0; height: 3px; width: 100%; background: rgba(255,255,255,0.12); z-index: 20; }
+.hero-bar {
+  height: 100%; width: 0;
+  background: linear-gradient(90deg, var(--gold-light), var(--crimson));
+  border-radius: 0 2px 2px 0; transition: width linear;
+}
+
+/* ═══════════════════════
+   UTILITY
+═══════════════════════ */
+.stripe { height: 4px; background: linear-gradient(90deg, var(--crimson), var(--gold-light), var(--lime), var(--gold-light), var(--crimson-deep)); }
+.section { padding: 104px 0; }
+.section-warm   { background: var(--warm-white); }
+.section-cream  { background: var(--cream); }
+.section-cream2 { background: var(--cream-2); }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.26em; color: var(--crimson); margin-bottom: 14px;
+}
+.eyebrow::before { content: ""; width: 20px; height: 1.5px; background: currentColor; border-radius: 2px; }
+.eyebrow-gold { color: var(--gold); }
+.eyebrow-gold::before { background: var(--gold); }
+.eyebrow-lime { color: var(--lime); }
+.eyebrow-lime::before { background: var(--lime); }
+
+.sec-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.9rem, 3.8vw, 3.5rem);
+  line-height: 1.1; font-weight: 700; color: var(--ink); margin-bottom: 16px;
+}
+.sec-title em { font-style: italic; color: var(--crimson); }
+.sec-sub { color: var(--muted); font-size: 1.02rem; max-width: 640px; line-height: 1.75; }
+.sec-header { max-width: 760px; margin-bottom: 56px; }
+.body-p { color: var(--muted); font-size: 1.01rem; line-height: 1.82; margin-bottom: 18px; }
+
+/* ═══════════════════════
+   TRUST BAR
+═══════════════════════ */
+.trust-bar {
+  background: var(--warm-white);
+  border-bottom: 1px solid rgba(191,138,46,0.14);
+  position: relative; z-index: 10;
+}
+.trust-bar::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--crimson), var(--gold-light), var(--lime), var(--crimson-deep));
+}
+.trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+.trust-cell {
+  padding: 28px 22px; border-right: 1px solid rgba(191,138,46,0.1);
+  transition: background 0.3s;
+}
+.trust-cell:last-child { border-right: none; }
+.trust-cell:hover { background: rgba(191,138,46,0.04); }
+.trust-ic { font-size: 1.5rem; margin-bottom: 9px; }
+.trust-cell h4 { font-size: 0.91rem; font-weight: 700; color: var(--ink); margin-bottom: 5px; }
+.trust-cell p { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+
+/* ═══════════════════════
+   STATS
+═══════════════════════ */
+.stats-band {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  background: linear-gradient(135deg, var(--crimson), var(--crimson-deep) 60%, var(--wine));
+  border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-red);
+}
+.stat {
+  padding: 40px 28px; border-right: 1px solid rgba(255,255,255,0.13);
+  text-align: center; position: relative;
+}
+.stat:last-child { border-right: none; }
+.stat h3 { font-family: 'Playfair Display', serif; font-size: 2.8rem; font-weight: 700; color: #fff; line-height: 1; margin-bottom: 8px; }
+.stat p { color: rgba(255,255,255,0.72); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; }
+.stat::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 36px; height: 2px; background: var(--gold-light); opacity: 0.5; }
+
+/* ═══════════════════════
+   SPLIT LAYOUT
+═══════════════════════ */
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.split-flip { direction: rtl; }
+.split-flip > * { direction: ltr; }
+
+.img-frame {
+  position: relative; border-radius: 28px; overflow: hidden;
+  min-height: 520px; box-shadow: var(--shadow-lg), var(--shadow-red);
+}
+.img-fill {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  transition: transform 0.7s ease;
+}
+.img-frame:hover .img-fill { transform: scale(1.04); }
+.img-frame::after {
+  content: ""; position: absolute; inset: -1px; border-radius: 28px;
+  border: 1.5px solid rgba(191,138,46,0.22); pointer-events: none;
+}
+.img-badge {
+  position: absolute; bottom: 22px; left: 22px;
+  background: rgba(253,250,245,0.97);
+  border: 1px solid rgba(191,138,46,0.22);
+  border-radius: 14px; padding: 14px 18px; box-shadow: var(--shadow);
+}
+.img-badge strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.35rem; color: var(--crimson); }
+.img-badge span { font-size: 0.76rem; color: var(--muted); font-weight: 600; }
+
+.checklist { display: grid; gap: 13px; margin: 22px 0; }
+.checklist li { display: flex; align-items: flex-start; gap: 13px; color: var(--ink-soft); font-size: 0.96rem; }
+.chk {
+  width: 23px; height: 23px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--crimson), var(--crimson-deep));
+  display: grid; place-items: center; color: #fff; font-size: 0.7rem;
+  flex-shrink: 0; margin-top: 2px;
+}
+
+/* ═══════════════════════
+   PROGRAM CARDS
+═══════════════════════ */
+.prog-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+.prog-card {
+  background: var(--warm-white); border: 1px solid rgba(191,138,46,0.14);
+  border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-sm); transition: var(--t);
+}
+.prog-card:hover { transform: translateY(-8px); border-color: rgba(200,1,62,0.28); box-shadow: var(--shadow), var(--shadow-red); }
+.prog-thumb { aspect-ratio: 16/10; overflow: hidden; position: relative; }
+.prog-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.prog-card:hover .prog-thumb img { transform: scale(1.08); }
+.prog-thumb-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(28,10,18,0.55), transparent 55%); }
+.prog-tag {
+  position: absolute; top: 13px; left: 13px;
+  background: var(--crimson); color: #fff;
+  font-size: 0.68rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.12em; padding: 4px 12px; border-radius: 999px;
+}
+.prog-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+.prog-body h3 { font-family: 'Playfair Display', serif; font-size: 1.12rem; color: var(--ink); margin-bottom: 9px; line-height: 1.35; }
+.prog-body p { color: var(--muted); font-size: 0.89rem; flex: 1; margin-bottom: 14px; }
+.prog-pills { display: flex; gap: 7px; flex-wrap: wrap; margin-bottom: 16px; }
+.pill { padding: 4px 11px; border-radius: 999px; font-size: 0.74rem; font-weight: 700; background: var(--cream-2); color: var(--ink-soft); border: 1px solid rgba(191,138,46,0.18); }
+.pill-red { background: rgba(200,1,62,0.07); color: var(--crimson); border-color: rgba(200,1,62,0.18); }
+
+/* ═══════════════════════
+   WHY CARDS
+═══════════════════════ */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.why-card {
+  padding: 30px 26px; background: var(--warm-white);
+  border: 1px solid rgba(191,138,46,0.13); border-radius: var(--radius);
+  transition: var(--t); position: relative; overflow: hidden;
+}
+.why-card::after {
+  content: ""; position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--crimson), var(--gold-light));
+  transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+}
+.why-card:hover { transform: translateY(-6px); border-color: rgba(200,1,62,0.22); box-shadow: var(--shadow); }
+.why-card:hover::after { transform: scaleX(1); }
+.why-ic { width: 50px; height: 50px; border-radius: 15px; background: rgba(200,1,62,0.07); border: 1px solid rgba(200,1,62,0.15); display: grid; place-items: center; font-size: 1.3rem; margin-bottom: 16px; }
+.why-card h3 { font-family: 'Playfair Display', serif; font-size: 1.04rem; color: var(--ink); margin-bottom: 9px; }
+.why-card p { color: var(--muted); font-size: 0.88rem; line-height: 1.65; }
+
+/* ═══════════════════════
+   STUDENT SUCCESS
+═══════════════════════ */
+.success-section { background: var(--ink); position: relative; overflow: hidden; }
+.success-section::before {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 75% 15%, rgba(200,1,62,0.2), transparent 44%),
+    radial-gradient(ellipse at 8% 85%, rgba(125,184,42,0.1), transparent 40%);
+  pointer-events: none;
+}
+.outcomes-list { display: grid; gap: 11px; margin: 22px 0 30px; }
+.outcome-row {
+  display: flex; align-items: center; gap: 14px; padding: 14px 18px;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 13px; transition: var(--t);
+}
+.outcome-row:hover { background: rgba(200,1,62,0.08); border-color: rgba(200,1,62,0.22); }
+.outcome-ic { font-size: 1.25rem; flex-shrink: 0; }
+.outcome-row span { color: rgba(255,255,255,0.85); font-size: 0.91rem; font-weight: 500; }
+
+/* ═══════════════════════
+   TESTIMONIALS
+═══════════════════════ */
+.testi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.testi-card {
+  background: var(--warm-white); border: 1px solid rgba(191,138,46,0.13);
+  border-radius: var(--radius); padding: 30px;
+  box-shadow: var(--shadow-sm); position: relative; overflow: hidden; transition: var(--t);
+}
+.testi-card:hover { transform: translateY(-5px); border-color: rgba(200,1,62,0.2); box-shadow: var(--shadow); }
+.testi-card::before { content: "\201C"; position: absolute; top: -14px; right: 18px; font-family: 'Playfair Display', serif; font-size: 6.5rem; color: rgba(200,1,62,0.06); line-height: 1; }
+.stars { display: flex; gap: 3px; margin-bottom: 14px; }
+.stars span { color: var(--gold-light); font-size: 0.85rem; }
+.testi-card blockquote { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--ink-soft); line-height: 1.78; margin-bottom: 18px; }
+.testi-author strong { display: block; font-size: 0.86rem; font-weight: 700; color: var(--ink); }
+.testi-author span { color: var(--crimson); font-size: 0.79rem; font-weight: 600; }
+
+/* ═══════════════════════
+   CTA BOX
+═══════════════════════ */
+.cta-wrap {
+  background: linear-gradient(135deg, var(--crimson) 0%, var(--crimson-deep) 55%, var(--wine) 100%);
+  border-radius: var(--radius-lg); padding: 80px 56px; text-align: center;
+  position: relative; overflow: hidden; box-shadow: var(--shadow-red);
+}
+.cta-wrap::before {
+  content: ""; position: absolute; inset: 0;
+  background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E");
+}
+.cta-wrap::after { content: ""; position: absolute; top: -70px; right: -70px; width: 300px; height: 300px; border-radius: 50%; background: rgba(255,255,255,0.04); pointer-events: none; }
+.cta-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22); border-radius: 999px; padding: 6px 18px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(255,255,255,0.82); margin-bottom: 22px; position: relative; z-index: 1; }
+.cta-wrap h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.9rem, 3.8vw, 3.3rem); color: #fff; margin-bottom: 14px; position: relative; z-index: 1; }
+.cta-wrap h2 em { font-style: italic; color: var(--gold-light); }
+.cta-wrap p { color: rgba(255,255,255,0.78); max-width: 520px; margin: 0 auto 32px; font-size: 1.03rem; position: relative; z-index: 1; }
+.cta-btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; position: relative; z-index: 1; }
+
+/* ═══════════════════════
+   FOOTER
+═══════════════════════ */
+footer { background: var(--ink); padding: 68px 0 32px; position: relative; }
+footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--crimson), var(--gold-light), var(--lime), var(--gold-light), var(--crimson-deep)); }
+.foot-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 44px; margin-bottom: 52px; }
+.foot-brand p { color: rgba(255,255,255,0.46); font-size: 0.89rem; margin-top: 14px; line-height: 1.72; }
+.foot-col h5 { color: rgba(255,255,255,0.45); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.22em; margin-bottom: 16px; }
+.foot-col a { display: block; color: rgba(255,255,255,0.62); font-size: 0.88rem; margin-bottom: 9px; transition: color 0.3s; }
+.foot-col a:hover { color: var(--gold-light); }
+.foot-col address { color: rgba(255,255,255,0.62); font-style: normal; font-size: 0.88rem; line-height: 1.75; }
+.foot-bottom { padding-top: 26px; border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+.foot-bottom p { color: rgba(255,255,255,0.32); font-size: 0.82rem; }
+.foot-bottom span { color: var(--gold-light); }
+
+/* ═══════════════════════
+   REVEAL ANIMATION
+═══════════════════════ */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.85s ease, transform 0.85s ease; }
+.reveal.show { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.1s; }
+.d2 { transition-delay: 0.2s; }
+.d3 { transition-delay: 0.3s; }
+
+/* ═══════════════════════
+   RESPONSIVE
+═══════════════════════ */
+@media (max-width: 1100px) {
+  .nav-menu {
+    display: none; position: absolute;
+    top: calc(var(--header-h) + 6px); right: 4%; width: 272px;
+    background: var(--warm-white); border: 1px solid rgba(191,138,46,0.18);
+    border-radius: 18px; box-shadow: var(--shadow); padding: 22px;
+    flex-direction: column; align-items: flex-start; gap: 14px;
+  }
+  .nav-menu.open { display: flex; }
+  .nav-menu a { color: var(--muted) !important; }
+  .hamburger { display: block; }
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-card { display: none; }
+  .split, .split-flip { grid-template-columns: 1fr; }
+  .split-flip { direction: ltr; }
+  .img-frame { min-height: 360px; }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
+  .trust-cell:nth-child(2) { border-right: none; }
+  .trust-cell:nth-child(1), .trust-cell:nth-child(2) { border-bottom: 1px solid rgba(191,138,46,0.1); }
+  .stats-band { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2) { border-right: none; }
+  .stat:nth-child(1), .stat:nth-child(2) { border-bottom: 1px solid rgba(255,255,255,0.13); }
+  .prog-grid { grid-template-columns: repeat(2, 1fr); }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .foot-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+}
+@media (max-width: 768px) {
+  .section { padding: 76px 0; }
+  .testi-grid { grid-template-columns: 1fr 1fr; }
+  .hero-h1 { font-size: 2.4rem; }
+}
+@media (max-width: 580px) {
+  :root { --header-h: 66px; }
+  .prog-grid, .why-grid, .testi-grid { grid-template-columns: 1fr; }
+  .trust-grid { grid-template-columns: 1fr; }
+  .trust-cell { border-right: none !important; border-bottom: 1px solid rgba(191,138,46,0.1); }
+  .trust-cell:last-child { border-bottom: none; }
+  .stats-band { grid-template-columns: 1fr 1fr; border-radius: 18px; }
+  .cta-wrap { padding: 52px 24px; }
+  .foot-grid { grid-template-columns: 1fr; }
+  .foot-bottom { flex-direction: column; text-align: center; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- ══════════════════════
+     HEADER
+══════════════════════ -->
+
+<header id="header">
+  <div class="container nav">
+
+
+<a href="#home" class="brand">
+  <div class="brand-mark">
+    <img src="logo.png" alt="LCS Logo"
+         onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'color:#fff;font-family:Playfair Display,serif;font-weight:700;font-size:1rem;\'>LCS</span>'">
+  </div>
+  <div class="brand-name">
+    <strong>Lyndishes</strong>
+    <small>Culinary School · Abuja</small>
+  </div>
+</a>
+
+<nav class="nav-menu" id="navMenu">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="program.html">Programs</a>
+  <a href="blog.html">Blog</a>
+  <a href="#students">Student Stories</a>
+</nav>
+
+<div class="nav-actions">
+  <a href="#apply" class="btn btn-crimson btn-sm">Apply Now →</a>
+<br>
+  <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+</div>
+
+
+  </div>
+</header>
+
+<!-- ══════════════════════
+     HERO CAROUSEL
+══════════════════════ -->
+
+<section class="hero" id="home">
+  <div class="hero-track" id="heroTrack">
+
+
+<!-- Slide 1 -->
+<div class="hero-slide s1 active">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-chip">Lyndishes Culinary School · Abuja, Nigeria</div>
+          <h1 class="hero-h1">From Culinary Skills<br>to <em>Profitable</em><br>Food Businesses</h1>
+          <p class="hero-p">Hands-on culinary training designed to equip aspiring chefs and food entrepreneurs with the skills to build successful careers in the food industry.</p>
+          <div class="hero-btns">
+            <a href="#apply" class="btn btn-crimson">Enroll Now →</a>
+            <a href="#programs" class="btn btn-outline-white">View Courses</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Train. Build. Launch.</h3>
+          <p class="card-sub">At Lyndishes, students don't just learn to cook — they build real careers.</p>
+          <ul>
+            <li><span class="dot"></span>Professional Culinary Training</li>
+            <li><span class="dot"></span>Pastry &amp; Baking Mastery</li>
+            <li><span class="dot"></span>Short Specialized Courses</li>
+            <li><span class="dot"></span>Food Entrepreneurship Program</li>
+            <li><span class="dot"></span>Industry-Relevant Practical Learning</li>
+          </ul>
+          <a href="#apply" class="btn btn-crimson" style="width:100%;justify-content:center;">Start Your Journey →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 2 -->
+<div class="hero-slide s2">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-chip">African &amp; International Cuisine</div>
+          <h1 class="hero-h1">Authentic Flavours,<br><em>Global</em><br>Techniques</h1>
+          <p class="hero-p">Celebrate the depth of African cuisine while mastering international culinary standards — a program that honours roots and builds global confidence.</p>
+          <div class="hero-btns">
+            <a href="#programs" class="btn btn-crimson">Discover Programs</a>
+            <a href="#apply" class="btn btn-outline-white">Apply Now</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Cuisine &amp; Patisserie</h3>
+          <p class="card-sub">Comprehensive training combining cooking and baking.</p>
+          <ul>
+            <li><span class="dot"></span>Nigerian &amp; West African Dishes</li>
+            <li><span class="dot"></span>Continental Cuisine Techniques</li>
+            <li><span class="dot"></span>Menu Planning &amp; Development</li>
+            <li><span class="dot"></span>Kitchen Management &amp; Hygiene</li>
+            <li><span class="dot"></span>Food Costing &amp; Profitability</li>
+          </ul>
+          <a href="#programs" class="btn btn-gold" style="width:100%;justify-content:center;">See Full Curriculum →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 3 -->
+<div class="hero-slide s3">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-chip">Pastry &amp; Baking Excellence</div>
+          <h1 class="hero-h1">Master the Art of<br><em>Pastry, Cakes</em><br>&amp; Fine Baking</h1>
+          <p class="hero-p">From artisan breads to elegant wedding cakes — our pastry program builds world-class baking technique from the ground up.</p>
+          <div class="hero-btns">
+            <a href="#programs" class="btn btn-gold">Explore Pastry Programs</a>
+            <a href="#apply" class="btn btn-outline-white">Apply Today</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Diploma in Patisserie</h3>
+          <p class="card-sub">8-week intensive pastry training with daily hands-on production.</p>
+          <ul>
+            <li><span class="dot"></span>Cake Decoration &amp; Design</li>
+            <li><span class="dot"></span>Artisan Bread &amp; Viennoiserie</li>
+            <li><span class="dot"></span>Dessert Plating &amp; Presentation</li>
+            <li><span class="dot"></span>Sugar Art &amp; Showpieces</li>
+            <li><span class="dot"></span>Pricing &amp; Sales for Bakers</li>
+          </ul>
+          <a href="#programs" class="btn btn-crimson" style="width:100%;justify-content:center;">View Pastry Courses →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 4 -->
+<div class="hero-slide s4">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-chip">Food Entrepreneurship</div>
+          <h1 class="hero-h1">Cook With Purpose.<br>Build a <em>Profitable</em><br>Food Business.</h1>
+          <p class="hero-p">Our entrepreneurship curriculum goes beyond the kitchen, teaching pricing, branding, customer experience and the systems needed to grow a real food business.</p>
+          <div class="hero-btns">
+            <a href="entrepreneurship.html" class="btn btn-lime">Entrepreneurship Program →</a>
+            <a href="#apply" class="btn btn-outline-white">Apply Now</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Business of Food</h3>
+          <p class="card-sub">Turn culinary talent into a profitable, structured food business.</p>
+          <ul>
+            <li><span class="dot"></span>Food Costing &amp; Profit Margins</li>
+            <li><span class="dot"></span>Branding &amp; Market Positioning</li>
+            <li><span class="dot"></span>Customer Experience Design</li>
+            <li><span class="dot"></span>Kitchen Workflow &amp; Operations</li>
+            <li><span class="dot"></span>Social Media for Food Business</li>
+          </ul>
+          <a href="entrepreneurship.html" class="btn btn-lime" style="width:100%;justify-content:center;">Explore →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Slide 5 -->
+<div class="hero-slide s5">
+  <div class="hero-bg"></div>
+  <div class="hero-inner">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-chip">Admissions Open — Join Our Next Cohort</div>
+          <h1 class="hero-h1">Where <em>Passion</em><br>Meets Discipline<br>&amp; Purpose</h1>
+          <p class="hero-p">Lyndishes Culinary School has trained thousands of students in Abuja. Join a community of chefs, bakers, and food entrepreneurs building real success.</p>
+          <div class="hero-btns">
+            <a href="#apply" class="btn btn-crimson">Apply Today — Seats Limited</a>
+            <a href="#about" class="btn btn-outline-white">Our Story</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Why Choose Lyndishes?</h3>
+          <p class="card-sub">A culinary school built for real-world success in Nigeria's food industry.</p>
+          <ul>
+            <li><span class="dot"></span>1,000+ Graduates Trained</li>
+            <li><span class="dot"></span>Business + Culinary Curriculum</li>
+            <li><span class="dot"></span>Practical, Hands-On Learning</li>
+            <li><span class="dot"></span>Flexible Program Duration</li>
+            <li><span class="dot"></span>Based in Gwarimpa, Abuja</li>
+          </ul>
+          <a href="#apply" class="btn btn-crimson" style="width:100%;justify-content:center;">Begin Your Journey →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </div><!-- /hero-track -->
+
+  <div class="hero-dots" id="heroDots">
+    <button class="hdot active" data-i="0"></button>
+    <button class="hdot" data-i="1"></button>
+    <button class="hdot" data-i="2"></button>
+    <button class="hdot" data-i="3"></button>
+    <button class="hdot" data-i="4"></button>
+  </div>
+  <div class="hero-arrows">
+    <button class="harrow" id="hPrev">&#8592;</button>
+    <button class="harrow" id="hNext">&#8594;</button>
+  </div>
+  <div class="hero-counter"><span id="hCur">01</span> / 05</div>
+  <div class="hero-progress"><div class="hero-bar" id="heroBar"></div></div>
+</section>
+
+<!-- ══════════════════════
+     TRUST BAR
+══════════════════════ -->
+
+<section class="trust-bar">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-cell reveal">
+        <div class="trust-ic">📍</div>
+        <h4>Abuja-Based Training</h4>
+        <p>Located in Gwarimpa — structured culinary education in Nigeria's capital city.</p>
+      </div>
+      <div class="trust-cell reveal d1">
+        <div class="trust-ic">👩‍🍳</div>
+        <h4>Founded by Chef Lyn</h4>
+        <p>City &amp; Guilds certified chef, trained at ICCA Dubai — professional expertise at its finest.</p>
+      </div>
+      <div class="trust-cell reveal d2">
+        <div class="trust-ic">📈</div>
+        <h4>Career &amp; Business Focused</h4>
+        <p>Kitchen technique meets business knowledge, the complete package for food industry success.</p>
+      </div>
+      <div class="trust-cell reveal d3">
+        <div class="trust-ic">🎓</div>
+        <h4>1,000+ Students Trained</h4>
+        <p>Graduates building catering businesses, food brands, and culinary careers across Nigeria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ══════════════════════
+     STATS
+══════════════════════ -->
+
+<section class="section section-warm">
+  <div class="container">
+    <div class="stats-band reveal">
+      <div class="stat"><h3>1,000+</h3><p>Students Trained</p></div>
+      <div class="stat"><h3>5+</h3><p>Core Programs</p></div>
+      <div class="stat"><h3>100%</h3><p>Practical Learning</p></div>
+      <div class="stat"><h3>Abuja</h3><p>Nigeria's Capital</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ══════════════════════
+     ABOUT
+══════════════════════ -->
+
+<section class="section section-cream2" id="about">
+  <div class="container split">
+
+
+<div class="img-frame reveal">
+  <!-- ABOUT PHOTO: replace about.jpg with your image filename -->
+  <div class="img-fill" style="background-image: linear-gradient(rgba(28,10,18,0.18), rgba(28,10,18,0.38)), url('food4.jpeg'); background-size: cover; background-position: center;"></div>
+  <div class="img-badge">
+    <strong>Since 2019</strong>
+    <span>Culinary Excellence in Abuja</span>
+  </div>
+</div>
+
+<div class="reveal d2">
+  <span class="eyebrow">About Lyndishes</span>
+  <h2 class="sec-title">A Culinary School Built for <em>Real-World</em> Success</h2>
+  <p class="body-p">Lyndishes Culinary School is a professional culinary institute based in Gwarimpa, Abuja, dedicated to training the next generation of chefs and food entrepreneurs.</p>
+  <p class="body-p">Founded by <strong>Chef Lyn Chinasa Ewalefo</strong> — a City &amp; Guilds certified chef trained at the International Centre for Culinary Arts (ICCA) Dubai — the school was created to bridge the gap between culinary skills and real food business knowledge.</p>
+  <p class="body-p">At Lyndishes, students receive hands-on training in professional cooking techniques, kitchen management, food presentation, and culinary creativity — plus strong emphasis on entrepreneurship.</p>
+  <ul class="checklist">
+    <li><span class="chk">✓</span>Hands-on culinary and pastry training</li>
+    <li><span class="chk">✓</span>Professional kitchen discipline and work ethics</li>
+    <li><span class="chk">✓</span>Business-focused education for food entrepreneurs</li>
+    <li><span class="chk">✓</span>Designed to build profitable food careers</li>
+  </ul>
+  <div class="btn-group">
+    <a href="about.html" class="btn btn-crimson">Learn More →</a>
+    <a href="#apply" class="btn btn-outline-dark">Apply Now</a>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ══════════════════════
+     PROGRAMS
+══════════════════════ -->
+
+<section class="section section-warm" id="programs">
+  <div class="container">
+
+
+<div class="sec-header reveal">
+  <span class="eyebrow eyebrow-gold">Our Programs</span>
+  <h2 class="sec-title">Training Designed for Skills, <em>Careers</em> &amp; Growth</h2>
+  <p class="sec-sub">Structured programs to build culinary confidence, technical expertise, and profitable opportunities in the food industry.</p>
+</div>
+
+<div class="prog-grid">
+
+  <div class="prog-card reveal">
+    <div class="prog-thumb">
+      <!-- PROGRAM PHOTO 1: replace prog1.jpg with your image filename -->
+      <img src="cul.jpeg" alt="Professional Culinary Training"
+           onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop'">
+      <div class="prog-thumb-overlay"></div>
+      <span class="prog-tag">Diploma</span>
+    </div>
+    <div class="prog-body">
+      <h3>Professional Culinary Training</h3>
+      <p>Comprehensive kitchen training — knife skills, stocks, African &amp; international cuisine, food presentation, and kitchen operations.</p>
+      <div class="prog-pills">
+        <span class="pill">Mon–Thu</span>
+        <span class="pill pill-red">&#8358;1.7M</span>
+      </div>
+      <a href="program.html" class="btn btn-outline btn-sm">View Details →</a>
+    </div>
+  </div>
+
+  <div class="prog-card reveal d1">
+    <div class="prog-thumb">
+      <!-- PROGRAM PHOTO 2: replace prog2.jpg with your image filename -->
+      <img src="dessert.jpeg" alt="Pastry & Baking"
+           onerror="this.src='https://images.unsplash.com/photo-1607631568010-a87245c0daf8?q=80&w=800&auto=format&fit=crop'">
+      <div class="prog-thumb-overlay"></div>
+      <span class="prog-tag">Intensive</span>
+    </div>
+    <div class="prog-body">
+      <h3>Pastry &amp; Baking Classes</h3>
+      <p>Master cakes, pastries, bread making, dessert plating, and the basics of running a profitable baking business.</p>
+      <div class="prog-pills">
+        <span class="pill">8 Weeks</span>
+        <span class="pill pill-red">&#8358;1.3M</span>
+      </div>
+      <a href="program.html#pastry" class="btn btn-outline btn-sm">View Details →</a>
+    </div>
+  </div>
+
+  <div class="prog-card reveal d2">
+    <div class="prog-thumb">
+      <!-- PROGRAM PHOTO 3: replace prog3.jpg with your image filename -->
+      <img src="shortcourse.jpeg" alt="Short Culinary Courses"
+           onerror="this.src='https://images.unsplash.com/photo-1514190051997-0f6f39ca5cde?q=80&w=800&auto=format&fit=crop'">
+      <div class="prog-thumb-overlay"></div>
+      <span class="prog-tag">Short Course</span>
+    </div>
+    <div class="prog-body">
+      <h3>Short Culinary Courses</h3>
+      <p>Specialized programs — soup masterclass, Chinese cuisine, African dishes, small chops, and cake masterclass.</p>
+      <div class="prog-pills">
+        <span class="pill">Flexible</span>
+        <span class="pill pill-red">Custom</span>
+      </div>
+      <a href="program.html#short" class="btn btn-outline btn-sm">View Details →</a>
+    </div>
+  </div>
+
+  <div class="prog-card reveal d3">
+    <div class="prog-thumb">
+      <!-- PROGRAM PHOTO 4: replace prog4.jpg with your image filename -->
+      <img src="foodint.jpeg" alt="Food Entrepreneurship"
+           onerror="this.src='https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=800&auto=format&fit=crop'">
+      <div class="prog-thumb-overlay"></div>
+      <span class="prog-tag">Entrepreneurship</span>
+    </div>
+    <div class="prog-body">
+      <h3>Food Entrepreneurship Program</h3>
+      <p>Learn how to start and grow a profitable food business — costing, branding, marketing, kitchen workflow, and customer experience.</p>
+      <div class="prog-pills">
+        <span class="pill">Ongoing</span>
+        <span class="pill pill-red">Enquire</span>
+      </div>
+      <a href="program.html" class="btn btn-outline btn-sm">View Details →</a>
+    </div>
+  </div>
+
+</div>
+
+<div class="btn-group reveal" style="margin-top: 40px;">
+  <a href="program.html" class="btn btn-crimson">View All Courses →</a>
+</div>
+
+
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ══════════════════════
+     WHY CHOOSE
+══════════════════════ -->
+
+<section class="section section-cream2">
+  <div class="container">
+
+
+<div class="sec-header reveal">
+  <span class="eyebrow">Why Choose Lyndishes</span>
+  <h2 class="sec-title">More Than Cooking — <em>We Build Careers</em></h2>
+  <p class="sec-sub">Lyndishes combines culinary excellence with practical business knowledge to prepare you for real opportunities in Nigeria's food industry.</p>
+</div>
+
+<div class="why-grid">
+  <div class="why-card reveal">
+    <div class="why-ic">🍽️</div>
+    <h3>Hands-On Practical Training</h3>
+    <p>Students learn by doing — gaining confidence through real kitchen application and guided daily practice with professional tools.</p>
+  </div>
+  <div class="why-card reveal d1">
+    <div class="why-ic">👩‍🏫</div>
+    <h3>Industry-Experienced Instructors</h3>
+    <p>Learn from Chef Lynda Nnamani — City &amp; Guilds certified, trained at ICCA Dubai — within a structured professional environment.</p>
+  </div>
+  <div class="why-card reveal d2">
+    <div class="why-ic">📊</div>
+    <h3>Culinary &amp; Business Education</h3>
+    <p>We teach not just how to cook, but how to price, brand, market, and grow a food business from the ground up.</p>
+  </div>
+  <div class="why-card reveal">
+    <div class="why-ic">🚀</div>
+    <h3>Support for Food Entrepreneurs</h3>
+    <p>Programs designed to help aspiring entrepreneurs turn culinary passion into structured, profitable food ventures.</p>
+  </div>
+  <div class="why-card reveal d1">
+    <div class="why-ic">🏆</div>
+    <h3>Thousands of Trained Students</h3>
+    <p>Our track record speaks — graduates running catering businesses, baking brands, restaurants, and online food businesses.</p>
+  </div>
+  <div class="why-card reveal d2">
+    <div class="why-ic">🌍</div>
+    <h3>Local Relevance, Global Standards</h3>
+    <p>Nigerian culinary depth combined with international techniques and professional discipline for a globally competitive edge.</p>
+  </div>
+</div>
+
+
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ══════════════════════
+     STUDENT SUCCESS
+══════════════════════ -->
+
+<section class="section success-section" id="students">
+  <div class="container split split-flip">
+
+
+<div class="img-frame reveal">
+  <!-- STUDENTS PHOTO: replace students.jpg with your image filename -->
+  <div class="img-fill" style="background-image: linear-gradient(rgba(28,10,18,0.2), rgba(28,10,18,0.48)), url('students.jpg'); background-size: cover; background-position: center;"></div>
+  <div class="img-badge" style="background: rgba(28,10,18,0.92); border-color: rgba(191,138,46,0.28);">
+    <strong style="color: var(--gold-light);">Our Graduates</strong>
+    <span style="color: rgba(255,255,255,0.58);">Building Businesses Across Nigeria</span>
+  </div>
+</div>
+
+<div class="reveal d1">
+  <span class="eyebrow eyebrow-lime">Student Success</span>
+  <h2 class="sec-title" style="color: #fff;">Our Students, <em style="color: var(--gold-light);">Our Pride</em></h2>
+  <p class="body-p" style="color: rgba(255,255,255,0.62);">Over the years, Lyndishes Culinary School has trained thousands of students who are now building successful careers in the food industry.</p>
+  <p class="body-p" style="color: rgba(255,255,255,0.62);">Our students have gone on to launch catering businesses, restaurants, food brands, and thriving home kitchens across Nigeria and beyond.</p>
+  <div class="outcomes-list">
+    <div class="outcome-row"><div class="outcome-ic">🍽️</div><span>Launch catering businesses</span></div>
+    <div class="outcome-row"><div class="outcome-ic">🎂</div><span>Start successful baking brands</span></div>
+    <div class="outcome-row"><div class="outcome-ic">🏪</div><span>Open restaurants and food outlets</span></div>
+    <div class="outcome-row"><div class="outcome-ic">👨‍🍳</div><span>Become private chefs</span></div>
+    <div class="outcome-row"><div class="outcome-ic">📱</div><span>Build thriving online food businesses</span></div>
+  </div>
+  <a href="program.html" class="btn btn-gold">Register Today →</a>
+</div>
+
+
+  </div>
+</section>
+
+<!-- ══════════════════════
+     TESTIMONIALS
+══════════════════════ -->
+
+<section class="section section-warm">
+  <div class="container">
+
+
+<div class="sec-header reveal" style="text-align: center; max-width: 100%;">
+  <span class="eyebrow" style="justify-content: center;">Testimonials</span>
+  <h2 class="sec-title" style="text-align: center;">What Our <em>Graduates</em> Say</h2>
+  <p class="sec-sub" style="margin: 0 auto; text-align: center;">Real students. Real results. Real businesses built from Lyndishes training.</p>
+</div>
+
+<div class="testi-grid">
+  <div class="testi-card reveal">
+    <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <blockquote>"Lyndishes Culinary School changed my life. I started my catering business immediately after graduating and haven't looked back since."</blockquote>
+    <div class="testi-author">
+      <strong>Adaeze O.</strong>
+      <span>Cuisine &amp; Patisserie Graduate</span>
+    </div>
+  </div>
+  <div class="testi-card reveal d1">
+    <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <blockquote>"The entrepreneurship classes helped me understand how to run my food business and actually make profit — not just cook well."</blockquote>
+    <div class="testi-author">
+      <strong>Blessing A.</strong>
+      <span>Food Business Program</span>
+    </div>
+  </div>
+  <div class="testi-card reveal d2">
+    <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+    <blockquote>"I came to learn cooking, but I left with confidence, structure, and a clearer path for my future. This school truly transforms lives."</blockquote>
+    <div class="testi-author">
+      <strong>Chiamaka E.</strong>
+      <span>Pastry Diploma Graduate</span>
+    </div>
+  </div>
+</div>
+
+<div class="btn-group reveal" style="justify-content: center; margin-top: 40px;">
+  <a href="register.html" class="btn btn-outline-dark">Register→</a>
+</div>
+
+
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ══════════════════════
+     CTA
+══════════════════════ -->
+
+<section class="section section-cream" id="apply">
+  <div class="container">
+    <div class="cta-wrap reveal">
+      <div class="cta-badge">✦ Admissions Now Open</div>
+      <h2>Ready to Start Your <em>Culinary Journey?</em></h2>
+      <p>Join hundreds of aspiring chefs and food entrepreneurs learning at Lyndishes Culinary School in Abuja, Nigeria.</p>
+      <div class="cta-btns">
+        <a href="program.html" class="btn btn-gold">Apply Now — Secure Your Seat →</a>
+        <a href="program.html" class="btn btn-outline-white">Browse All Courses</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════
+     FOOTER
+══════════════════════ -->
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+
+
+  <div class="foot-brand">
+    <div class="brand">
+      <div class="brand-mark">
+        <img src="1.jpeg" alt="LCS"
+             onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'color:#fff;font-family:Playfair Display,serif;font-weight:700;font-size:1rem;\'>LCS</span>'">
+      </div>
+      <div class="brand-name">
+        <strong>Lyndishes</strong>
+        <small>Culinary School · Abuja</small>
+      </div>
+    </div>
+    <p>Premium culinary education for chefs, bakers, food entrepreneurs, and future hospitality professionals in Abuja, Nigeria.</p>
+  </div>
+
+  <div class="foot-col">
+    <h5>Explore</h5>
+    <a href="#home">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="program.html">All Programs</a>
+    <a href="blog.html">Blog</a>
+ 
+  </div>
+
+  <div class="foot-col">
+    <h5>Programs</h5>
+    <a href="program.html#culinary">Professional Culinary</a>
+    <a href="program.html#pastry">Pastry &amp; Baking</a>
+    <a href="program.html#short">Short Courses</a>
+    
+    <a href="program.html">Register Now</a>
+  </div>
+
+  <div class="foot-col">
+    <h5>Contact</h5>
+    <address>
+      <a href="mailto:lyndishesculinaryschool@gmail.com">lyndishesculinaryschool@gmail.com</a>
+      <a href="tel:+2348101408693">+234 810 140 8693</a>
+      Gwarimpa, Abuja,<br>Federal Capital Territory, Nigeria
+    </address>
+  </div>
+
+</div>
+<div class="foot-bottom">
+  <p>© 2026 Lyndishes Culinary School. All rights reserved.</p>
+  <p>Crafted with passion for <span>culinary excellence</span>.</p>
+</div>
+
+
+  </div>
+</footer>
+
+<!-- ══════════════════════
+     SCRIPTS
+══════════════════════ -->
+
+<script>
+/* ── Carousel ── */
+const DURATION = 5800;
+const track  = document.getElementById('heroTrack');
+const slides = document.querySelectorAll('.hero-slide');
+const dots   = document.querySelectorAll('.hdot');
+const bar    = document.getElementById('heroBar');
+const curEl  = document.getElementById('hCur');
+let cur = 0, timer, paused = false;
+
+function goto(n) {
+  slides[cur].classList.remove('active');
+  dots[cur].classList.remove('active');
+  cur = (n + slides.length) % slides.length;
+  slides[cur].classList.add('active');
+  dots[cur].classList.add('active');
+  track.style.transform = `translateX(-${cur * 100}%)`;
+  curEl.textContent = String(cur + 1).padStart(2, '0');
+  bar.style.transition = 'none';
+  bar.style.width = '0';
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    bar.style.transition = `width ${DURATION}ms linear`;
+    bar.style.width = '100%';
+  }));
+}
+function play() {
+  clearInterval(timer);
+  timer = setInterval(() => { if (!paused) goto(cur + 1); }, DURATION);
+}
+document.getElementById('hNext').onclick = () => { goto(cur + 1); play(); };
+document.getElementById('hPrev').onclick = () => { goto(cur - 1); play(); };
+dots.forEach(d => d.addEventListener('click', () => { goto(+d.dataset.i); play(); }));
+
+const heroEl = document.querySelector('.hero');
+heroEl.addEventListener('mouseenter', () => paused = true);
+heroEl.addEventListener('mouseleave', () => paused = false);
+
+let tx = 0;
+heroEl.addEventListener('touchstart', e => tx = e.touches[0].clientX, { passive: true });
+heroEl.addEventListener('touchend', e => {
+  const diff = tx - e.changedTouches[0].clientX;
+  if (Math.abs(diff) > 50) { goto(diff > 0 ? cur + 1 : cur - 1); play(); }
+}, { passive: true });
+
+goto(0); play();
+
+/* ── Header scroll ── */
+const hdr = document.getElementById('header');
+window.addEventListener('scroll', () => hdr.classList.toggle('scrolled', scrollY > 80), { passive: true });
+
+/* ── Mobile menu ── */
+const ham = document.getElementById('hamburger');
+const nav = document.getElementById('navMenu');
+ham.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  ham.textContent = open ? '✕' : '☰';
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open');
+  ham.textContent = '☰';
+}));
+
+/* ── Scroll reveal ── */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('show'); ro.unobserve(e.target); }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+
+</body>
+</html>
