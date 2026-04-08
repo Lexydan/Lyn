@@ -1,0 +1,1159 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Gallery | Lyndishes Culinary School</title>
+  <meta name="description" content="Behind the scenes at Lyndishes — student stories, class moments, finished dishes, and culinary inspiration from Abuja's premier culinary school." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
+    :root {
+      --red:      #D90452;
+      --deep:     #8C0335;
+      --wine:     #590222;
+      --lime:     #9BD835;
+      --olive:    #6CA71B;
+      --bg:       #FAF7F4;
+      --bg-warm:  #F3EDE8;
+      --bg-card:  #FFFFFF;
+      --text:     #1A0A10;
+      --muted:    #8A6070;
+      --line:     rgba(217,4,82,0.1);
+      --sh:       0 4px 28px rgba(26,10,16,0.08);
+      --sh-h:     0 14px 48px rgba(217,4,82,0.13);
+      --sh-r:     0 8px 28px rgba(217,4,82,0.18);
+      --r:        16px;
+      --max:      1220px;
+      --t:        all 0.32s cubic-bezier(.4,0,.2,1);
+      --hh:       66px;
+    }
+
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
+    h1,h2,h3,h4{font-family:'Raleway',sans-serif;}
+    img,video{max-width:100%;display:block;width:100%;}
+    a{text-decoration:none;color:inherit;}
+    ul{list-style:none;}
+    .container{width:min(92%,var(--max));margin:0 auto;}
+    .section{padding:88px 0;}
+
+    /* ═══════════════════════════
+       HEADER / NAV
+    ═══════════════════════════ */
+    header{
+      position:fixed;top:0;left:0;width:100%;z-index:9000;
+      background:rgba(250,247,244,.95);
+      backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(217,4,82,.1);
+      transition:var(--t);
+    }
+    header.scrolled{
+      background:#faf7f4;
+      box-shadow:0 2px 20px rgba(26,10,16,.09);
+    }
+
+    .nav-wrap{
+      width:min(92%,var(--max));margin:0 auto;
+      height:var(--hh);
+      display:flex;align-items:center;justify-content:space-between;gap:16px;padding: 0 10px;
+    }
+
+.hero-proof {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: red;
+}
+
+    /* Brand */
+    .brand{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none;}
+    .brand-logo{
+      width:38px;height:38px;object-fit:contain;border-radius:8px;
+      background:#fff;padding:3px;
+      box-shadow:0 0 0 2px var(--red),0 4px 14px rgba(217,4,82,.45);
+      flex-shrink:0;
+    }
+    .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+    .brand-text strong{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);white-space:nowrap;}
+    .brand-text small{font-size:0.48rem;color:var(--red);letter-spacing:.2em;text-transform:uppercase;margin-top:2px;white-space:nowrap;}
+
+    /* Desktop nav links */
+    .nav-links{
+      display:flex;align-items:center;gap:6px;
+      list-style:none;
+    }
+    .nav-links li a{
+      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.78rem;
+      letter-spacing:.08em;text-transform:uppercase;
+      color:var(--muted);padding:8px 12px;border-radius:6px;
+      position:relative;transition:var(--t);display:block;
+    }
+    .nav-links li a:hover{ color:var(--red); background:rgba(217,4,82,.05); }
+    .nav-links li a.active{ color:var(--red); }
+    .nav-links li a::after{
+      content:"";position:absolute;left:12px;bottom:4px;
+      width:0;height:2px;background:var(--red);border-radius:2px;
+      transition:width .3s ease;
+    }
+    .nav-links li a:hover::after,
+    .nav-links li a.active::after{ width:calc(100% - 24px); }
+
+    /* CTA area */
+    .nav-right{display:flex;align-items:center;gap:16px;flex-shrink:0;}
+    .nav-apply{
+      background:var(--red);color:#fff;
+      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.78rem;
+      letter-spacing:.08em;text-transform:uppercase;
+      padding:10px 20px;border-radius:4px;border:2px solid var(--red);
+      transition:var(--t);white-space:nowrap;
+    }
+    .nav-apply:hover{background:var(--deep);border-color:var(--deep);transform:translateY(-2px);}
+
+    /* Hamburger */
+    .hamburger{
+      display:none;flex-direction:column;justify-content:center;
+      gap:5px;width:36px;height:36px;
+      background:none;border:none;cursor:pointer;padding:4px;flex-shrink:0;
+    }
+    .hamburger span{
+      display:block;height:2.5px;border-radius:2px;
+      background:var(--text);transition:var(--t);
+    }
+    .hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
+    .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+    .hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
+
+    /* Mobile drawer */
+    .mobile-nav{
+      position:fixed;top:var(--hh);left:0;width:100%;
+      background:#faf7f4;border-bottom:1px solid rgba(217,4,82,.12);
+      box-shadow:0 8px 32px rgba(26,10,16,.1);
+      padding:0;max-height:0;overflow:hidden;
+      transition:max-height .4s ease,padding .3s ease;
+      z-index:8999;
+    }
+    .mobile-nav.open{max-height:420px;padding:16px 0 20px;}
+    .mobile-nav ul{width:min(92%,var(--max));margin:0 auto;display:flex;flex-direction:column;gap:4px;}
+    .mobile-nav ul li a{
+      display:block;font-family:'Raleway',sans-serif;font-weight:700;
+      font-size:0.9rem;letter-spacing:.06em;text-transform:uppercase;
+      color:var(--muted);padding:12px 16px;border-radius:8px;transition:var(--t);
+    }
+    .mobile-nav ul li a:hover,.mobile-nav ul li a.active{color:var(--red);background:rgba(217,4,82,.06);}
+    .mobile-nav .mobile-apply{
+      display:block;margin:12px 16px 0;
+      background:var(--red);color:#fff;text-align:center;
+      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.88rem;
+      letter-spacing:.08em;text-transform:uppercase;
+      padding:14px;border-radius:4px;transition:var(--t);
+    }
+    .mobile-nav .mobile-apply:hover{background:var(--deep);}
+
+    /* ═══════════════════════════
+       BUTTONS
+    ═══════════════════════════ */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:7px;
+      padding:12px 24px;border-radius:4px;
+      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.82rem;
+      letter-spacing:.08em;text-transform:uppercase;
+      border:2px solid transparent;cursor:pointer;transition:var(--t);white-space:nowrap;
+    }
+    .btn-red{background:var(--red);color:#fff;border-color:var(--red);box-shadow:var(--sh-r);}
+    .btn-red:hover{background:var(--deep);border-color:var(--deep);transform:translateY(-2px);}
+    .btn-outline{background:transparent;color:var(--text);border-color:rgba(26,10,16,.2);}
+    .btn-outline:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px);}
+    .btn-white{background:#fff;color:var(--red);border-color:#fff;font-weight:800;}
+    .btn-white:hover{background:rgba(255,255,255,.9);transform:translateY(-2px);}
+    .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
+    .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px);}
+
+    /* ═══════════════════════════
+       DIVIDER
+    ═══════════════════════════ */
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--red),rgba(155,216,53,.5),var(--deep),transparent);opacity:.3;margin:0;}
+
+    /* ═══════════════════════════
+       PAGE HERO
+    ═══════════════════════════ */
+    .page-hero{
+      padding:calc(var(--hh) + 72px) 0 64px;
+      background:var(--bg-warm);
+      position:relative;overflow:hidden;
+    }
+    .page-hero::before{
+      content:"";position:absolute;inset:0;
+      background-image:radial-gradient(rgba(217,4,82,.055) 1.5px,transparent 1.5px);
+      background-size:26px 26px;pointer-events:none;
+    }
+    .page-hero::after{
+      content:"";position:absolute;top:0;left:0;
+      width:5px;height:100%;
+      background:linear-gradient(to bottom,var(--red),var(--lime));
+    }
+    .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:center;position:relative;z-index:1;}
+    .kicker{
+      display:inline-flex;align-items:center;gap:9px;
+      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.7rem;
+      letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:16px;
+    }
+    .kicker::before{content:"";width:22px;height:2px;background:var(--red);border-radius:2px;}
+    .hero-h1{font-family:'Lora',serif;font-weight:700;font-size:clamp(2.6rem,5vw,4.4rem);line-height:1.08;color:var(--text);margin-bottom:14px;}
+    .hero-h1 em{font-style:italic;color:var(--red);}
+    .hero-p{color:var(--muted);font-size:1rem;max-width:520px;line-height:1.9;margin-bottom:28px;}
+    .hero-stats{display:flex;gap:12px;flex-wrap:wrap;}
+    .hs{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--sh);}
+    .hs strong{display:block;font-family:'Raleway',sans-serif;font-weight:800;font-size:1.35rem;color:var(--red);letter-spacing:-.5px;}
+    .hs span{font-size:0.78rem;color:var(--muted);}
+
+    /* Hero collage */
+    .hero-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:190px 150px;gap:10px;}
+    .hc-cell{border-radius:12px;overflow:hidden;border:1px solid rgba(217,4,82,.08);box-shadow:var(--sh);}
+    .hc-cell:first-child{grid-column:span 2;}
+    .hc-cell img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+    .hc-cell:hover img{transform:scale(1.05);}
+
+    /* ═══════════════════════════
+       CATEGORY BAR
+    ═══════════════════════════ */
+    .cat-bar{
+      background:#fff;border-bottom:1px solid rgba(217,4,82,.08);
+      position:sticky;top:var(--hh);z-index:500;
+    }
+    .cat-scroll{
+      width:min(92%,var(--max));margin:0 auto;
+      display:flex;gap:0;overflow-x:auto;scrollbar-width:none;
+    }
+    .cat-scroll::-webkit-scrollbar{display:none;}
+    .cat-btn{
+      flex-shrink:0;padding:16px 20px;
+      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.74rem;
+      letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+      border:none;background:none;cursor:pointer;
+      border-bottom:3px solid transparent;transition:var(--t);
+    }
+    .cat-btn:hover{color:var(--red);}
+    .cat-btn.active{color:var(--red);border-bottom-color:var(--red);}
+
+    /* ═══════════════════════════
+       FEATURED POST
+    ═══════════════════════════ */
+    .featured{
+      display:grid;grid-template-columns:1.2fr 0.8fr;
+      border-radius:var(--r);overflow:hidden;
+      background:#fff;box-shadow:var(--sh-h);
+      border:1px solid rgba(217,4,82,.08);transition:var(--t);margin-bottom:44px;
+    }
+    .featured:hover{box-shadow:0 20px 60px rgba(217,4,82,.15);}
+    .feat-img-wrap{position:relative;overflow:hidden;min-height:380px;}
+
+    /* ── MEDIA PLACEHOLDER STYLE ── */
+    .media-slot{
+      width:100%;height:100%;
+      background:linear-gradient(135deg,#f0e8ed,#f5ece6);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:10px;border:2px dashed rgba(217,4,82,.2);
+      color:var(--muted);text-align:center;padding:20px;
+      position:relative;
+    }
+    .media-slot .slot-icon{font-size:2.4rem;opacity:.5;}
+    .media-slot .slot-label{
+      font-family:'Raleway',sans-serif;font-weight:700;
+      font-size:0.7rem;letter-spacing:.14em;text-transform:uppercase;
+      color:var(--red);opacity:.7;
+    }
+    .media-slot .slot-hint{font-size:0.75rem;color:var(--muted);line-height:1.5;max-width:160px;}
+    /* When you add a real image it covers the slot styling */
+    .feat-img-wrap img{
+      width:100%;height:100%;object-fit:cover;
+      position:absolute;inset:0;
+      transition:transform .6s ease;
+    }
+    .featured:hover .feat-img-wrap img{transform:scale(1.04);}
+
+    .feat-badge{
+      position:absolute;top:16px;left:16px;z-index:2;
+      padding:5px 13px;border-radius:4px;
+      font-family:'Raleway',sans-serif;font-weight:800;font-size:0.66rem;
+      letter-spacing:.1em;text-transform:uppercase;
+    }
+    .b-photo{background:rgba(217,4,82,.92);color:#fff;}
+    .b-video{background:rgba(10,0,5,.85);color:#fff;}
+    .b-story{background:rgba(155,216,53,.92);color:#0a0005;}
+    .b-tip{background:rgba(140,3,53,.9);color:#fff;}
+    .b-event{background:rgba(38,1,15,.88);color:var(--lime);}
+
+    .feat-body{padding:40px 32px;display:flex;flex-direction:column;justify-content:center;}
+    .feat-cat{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
+    .feat-title{font-family:'Lora',serif;font-weight:600;font-size:1.75rem;color:var(--text);line-height:1.25;margin-bottom:12px;}
+    .feat-excerpt{color:var(--muted);font-size:0.93rem;line-height:1.75;margin-bottom:20px;}
+    .feat-readmore{
+      display:inline-flex;align-items:center;gap:6px;
+      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.78rem;
+      letter-spacing:.08em;text-transform:uppercase;color:var(--red);transition:gap .25s ease;
+    }
+    .feat-readmore:hover{gap:12px;}
+    .feat-readmore::after{content:"→";}
+    .feat-meta{
+      display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+      margin-top:20px;padding-top:18px;border-top:1px solid rgba(217,4,82,.08);
+    }
+    .feat-date{font-size:0.8rem;color:var(--muted);}
+    .tag{
+      padding:4px 11px;border-radius:999px;
+      background:rgba(217,4,82,.07);border:1px solid rgba(217,4,82,.14);
+      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.68rem;
+      letter-spacing:.07em;text-transform:uppercase;color:var(--red);
+    }
+
+    /* ═══════════════════════════
+       POSTS GRID
+    ═══════════════════════════ */
+    .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+
+    .post-card{
+      background:#fff;border:1px solid rgba(217,4,82,.07);
+      border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);
+      transition:var(--t);display:flex;flex-direction:column;
+    }
+    .post-card:hover{transform:translateY(-8px);box-shadow:var(--sh-h);border-color:rgba(217,4,82,.2);}
+
+    .card-media{
+      position:relative;overflow:hidden;
+      aspect-ratio:4/3;background:var(--bg-warm);flex-shrink:0;
+    }
+    .card-media img,.card-media video{
+      width:100%;height:100%;object-fit:cover;
+      transition:transform .55s ease;
+    }
+    .post-card:hover .card-media img{transform:scale(1.06);}
+    .card-badge{position:absolute;top:12px;left:12px;z-index:2;}
+
+    /* Play overlay for video */
+    .play-over{
+      position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+      background:rgba(26,10,16,.25);transition:background .3s;
+    }
+    .post-card:hover .play-over{background:rgba(26,10,16,.4);}
+    .play-btn{
+      width:54px;height:54px;border-radius:50%;
+      background:rgba(255,255,255,.94);display:grid;place-items:center;
+      font-size:1.1rem;color:var(--red);box-shadow:0 4px 18px rgba(0,0,0,.22);
+      transition:var(--t);
+    }
+    .post-card:hover .play-btn{transform:scale(1.12);}
+
+    .card-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1;}
+    .card-cat{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:7px;}
+    .card-title{font-family:'Lora',serif;font-weight:600;font-size:1.05rem;color:var(--text);line-height:1.35;margin-bottom:9px;}
+    .card-excerpt{color:var(--muted);font-size:0.87rem;line-height:1.7;flex:1;margin-bottom:14px;}
+    .card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid rgba(217,4,82,.07);}
+    .card-date{font-size:0.76rem;color:var(--muted);}
+    .card-link{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:4px;transition:gap .22s;}
+    .card-link:hover{gap:8px;}
+    .card-link::after{content:"→";}
+
+    /* ═══════════════════════════
+       INSTAGRAM FEED SECTION
+    ═══════════════════════════ */
+    .ig-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:14px;}
+    .ig-handle{
+      display:inline-flex;align-items:center;gap:10px;
+      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);
+    }
+    .ig-dot{
+      width:36px;height:36px;border-radius:50%;
+      background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
+      display:grid;place-items:center;color:#fff;font-size:1rem;flex-shrink:0;
+    }
+    .ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+
+    /* Each Instagram cell */
+    .ig-cell{
+      aspect-ratio:1;border-radius:10px;overflow:hidden;
+      border:1px solid rgba(217,4,82,.08);box-shadow:var(--sh);
+      position:relative;cursor:pointer;transition:var(--t);
+      background:linear-gradient(135deg,#f0e8ed,#f5ece6);
+    }
+    .ig-cell:hover{transform:scale(1.03);box-shadow:var(--sh-h);border-color:rgba(217,4,82,.22);}
+    .ig-cell img,.ig-cell video{width:100%;height:100%;object-fit:cover;}
+
+    /* Hover overlay */
+    .ig-over{
+      position:absolute;inset:0;
+      background:rgba(217,4,82,.72);
+      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
+      opacity:0;transition:opacity .3s ease;color:#fff;
+    }
+    .ig-cell:hover .ig-over{opacity:1;}
+    .ig-over span{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;}
+
+    /* Instagram media slot */
+    .ig-slot{
+      width:100%;height:100%;
+      display:flex;flex-direction:column;align-items:center;justify-content:center;
+      gap:6px;padding:12px;text-align:center;
+    }
+    .ig-slot-icon{font-size:1.6rem;opacity:.4;}
+    .ig-slot-text{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);opacity:.6;}
+
+    /* Video type indicator */
+    .media-type-dot{
+      position:absolute;top:8px;right:8px;z-index:2;
+      background:rgba(10,0,5,.7);color:#fff;border-radius:4px;
+      font-size:0.6rem;font-weight:700;padding:3px 7px;
+      font-family:'Raleway',sans-serif;letter-spacing:.06em;text-transform:uppercase;
+    }
+
+    /* ═══════════════════════════
+       VIDEO SECTION
+    ═══════════════════════════ */
+    .video-grid{display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:auto auto;gap:16px;}
+    .video-main-card{grid-row:span 2;}
+    .v-card{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid rgba(217,4,82,.07);box-shadow:var(--sh);transition:var(--t);}
+    .v-card:hover{transform:translateY(-5px);box-shadow:var(--sh-h);}
+    .v-thumb{position:relative;overflow:hidden;background:var(--bg-warm);}
+    .v-thumb img{width:100%;object-fit:cover;transition:transform .5s ease;}
+    .v-card:hover .v-thumb img{transform:scale(1.05);}
+    .v-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,10,16,.2);transition:background .3s;}
+    .v-card:hover .v-play{background:rgba(26,10,16,.38);}
+    .v-play-circle{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;font-size:1.3rem;color:var(--red);box-shadow:0 6px 22px rgba(0,0,0,.2);transition:var(--t);}
+    .v-card:hover .v-play-circle{transform:scale(1.1);}
+    .v-info{padding:16px 18px;}
+    .v-label{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);margin-bottom:5px;}
+    .v-title{font-family:'Lora',serif;font-weight:600;font-size:0.98rem;color:var(--text);line-height:1.3;margin-bottom:4px;}
+    .v-date{font-size:0.76rem;color:var(--muted);}
+
+    /* ═══════════════════════════
+       MASONRY GALLERY
+    ═══════════════════════════ */
+    .masonry{columns:4;column-gap:12px;}
+    .m-item{
+      break-inside:avoid;margin-bottom:12px;
+      border-radius:12px;overflow:hidden;
+      border:1px solid rgba(217,4,82,.06);box-shadow:var(--sh);
+      position:relative;cursor:zoom-in;transition:var(--t);
+    }
+    .m-item:hover{transform:scale(1.02);box-shadow:var(--sh-h);border-color:rgba(217,4,82,.2);}
+    .m-item img{width:100%;display:block;transition:transform .5s ease;}
+    .m-item:hover img{transform:scale(1.04);}
+    .m-over{position:absolute;inset:0;background:linear-gradient(to top,rgba(217,4,82,.72),transparent 55%);opacity:0;transition:opacity .32s;display:flex;align-items:flex-end;padding:12px;}
+    .m-item:hover .m-over{opacity:1;}
+    .m-lbl{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;z-index:99999;background:rgba(26,10,16,.93);backdrop-filter:blur(8px);display:none;place-items:center;}
+    .lightbox.open{display:grid;}
+    .lb-img-wrap{position:relative;max-width:90vw;}
+    .lb-img-wrap img{max-width:90vw;max-height:88vh;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,.5);}
+    .lb-x{position:absolute;top:-16px;right:-16px;width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff;border:none;font-size:1rem;cursor:pointer;display:grid;place-items:center;transition:var(--t);}
+    .lb-x:hover{background:var(--deep);transform:scale(1.1);}
+
+    /* ═══════════════════════════
+       UPLOAD SECTION
+    ═══════════════════════════ */
+    .upload-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start;}
+    .upload-kicker{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
+    .upload-kicker::before{content:"";width:22px;height:2px;background:var(--red);border-radius:2px;}
+    .upload-h2{font-family:'Lora',serif;font-weight:600;font-size:clamp(1.9rem,3.2vw,2.9rem);color:var(--text);line-height:1.1;margin-bottom:12px;}
+    .upload-h2 em{font-style:italic;color:var(--red);}
+    .upload-p{color:var(--muted);font-size:0.96rem;line-height:1.8;margin-bottom:22px;}
+    .upload-perks{display:grid;gap:10px;}
+    .perk{display:flex;align-items:center;gap:11px;color:#4a2030;font-size:0.91rem;}
+    .perk-dot{width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0;}
+
+    /* Drop zone */
+    .dropzone{
+      background:#fff;border:2px dashed rgba(217,4,82,.28);border-radius:var(--r);
+      padding:40px 28px;text-align:center;cursor:pointer;position:relative;
+      transition:var(--t);
+    }
+    .dropzone:hover,.dropzone.over{border-color:var(--red);background:rgba(217,4,82,.03);transform:scale(1.01);}
+    .dropzone input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
+    .dz-icon{width:68px;height:68px;border-radius:50%;background:rgba(217,4,82,.08);border:1px solid rgba(217,4,82,.15);display:grid;place-items:center;margin:0 auto 16px;font-size:1.9rem;transition:var(--t);}
+    .dropzone:hover .dz-icon{background:rgba(217,4,82,.15);transform:scale(1.08);}
+    .dz-title{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);margin-bottom:7px;}
+    .dz-sub{color:var(--muted);font-size:0.85rem;margin-bottom:18px;line-height:1.6;}
+    .dz-tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
+    .dz-tag{padding:5px 13px;border-radius:999px;background:rgba(217,4,82,.07);border:1px solid rgba(217,4,82,.14);font-family:'Raleway',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);}
+
+    .preview-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px;}
+    .prev-slot{aspect-ratio:1;border-radius:9px;overflow:hidden;background:var(--bg-warm);border:1px solid rgba(217,4,82,.1);display:none;position:relative;}
+    .prev-slot.show{display:block;}
+    .prev-slot img,.prev-slot video{width:100%;height:100%;object-fit:cover;}
+    .prev-rm{position:absolute;top:5px;right:5px;width:22px;height:22px;border-radius:50%;background:rgba(217,4,82,.9);color:#fff;border:none;font-size:0.65rem;cursor:pointer;display:grid;place-items:center;transition:var(--t);}
+    .prev-rm:hover{background:var(--deep);}
+
+    /* Form */
+    .uf{margin-top:20px;display:grid;gap:13px;}
+    .uf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+    .fg label{display:block;font-family:'Raleway',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
+    .fg input,.fg select,.fg textarea{
+      width:100%;background:#fff;border:1px solid rgba(217,4,82,.18);
+      border-radius:8px;padding:12px 14px;color:var(--text);
+      font-family:'Nunito Sans',sans-serif;font-size:0.92rem;
+      outline:none;transition:var(--t);
+    }
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(217,4,82,.09);}
+    .fg textarea{height:78px;resize:vertical;}
+    .uf-note{text-align:center;color:var(--muted);font-size:0.78rem;margin-top:9px;}
+
+    /* ═══════════════════════════
+       FOLLOW STRIP
+    ═══════════════════════════ */
+    .follow-wrap{background:linear-gradient(135deg,var(--red),var(--deep));border-radius:var(--r);padding:56px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden;}
+    .follow-wrap::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80%,rgba(155,216,53,.12),transparent 55%);}
+    .follow-wrap::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);}
+    .fw-text{position:relative;z-index:1;}
+    .fw-text h2{font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(1.6rem,2.8vw,2.3rem);color:#fff;letter-spacing:-.5px;margin-bottom:6px;}
+    .fw-text p{color:rgba(255,255,255,.8);font-size:0.94rem;}
+    .fw-btns{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1;}
+
+    /* ═══════════════════════════
+       FOOTER
+    ═══════════════════════════ */
+    footer{padding:52px 0 28px;border-top:1px solid rgba(217,4,82,.1);background:var(--bg-warm);}
+    .ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px;margin-bottom:32px;}
+    .ft-brand p{color:var(--muted);font-size:0.87rem;margin-top:12px;line-height:1.72;max-width:250px;}
+    .ft-col h4{font-family:'Raleway',sans-serif;font-weight:700;color:var(--text);font-size:0.74rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:13px;}
+    .ft-col a{display:block;color:var(--muted);font-size:0.88rem;margin-bottom:9px;transition:color .28s;}
+    .ft-col a:hover{color:var(--red);}
+    .ft-bottom{padding-top:20px;border-top:1px solid rgba(217,4,82,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:0.82rem;}
+
+    /* ═══════════════════════════
+       REVEAL
+    ═══════════════════════════ */
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1);}
+    .reveal.left{transform:translateX(-26px);}
+    .reveal.on{opacity:1;transform:translate(0);}
+
+    /* ═══════════════════════════
+       RESPONSIVE
+    ═══════════════════════════ */
+    @media(max-width:1080px){
+      .hero-grid,.featured,.upload-grid,.video-grid,.ft-grid{grid-template-columns:1fr;}
+      .feat-img-wrap{min-height:260px;}
+      .posts-grid{grid-template-columns:repeat(2,1fr);}
+      .ig-grid{grid-template-columns:repeat(3,1fr);}
+      .masonry{columns:3;}
+      .video-main-card{grid-row:span 1;}
+      .hamburger{display:flex;}
+      .nav-links{display:none;}
+      .nav-apply{display:none;}
+      .follow-wrap{flex-direction:column;text-align:center;}
+      .fw-btns{justify-content:center;}
+    }
+    @media(max-width:680px){
+      .posts-grid{grid-template-columns:1fr;}
+      .ig-grid{grid-template-columns:repeat(2,1fr);}
+      .masonry{columns:2;}
+      .uf-row{grid-template-columns:1fr;}
+      .preview-row{grid-template-columns:repeat(2,1fr);}
+      .hero-collage{grid-template-columns:1fr;grid-template-rows:auto auto auto;}
+      .hc-cell:first-child{grid-column:auto;}
+      .section{padding:68px 0;}
+    }
+  </style></head>
+<body><!-- LIGHTBOX --><div class="lightbox" id="lightbox">
+  <div class="lb-img-wrap">
+    <img id="lbImg" src="" alt="Gallery image">
+    <button class="lb-x" id="lbClose">✕</button>
+  </div>
+</div><!-- ═══════════════════════════
+     HEADER
+═══════════════════════════ --><header id="siteHeader">
+  <div class="nav-wrap">
+
+<!-- Brand -->
+<a href="index.html" class="brand">
+  <img src="1.jpeg" alt="Lyndishes Logo" class="brand-logo">
+  <div class="brand-text">
+    <strong>LYNDISHES</strong>
+    <small></small>
+  </div>
+</a>
+
+<!-- Desktop Nav -->
+<ul class="nav-links">
+  <li><a href="index.html">Home</a></li>
+  <li><a href="about.html">About</a></li>
+  <li><a href="program.html">Programs</a></li>
+  <li><a href="blog.html" class="active">Blog</a></li>
+  <li><a href="register.html">Register</a></li>
+</ul>
+
+<!-- Right side -->
+<div class="nav-right">
+  <a href="register.html" class="nav-apply">Apply Now</a>
+  <!-- Hamburger -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+
+
+</div>
+</header><!-- Mobile Nav Drawer --><div class="mobile-nav" id="mobileNav">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="program.html">Programs</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="register.html">Register</a></li>
+  </ul>
+  <a href="register.html" class="mobile-apply">Apply Now →</a>
+</div><!-- ═══════════════════════════
+     PAGE HERO
+═══════════════════════════ --><section class="page-hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="kicker">From Our Kitchen to Yours</div>
+      <h1 class="hero-h1">Stories, Classes<br>& <em>Culinary Moments</em></h1>
+      <p class="hero-p">Behind the scenes at Lyndishes, student wins, class highlights, recipe inspiration, and everything happening in our kitchen in Abuja.</p>
+      <div class="hero-stats">
+        <div class="hs"><strong>1,000+</strong><span>Students Trained</span></div>
+        <div class="hs"><strong>Weekly</strong><span>New Content</span></div>
+        <div class="hs"><strong>Real</strong><span>Kitchen Stories</span></div>
+      </div>
+    </div>
+<div class="hero-proof">
+  <span>✔ City & Guilds Certified</span>
+  <span>✔ 1,000+ Students Trained</span>
+  <span>✔ Abuja’s Leading Culinary School</span>
+</div>
+
+<!-- HERO COLLAGE — swap images below -->
+<div class="hero-collage">
+  <!-- SWAP: Hero collage top image -->
+  <div class="hc-cell" style="height:190px;">
+    <img src="6.jpeg" alt="LCS Class — replace with your Instagram photo">
+  </div>
+  <!-- SWAP: Hero collage bottom-left -->
+  <div class="hc-cell" style="height:150px;">
+    <img src="blog2.jpeg" alt="Pastry class — replace with your Instagram photo">
+  </div>
+  <!-- SWAP: Hero collage bottom-right -->
+  <div class="hc-cell" style="height:150px;">
+    <img src="kitchen2.jpeg" alt="Finished dish — replace with your Instagram photo">
+  </div>
+</div>
+
+
+</div>
+</section><!-- CATEGORY BAR --><div class="cat-bar">
+  <div class="cat-scroll">
+    <button class="cat-btn active" data-cat="all">All Posts</button>
+    <button class="cat-btn" data-cat="class">Class Moments</button>
+    <button class="cat-btn" data-cat="dishes">Finished Dishes</button>
+    <button class="cat-btn" data-cat="students">Student Stories</button>
+    <button class="cat-btn" data-cat="tips">Chef Tips</button>
+    <button class="cat-btn" data-cat="video">Videos</button>
+    <button class="cat-btn" data-cat="events">Events</button>
+  </div>
+</div><!-- ═══════════════════════════
+     BLOG POSTS
+═══════════════════════════ --><section class="section">
+  <div class="container">
+
+<!-- FEATURED POST -->
+<!-- SWAP: Replace src="6.jpeg" with your Instagram featured photo -->
+<div class="featured reveal" data-cat="class">
+  <div class="feat-img-wrap">
+    <img src="6.jpeg" alt="SWAP → Your Instagram featured photo here">
+    <span class="feat-badge b-photo">📸 Featured</span>
+  </div>
+  <div class="feat-body">
+    <p class="feat-cat">✦ Featured · Class Moments</p>
+    <h2 class="feat-title">Inside a Professional Kitchen: What a Day at Lyndishes Really Looks Like</h2>
+    <p class="feat-excerpt">From knife skills at 9am to plated perfection by afternoon a behind-the-scenes look at what our students experience every single day at Lyndishes Culinary School.</p>
+   
+    <div class="feat-meta">
+      <span class="feat-date">March 2026</span>
+      <span class="tag">Class Life</span>
+      <span class="tag">Training</span>
+    </div>
+  </div>
+</div>
+
+<!-- POSTS GRID -->
+<div class="posts-grid" id="postsGrid">
+
+  <!-- POST 1 — SWAP image -->
+  <div class="post-card reveal" data-cat="dishes">
+    <div class="card-media">
+      <!-- SWAP → Instagram photo: finished dishes / plating session -->
+      <img src="blog1.jpeg" alt="SWAP → Instagram plating photo">
+      <span class="card-badge"><span class="feat-badge b-photo">📸 Photo</span></span>
+    </div>
+    <div class="card-body">
+      <p class="card-cat">✦ Finished Dishes</p>
+      <h3 class="card-title">Our Diploma Students' Final Plating Session, The Results Were Stunning</h3>
+      <p class="card-excerpt">Weeks of training, discipline, and creativity all coming together in one unforgettable plating session.</p>
+      <div class="card-foot"><span class="card-date">Feb 2026</span></div>
+    </div>
+  </div>
+
+  <!-- POST 2 — VIDEO SWAP -->
+  <div class="post-card reveal" data-cat="video">
+    <div class="card-media">
+      <!-- SWAP → Instagram video thumbnail (screenshot of your video) -->
+     <video controls poster="kitchen1.jpeg">
+  <source src="video.mp4" type="video/mp4">
+</video>
+      <div class="play-over"><div class="play-btn">▶</div></div>
+      <span class="card-badge"><span class="feat-badge b-video">▶ Video</span></span>
+      <span class="media-type-dot">MP4</span>
+    </div>
+    <div class="card-body">
+      <p class="card-cat">✦ Video · Chef Demo</p>
+      <h3 class="card-title">Watch: Chef Lyn Demonstrates the Perfect Beurre Blanc Sauce</h3>
+      <p class="card-excerpt">A step-by-step video masterclass — one of the most requested techniques from our Continental Cuisine program.</p>
+      <div class="card-foot"><span class="card-date">Jan 2026</span><a href="https://www.instagram.com/reel/DV1Sm--jEQ4/?igsh=MW5uOHN5aTh2dm84Yg==" class="card-link">Watch Now</a></div>
+    </div>
+  </div>
+
+  <!-- POST 3 — SWAP image -->
+  <div class="post-card reveal" data-cat="students">
+    <div class="card-media">
+      <!-- SWAP → Instagram student story photo -->
+      <img src="students.jpg" alt="SWAP → Instagram student photo">
+      <span class="card-badge"><span class="feat-badge b-story">Student Story</span></span>
+    </div>
+    <div class="card-body">
+      <p class="card-cat">✦ Student Success</p>
+      <h3 class="card-title">From Zero to Catering Business: A Graduate's Story After Lyndishes</h3>
+      <p class="card-excerpt">One year after completing the Diploma program, she now runs a thriving catering business serving corporate events in Abuja.</p>
+      <div class="card-foot"><span class="card-date">Dec 2025</span></div>
+    </div>
+  </div>
+
+  <!-- POST 4 — SWAP image -->
+  <div class="post-card reveal" data-cat="tips">
+    <div class="card-media">
+      <!-- SWAP → Instagram pastry / tips photo -->
+      <img src="4.jpeg" alt="SWAP → Instagram tips photo">
+      <span class="card-badge"><span class="feat-badge b-tip">Chef Tip</span></span>
+    </div>
+    <div class="card-body">
+      <p class="card-cat">✦ Chef Tips</p>
+      <h3 class="card-title">5 Things Every Beginner Baker Gets Wrong (And How to Fix Them)</h3>
+      <p class="card-excerpt">Chef Lyn shares the most common mistakes she sees in beginner pastry students. and the easy fixes that change everything.</p>
+      <div class="card-foot"><span class="card-date">Nov 2025</span></div>
+    </div>
+  </div>
+
+  <!-- POST 5 — VIDEO SWAP -->
+  <div class="post-card reveal" data-cat="video class">
+    <div class="card-media">
+      <!-- SWAP → Instagram video thumbnail (patisserie class) -->
+      <img src="blog7.jpeg" alt="SWAP → Instagram patisserie video thumbnail">
+      <div class="play-over"><div class="play-btn">▶</div></div>
+      <span class="card-badge"><span class="feat-badge b-video">▶ Video</span></span>
+      <span class="media-type-dot">MOV</span>
+    </div>
+    <div class="card-body">
+      <p class="card-cat">✦ Video · Class Highlights</p>
+      <h3 class="card-title">Patisserie Class Highlights, Students Create Their First Tarte Tatin</h3>
+      <p class="card-excerpt">Watch our Diploma in Patisserie students tackle one of the most iconic French desserts for the very first time.</p>
+      <div class="card-foot"><span class="card-date">Oct 2025</span><a href="https://www.instagram.com/reel/DWeeLGXjOhj/?igsh=Z2IzNDR6Znlqems4" class="card-link">Watch Now</a></div>
+    </div>
+  </div>
+
+  <!-- POST 6 — SWAP image -->
+  <div class="post-card reveal" data-cat="events">
+    <div class="card-media">
+      <!-- SWAP → Instagram graduation / event photo -->
+      <img src="blog8.jpeg" alt="SWAP → Instagram graduation photo">
+      <span class="card-badge"><span class="feat-badge b-event">Event</span></span>
+    </div>
+    <div class="card-body">
+      <p class="card-cat">✦ Events & Graduation</p>
+      <h3 class="card-title">Graduation Day: Celebrating Our Latest Class of Culinary Professionals</h3>
+      <p class="card-excerpt">Smiles, aprons, and certificates — a look back at our most recent graduation ceremony and the incredible journeys behind it.</p>
+      <div class="card-foot"><span class="card-date">Sep 2025</span><a href="https://www.instagram.com/lyndishesculinaryschool?igsh=MWF5a2R0d2E4ajViZg==" class="card-link">See Gallery</a></div>
+    </div>
+  </div>
+
+</div><!-- /posts-grid -->
+
+<div style="display:flex;justify-content:center;margin-top:44px;" class="reveal">
+  <button class="btn btn-outline" style="min-width:200px;">Load More Posts</button>
+</div>
+
+
+</div>
+</section><div class="divider"></div><!-- ═══════════════════════════
+     INSTAGRAM FEED
+     Replace each ig-cell image with your real Instagram photos/videos
+═══════════════════════════ --><section class="section" style="background:var(--bg-warm);">
+  <div class="container">
+    <div class="ig-header reveal">
+      <div class="ig-handle">
+        <div class="ig-dot">📸</div>
+        <div>
+          <div style="font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;">@lyndishesculinaryschool</div>
+          <div style="font-size:0.8rem;color:var(--muted);">Follow us on Instagram for daily kitchen moments</div>
+        </div>
+      </div>
+      <a href="https://www.instagram.com/lyndishesculinaryschool" target="_blank" class="btn btn-outline">Follow on Instagram</a>
+    </div>
+
+<!-- ══ INSTAGRAM GRID ══
+     HOW TO UPDATE:
+     1. Download your Instagram photos/videos
+     2. Upload them to your GitHub repo (name them ig1.jpeg, ig2.jpeg ... ig8.jpeg or whatever you like)
+     3. Replace each src="" value below with your file name
+     4. For videos: replace <img> with <video autoplay muted loop playsinline src="your-video.mp4"></video>
+════════════════════════ -->
+<div class="ig-grid reveal">
+
+  <!-- IG SLOT 1 — SWAP -->
+  <div class="ig-cell" onclick="openLB(this)">
+   <img src="6.jpeg" alt="Students practicing knife skills in Lyndishes kitchen">
+    <!-- To change: replace src="6.jpeg" with your Instagram photo -->
+    <div class="ig-over"><span>View</span></div>
+  </div>
+
+  <!-- IG SLOT 2 — SWAP -->
+  <div class="ig-cell" onclick="openLB(this)">
+    <img src="17.jpeg" alt="Instagram post 2 — SWAP with ig2.jpeg">
+    <div class="ig-over"><span>View</span></div>
+  </div>
+
+  <!-- IG SLOT 3 — VIDEO SWAP -->
+  <div class="ig-cell">
+    <!-- To add a video: remove the img tag and add:
+         <video autoplay muted loop playsinline src="your-ig-video.mp4"></video> -->
+    <img src="13.jpeg" alt="Instagram post 3 — SWAP with ig3.jpeg or video">
+    <span class="media-type-dot">Video</span>
+    <div class="ig-over"><span>▶ Play</span></div>
+  </div>
+
+  <!-- IG SLOT 4 — SWAP -->
+  <div class="ig-cell" onclick="openLB(this)">
+    <img src="blog3.jpeg" alt="Instagram post 4 — SWAP with ig4.jpeg">
+    <div class="ig-over"><span>View</span></div>
+  </div>
+
+  <!-- IG SLOT 5 — SWAP -->
+  <div class="ig-cell" onclick="openLB(this)">
+    <img src="blog6.jpeg" alt="Instagram post 5 — SWAP with ig5.jpeg">
+    <div class="ig-over"><span>View</span></div>
+  </div>
+
+  <!-- IG SLOT 6 — SWAP -->
+  <div class="ig-cell" onclick="openLB(this)">
+    <img src="blog9.jpeg" alt="Instagram post 6 — SWAP with ig6.jpeg">
+    <div class="ig-over"><span>View</span></div>
+  </div>
+
+  <!-- IG SLOT 7 — VIDEO SWAP -->
+  <div class="ig-cell">
+    <img src="8.jpeg" alt="Instagram post 7 — SWAP with ig7.jpeg or video">
+    <span class="media-type-dot">Video</span>
+    <div class="ig-over"><span>▶ Play</span></div>
+  </div>
+
+  <!-- IG SLOT 8 — SWAP -->
+  <div class="ig-cell" onclick="openLB(this)">
+    <img src="blog5.jpeg" alt="Instagram post 8 — SWAP with ig8.jpeg">
+    <div class="ig-over"><span>View</span></div>
+  </div>
+
+</div><!-- /ig-grid -->
+
+
+</div>
+</section><div class="divider"></div><!-- ═══════════════════════════
+     VIDEO SHOWCASE
+     SWAP each thumbnail with your real video cover images
+     Then link the play button to your actual video URL or file
+═══════════════════════════ --><section class="section">
+  <div class="container">
+    <div style="max-width:600px;margin-bottom:44px;" class="reveal">
+      <div class="kicker">Video Gallery</div>
+      <h2 style="font-family:'Lora',serif;font-weight:600;font-size:clamp(1.9rem,3.2vw,3rem);color:var(--text);line-height:1.1;margin-bottom:10px;">Watch Us <em style="font-style:italic;color:var(--red);">in Action</em></h2>
+      <p style="color:var(--muted);font-size:0.96rem;line-height:1.78;">Real classes. Real students. Real results — captured on video from our kitchen.</p>
+    </div>
+    <div class="video-grid reveal">
+
+  <!-- MAIN VIDEO — SWAP thumbnail + link video src -->
+  <div class="v-card video-main-card">
+    <div class="v-thumb" style="aspect-ratio:4/3;">
+      <!-- SWAP: Replace src with your main video cover photo -->
+      <img src="6.jpeg" alt="SWAP → Main video thumbnail (your Instagram/kitchen video cover)">
+      <!-- To embed a real video, replace img with:
+           <video controls poster="your-thumbnail.jpeg" src="your-video.mp4"></video> -->
+      <div class="v-play"><div class="v-play-circle">▶</div></div>
+    </div>
+    <div class="v-info">
+      <p class="v-label">✦ Featured Video</p>
+      <h3 class="v-title">A Full Day Inside Lyndishes Culinary School</h3>
+      <p class="v-date">March 2026 · Replace with real video length</p>
+    </div>
+  </div>
+
+  <!-- SIDE VIDEO 1 — SWAP -->
+  <div class="v-card">
+    <div class="v-thumb">
+      <!-- SWAP: Replace with your pastry video thumbnail -->
+      <img src="dessert.jpeg" alt="SWAP → Pastry video thumbnail">
+      <div class="v-play"><div class="v-play-circle" style="width:46px;height:46px;font-size:0.95rem;">▶</div></div>
+    </div>
+    <div class="v-info">
+      <p class="v-label">✦ Pastry Class</p>
+      <h3 class="v-title">Chocolate Ganache Masterclass</h3>
+      <p class="v-date">Feb 2026</p>
+    </div>
+  </div>
+
+  <!-- SIDE VIDEO 2 — SWAP -->
+  <div class="v-card">
+    <div class="v-thumb">
+      <!-- SWAP: Replace with your African cuisine video thumbnail -->
+      <img src="5.jpeg" alt="SWAP → African cuisine video thumbnail">
+      <div class="v-play"><div class="v-play-circle" style="width:46px;height:46px;font-size:0.95rem;">▶</div></div>
+    </div>
+    <div class="v-info">
+      <p class="v-label">✦ African Cuisine</p>
+      <h3 class="v-title">Nigerian Dishes, Professional Method</h3>
+      <p class="v-date">Jan 2026</p>
+    </div>
+  </div>
+
+</div>
+
+
+</div>
+</section><div class="divider"></div><!-- ═══════════════════════════
+     PHOTO GALLERY MASONRY
+     SWAP each image src with your real Instagram/school photos
+═══════════════════════════ --><section class="section" style="background:var(--bg-warm);">
+  <div class="container">
+    <div style="max-width:600px;margin-bottom:44px;" class="reveal">
+      <div class="kicker">Photo Gallery</div>
+      <h2 style="font-family:'Lora',serif;font-weight:600;font-size:clamp(1.9rem,3.2vw,3rem);color:var(--text);line-height:1.1;margin-bottom:10px;">Moments from <em style="font-style:italic;color:var(--red);">Our Kitchen</em></h2>
+      <p style="color:var(--muted);font-size:0.96rem;line-height:1.78;">Click any photo to view it in full. Every image is a story of a student growing into a professional.</p>
+    </div>
+
+<!-- MASONRY GALLERY
+     SWAP: Replace each src with your Instagram/school photos
+     Add more .m-item blocks to add more photos
+-->
+<div class="masonry reveal">
+  <div class="m-item" onclick="openLB(this)"><img src="6.jpeg" alt="SWAP → Your photo 1"><div class="m-over"><span class="m-lbl">Professional Training</span></div></div>
+  <div class="m-item" onclick="openLB(this)"><img src="kitchen2.jpeg" alt="SWAP → Your photo 2"><div class="m-over"><span class="m-lbl">Pastry Class</span></div></div>
+  <div class="m-item" onclick="openLB(this)"><img src="kitchen3.jpeg" alt="SWAP → Your photo 3"><div class="m-over"><span class="m-lbl">Plated Dishes</span></div></div>
+  <div class="m-item" onclick="openLB(this)"><img src="kitchen4.jpeg" alt="SWAP → Your photo 4"><div class="m-over"><span class="m-lbl">Cake Decorating</span></div></div>
+  <div class="m-item" onclick="openLB(this)"><img src="kitchen5.jpeg" alt="SWAP → Your photo 5"><div class="m-over"><span class="m-lbl">African Cuisine</span></div></div>
+  <div class="m-item" onclick="openLB(this)"><img src="kitchen6.jpeg" alt="SWAP → Your photo 6"><div class="m-over"><span class="m-lbl">Diploma Class</span></div></div>
+  <div class="m-item" onclick="openLB(this)"><img src="kitchen7.jpeg" alt="SWAP → Your photo 7"><div class="m-over"><span class="m-lbl">Short Course</span></div></div>
+  <div class="m-item" onclick="openLB(this)"><img src="kitchen8.jpeg" alt="SWAP → Your photo 8"><div class="m-over"><span class="m-lbl">Patisserie</span></div></div>
+  <div class="m-item" onclick="openLB(this)"><img src="9.jpeg" alt="SWAP → Your photo 9"><div class="m-over"><span class="m-lbl">Kitchen Moments</span></div></div>
+</div>
+
+
+</div>
+</section><div class="divider"></div><!-- ═══════════════════════════
+     UPLOAD SECTION
+═══════════════════════════ --><section class="section">
+  <div class="container upload-grid">
+
+<div class="reveal left">
+  <div class="upload-kicker">Share Your Moment</div>
+  <h2 class="upload-h2">Upload Your Photos<br>& <em>Videos</em></h2>
+  <p class="upload-p">Student, graduate, or staff? Share your Lyndishes moments — class photos, finished dishes, graduation memories — and we'll feature them on our blog and gallery.</p>
+  <div class="upload-perks">
+    <div class="perk"><div class="perk-dot"></div>Photos from cooking classes & practical sessions</div>
+    <div class="perk"><div class="perk-dot"></div>Videos of dish preparation & techniques</div>
+    <div class="perk"><div class="perk-dot"></div>Graduation & event moments</div>
+    <div class="perk"><div class="perk-dot"></div>Finished dish presentations</div>
+    <div class="perk"><div class="perk-dot"></div>Behind-the-scenes kitchen life</div>
+  </div>
+</div>
+
+<div class="reveal">
+  <div class="dropzone" id="dropzone">
+    <input type="file" id="fileIn" multiple accept="image/*,video/*">
+    <div class="dz-icon">📸</div>
+    <p class="dz-title">Drop Photos & Videos Here</p>
+    <p class="dz-sub">Drag & drop, or click to browse.<br>JPG, PNG, MP4, MOV supported · Max 100MB per file</p>
+    <div class="dz-tags">
+      <span class="dz-tag">📸 JPG</span>
+      <span class="dz-tag">🖼 PNG</span>
+      <span class="dz-tag">🎬 MP4</span>
+      <span class="dz-tag">📹 MOV</span>
+    </div>
+  </div>
+
+  <div class="preview-row" id="prevRow">
+    <div class="prev-slot" id="ps0"></div>
+    <div class="prev-slot" id="ps1"></div>
+    <div class="prev-slot" id="ps2"></div>
+    <div class="prev-slot" id="ps3"></div>
+    <div class="prev-slot" id="ps4"></div>
+    <div class="prev-slot" id="ps5"></div>
+  </div>
+
+  <div class="uf">
+    <div class="uf-row">
+      <div class="fg"><label>Your Name</label><input type="text" placeholder="e.g. Chisom Adekunle"></div>
+      <div class="fg"><label>Your Program</label>
+        <select>
+          <option value="" disabled selected>Select program</option>
+          <option>Diploma in Cuisine & Patisserie</option>
+          <option>Professional Diploma Class</option>
+          <option>Diploma in Patisserie</option>
+          <option>Continental Cuisine</option>
+          <option>African Cuisine</option>
+          <option>Pastry & Baking</option>
+          <option>Short Course</option>
+          <option>Staff / Team</option>
+        </select>
+      </div>
+    </div>
+    <div class="fg"><label>Caption / Description</label><textarea placeholder="Tell us about this moment — what class, what you made, how you felt…"></textarea></div>
+    <div class="uf-row">
+      <div class="fg"><label>Category</label>
+        <select>
+          <option>Class Moments</option>
+          <option>Finished Dishes</option>
+          <option>Student Story</option>
+          <option>Graduation</option>
+          <option>Events</option>
+          <option>Behind the Scenes</option>
+        </select>
+      </div>
+      <div class="fg"><label>Email (optional)</label><input type="email" placeholder="For credit when published"></div>
+    </div>
+    <a href="mailto:culinary.school@lyndishes.com?subject=Blog Submission" class="btn btn-red" style="width:100%;min-height:50px;font-size:0.88rem;">Submit to Lyndishes Blog →</a>
+    <p class="uf-note">Or email files directly to <strong>culinary.school@lyndishes.com</strong></p>
+  </div>
+</div>
+
+
+</div>
+</section><div class="divider"></div><!-- FOLLOW STRIP --><section class="section" style="padding-bottom:0;">
+  <div class="container">
+    <div class="follow-wrap reveal">
+      <div class="fw-text">
+        <h2>Follow Our Kitchen Journey</h2>
+        <p>New posts, class highlights, and student stories — every week from Lyndishes.</p>
+      </div>
+      <div class="fw-btns">
+        <a href="register.html" class="btn btn-white">Enroll Today</a>
+        <a href="mailto:culinary.school@lyndishes.com" class="btn btn-ghost">Send Us Your Story</a>
+      </div>
+    </div>
+  </div>
+</section><!-- FOOTER --><footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <div class="brand">
+          <img src="1.jpeg" alt="LCS" class="brand-logo">
+          <div class="brand-text"><strong>LCS</strong><small>Lyndishes Culinary School</small></div>
+        </div>
+        <p>Premium culinary education for chefs, bakers, food entrepreneurs, and future hospitality professionals. Est. 2020, Abuja Nigeria.</p>
+      </div>
+      <div class="ft-col">
+        <h4>Navigate</h4>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="blog.html">Blog</a>
+        <a href="register.html">Register</a>
+      </div>
+     
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <a href="mailto:culinary.school@lyndishes.com">culinary.school@lyndishes.com</a>
+        <a href="tel:+234000000000">+234 8101408693</a>
+        <a href="#">Gwarimpa, Abuja, Nigeria</a>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p>© 2026 Lyndishes Culinary School. All rights reserved.</p>
+      <p style="color:rgba(217,4,82,.55);">Est. 2020 · Abuja, Nigeria</p>
+    </div>
+  </div>
+</footer><script>
+  /* ── HAMBURGER ── */
+  const ham  = document.getElementById('hamburger');
+  const mob  = document.getElementById('mobileNav');
+  ham.addEventListener('click', () => {
+    ham.classList.toggle('open');
+    mob.classList.toggle('open');
+  });
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    ham.classList.remove('open');
+    mob.classList.remove('open');
+  }));
+
+  /* ── HEADER SCROLL ── */
+  window.addEventListener('scroll', () => {
+    document.getElementById('siteHeader').classList.toggle('scrolled', scrollY > 60);
+  });
+
+  /* ── CATEGORY FILTER ── */
+  document.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const cat = btn.dataset.cat;
+      document.querySelectorAll('.post-card, .featured').forEach(card => {
+        const cats = card.dataset.cat || '';
+        card.style.display = 'none';
+card.style.opacity = '0';
+      });
+    });
+  });
+
+  /* ── FILE UPLOAD PREVIEW ── */
+  const dz = document.getElementById('dropzone');
+  const fi = document.getElementById('fileIn');
+  const slots = document.querySelectorAll('.prev-slot');
+  let filled = 0;
+
+  function loadFiles(files) {
+    [...files].slice(0, 6 - filled).forEach((file, i) => {
+      const slot = slots[filled + i];
+      if (!slot) return;
+      slot.classList.add('show');
+      const reader = new FileReader();
+      reader.onload = e => {
+        const tag = file.type.startsWith('video/') ? 'video' : 'img';
+        slot.innerHTML = `<${tag} src="${e.target.result}" ${tag==='video'?'muted':''}></${tag}><button class="prev-rm" onclick="this.parentElement.classList.remove('show');this.parentElement.innerHTML='';filled=Math.max(0,filled-1);">✕</button>`;
+      };
+      reader.readAsDataURL(file);
+    });
+    filled = Math.min(filled + files.length, 6);
+  }
+
+  fi.addEventListener('change', e => loadFiles(e.target.files));
+  dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('over'); });
+  dz.addEventListener('dragleave', () => dz.classList.remove('over'));
+  dz.addEventListener('drop', e => { e.preventDefault(); dz.classList.remove('over'); loadFiles(e.dataTransfer.files); });
+
+  /* ── LIGHTBOX ── */
+  function openLB(cell) {
+    const img = cell.querySelector('img');
+    if (!img) return;
+    document.getElementById('lbImg').src = img.src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  document.getElementById('lbClose').addEventListener('click', closeLB);
+  document.getElementById('lightbox').addEventListener('click', e => { if(e.target===e.currentTarget) closeLB(); });
+  function closeLB() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+
+  /* ── SCROLL REVEAL ── */
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); } });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script></body>
+</html>
