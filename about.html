@@ -1,0 +1,2191 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Lyndishes Culinary School</title>
+  <meta name="description" content="Lyndishes Culinary School: professionally equipping the next generation of chefs, bakers and food entrepreneurs in Abuja, Nigeria.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap');
+
+    :root {
+      --font-primary: 'Campton', 'Figtree', 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      --font-display: 'Playfair Display', 'Campton', Georgia, 'Times New Roman', serif;
+      --font-script:  'Great Vibes', cursive;
+
+      --crimson:      #D90452;
+      --crimson-dark: #8C0335;
+      --crimson-deep: #590222;
+      --crimson-ink:  #26010F;
+      --lime:         #9BD835;
+      --green:        #6CA71B;
+      --olive:        #19300D;
+
+      --bg:           #FAF8F7;
+      --bg-soft:      #F5F0F3;
+      --bg-card:      #FFFFFF;
+      --text:         #1A1214;
+      --text-muted:   #6B6068;
+      --border:       rgba(26,18,20,.09);
+      --header-bg:    rgba(250,248,247,.92);
+
+      --r:   28px;
+      --r-sm:18px;
+      --r-pill: 999px;
+      --max: 1260px;
+      --ease: cubic-bezier(.22,.68,0,1.2);
+      --t: all .36s var(--ease);
+      --shadow: 0 20px 60px rgba(0,0,0,.06);
+      --shadow-card: 0 12px 40px rgba(26,1,15,.07);
+      --shadow-glow: 0 16px 48px rgba(217,4,82,.18);
+    }
+    html[data-theme="dark"] {
+      --bg:        #0C0608;
+      --bg-soft:   #130509;
+      --bg-card:   rgba(255,255,255,.04);
+      --text:      #F8F4F6;
+      --text-muted:#C0B8BC;
+      --border:    rgba(255,255,255,.08);
+      --header-bg: rgba(12,6,8,.92);
+    }
+
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; font-size:16px; }
+
+    body {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.75;
+      overflow-x: hidden;
+      letter-spacing: -0.01em;
+      transition: background .45s ease, color .45s ease;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img { max-width:100%; display:block; }
+    a   { text-decoration:none; color:inherit; }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+    .section { padding: 110px 0; position: relative; }
+
+    /* ═══════════════ CUSTOM CURSOR ═══════════════ */
+    .cursor {
+      width: 12px; height: 12px;
+      background: var(--crimson);
+      border-radius: 50%;
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 99999;
+      transform: translate(-50%,-50%);
+      transition: width .2s ease, height .2s ease, background .2s ease;
+      mix-blend-mode: multiply;
+    }
+    .cursor-ring {
+      width: 40px; height: 40px;
+      border: 1.5px solid rgba(217,4,82,.4);
+      border-radius: 50%;
+      position: fixed;
+      top: 0; left: 0;
+      pointer-events: none;
+      z-index: 99998;
+      transform: translate(-50%,-50%);
+      transition: transform .12s ease, width .3s ease, height .3s ease, border-color .3s ease;
+    }
+    .cursor.hovering { width: 20px; height: 20px; }
+    .cursor-ring.hovering { width: 60px; height: 60px; border-color: var(--crimson); }
+    html[data-theme="dark"] .cursor { mix-blend-mode: screen; }
+
+    /* ═══════════════ HEADER ═══════════════ */
+    header {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      background: var(--header-bg);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: var(--t);
+    }
+    header.scrolled {
+      box-shadow: 0 8px 32px rgba(0,0,0,.08);
+      border-bottom-color: rgba(217,4,82,.12);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 82px;
+      gap: 20px;
+      padding: 12px 0;
+    }
+
+    .brand { display:flex; align-items:center; gap:14px; flex-shrink:0; }
+    .brand-logo {
+      width: 50px; height: 50px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--crimson), var(--crimson-dark));
+      display: grid; place-items: center;
+      font-family: var(--font-primary);
+      font-weight: 800;
+      font-size: 1rem;
+      color: #fff;
+      letter-spacing: -1px;
+      box-shadow: var(--shadow-glow);
+      transition: var(--t);
+      position: relative;
+      overflow: hidden;
+    }
+    .brand-logo::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,.15), transparent);
+    }
+    .brand:hover .brand-logo { transform: rotate(-4deg) scale(1.06); }
+
+    .brand-text strong {
+      font-family: var(--font-primary);
+      font-weight: 800;
+      font-size: 1.12rem;
+      color: var(--text);
+      letter-spacing: -0.5px;
+      display: block;
+    }
+    .brand-text span {
+      font-family: var(--font-primary);
+      font-weight: 400;
+      font-size: .62rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .16em;
+    }
+
+    /* Desktop nav links */
+    .nav-links { display:flex; align-items:center; gap:28px; }
+    .nav-links a {
+      font-family: var(--font-primary);
+      font-weight: 500;
+      font-size: .9rem;
+      color: var(--text-muted);
+      transition: var(--t);
+      position: relative;
+      padding-bottom: 2px;
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -4px;
+      width: 0; height: 2px;
+      border-radius: 999px;
+      background: var(--crimson);
+      transition: width .3s ease;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--text); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+
+    .nav-actions { display:flex; align-items:center; gap:12px; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 26px;
+      border-radius: var(--r-pill);
+      font-family: var(--font-primary);
+      font-weight: 600;
+      font-size: .9rem;
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: var(--t);
+      white-space: nowrap;
+      min-height: 50px;
+    }
+    .btn-primary {
+      background: var(--crimson);
+      color: #fff;
+      box-shadow: var(--shadow-glow);
+    }
+    .btn-primary:hover { background: var(--crimson-dark); transform: translateY(-3px); box-shadow: 0 20px 50px rgba(217,4,82,.32); }
+    .btn-ghost { border-color: var(--border); color: var(--text); background: transparent; }
+    .btn-ghost:hover { border-color: rgba(217,4,82,.3); background: rgba(217,4,82,.04); transform: translateY(-3px); }
+    .btn-white { background: #fff; color: var(--crimson); font-weight: 700; }
+    .btn-white:hover { background: var(--crimson); color: #fff; transform: translateY(-3px); }
+    .btn-green { background: var(--green); color: #fff; box-shadow: 0 10px 28px rgba(108,167,27,.20); }
+    .btn-green:hover { background: var(--olive); transform: translateY(-3px); }
+
+    /* ─── Mobile menu toggle + dropdown ─── */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--text);
+      font-size: 1.3rem;
+      cursor: pointer;
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      align-items: center;
+      justify-content: center;
+      transition: var(--t);
+    }
+    .menu-toggle:hover { border-color: var(--crimson); background: rgba(217,4,82,.04); }
+
+    /* Mobile dropdown — hidden by default, shown on open */
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 94px; right: 4%;
+      width: min(90vw, 320px);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 30px 80px rgba(0,0,0,.12);
+      z-index: 999;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity .3s ease, transform .3s ease;
+      pointer-events: none;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    /* Nav links inside mobile dropdown */
+    .mobile-menu .mob-links {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      margin-bottom: 16px;
+    }
+    .mobile-menu .mob-links a {
+      font-family: var(--font-primary);
+      font-weight: 500;
+      font-size: .95rem;
+      color: var(--text-muted);
+      padding: 11px 14px;
+      border-radius: 12px;
+      transition: var(--t);
+      position: relative;
+    }
+    .mobile-menu .mob-links a:hover,
+    .mobile-menu .mob-links a.active {
+      color: var(--text);
+      background: rgba(217,4,82,.06);
+    }
+    .mobile-menu .mob-links a.active::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 25%; bottom: 25%;
+      width: 3px;
+      border-radius: 999px;
+      background: var(--crimson);
+    }
+
+    /* Theme toggle INSIDE dropdown */
+    .mobile-menu .mob-theme-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      margin-bottom: 12px;
+      background: var(--bg-soft);
+    }
+    .mobile-menu .mob-theme-row span {
+      font-family: var(--font-primary);
+      font-size: .88rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    .mob-theme-pill {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 5px 12px;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--text);
+      cursor: pointer;
+      transition: var(--t);
+    }
+    .mob-theme-pill:hover { border-color: var(--crimson); color: var(--crimson); }
+
+    /* Divider inside dropdown */
+    .mob-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 12px 0;
+    }
+
+    /* CTA in dropdown */
+    .mobile-menu .mob-cta { width: 100%; justify-content: center; }
+
+    /* Desktop keeps theme btn in nav-actions, hide on mobile */
+    .desktop-theme-btn {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text);
+      display: grid; place-items: center;
+      cursor: pointer;
+      font-size: .95rem;
+      transition: var(--t);
+    }
+    .desktop-theme-btn:hover { border-color: var(--crimson); transform: rotate(12deg); }
+
+    /* ═══════════════ PROGRESS BAR ═══════════════ */
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--crimson), var(--lime));
+      z-index: 9999;
+      width: 0%;
+      transition: width .1s linear;
+    }
+
+    /* ═══════════════ HERO ═══════════════ */
+    .hero {
+      position: relative;
+      padding: 200px 0 130px;
+      overflow: hidden;
+      background: linear-gradient(165deg, var(--crimson-ink) 0%, #3A0118 50%, #1A0008 100%);
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      pointer-events: none;
+    }
+    .hero-orb-1 {
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(217,4,82,.25), transparent 70%);
+      top: -200px; left: -100px;
+      animation: orb1 8s ease-in-out infinite alternate;
+    }
+    .hero-orb-2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(155,216,53,.15), transparent 70%);
+      bottom: -100px; right: 10%;
+      animation: orb2 10s ease-in-out infinite alternate;
+    }
+    .hero-orb-3 {
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(217,4,82,.12), transparent 70%);
+      top: 40%; right: 5%;
+      animation: orb1 12s ease-in-out infinite alternate-reverse;
+    }
+
+    @keyframes orb1 { from { transform: translate(0,0) scale(1); } to { transform: translate(40px,-30px) scale(1.1); } }
+    @keyframes orb2 { from { transform: translate(0,0) scale(1); } to { transform: translate(-30px,20px) scale(1.08); } }
+
+    .hero::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--crimson), var(--lime), var(--crimson), transparent);
+    }
+
+    .hero-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 18px;
+      border-radius: var(--r-pill);
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.85);
+      font-weight: 500;
+      font-size: .82rem;
+      letter-spacing: .04em;
+      backdrop-filter: blur(10px);
+      margin-bottom: 28px;
+    }
+    .badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--crimson);
+      box-shadow: 0 0 12px var(--crimson);
+      flex-shrink: 0;
+      animation: pulse-dot 2s ease infinite;
+    }
+    @keyframes pulse-dot {
+      0%,100% { box-shadow: 0 0 6px var(--crimson); }
+      50% { box-shadow: 0 0 18px var(--crimson), 0 0 30px rgba(217,4,82,.4); }
+    }
+
+    .hero h1 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2.8rem, 4.5vw, 5rem);
+      letter-spacing: -2.5px;
+      line-height: 1.05;
+      color: #FFFFFF;
+      margin-bottom: 22px;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: transparent;
+      -webkit-text-stroke: 1.5px rgba(255,255,255,.6);
+    }
+    .hero-sub {
+      color: rgba(255,255,255,.75);
+      font-size: 1.05rem;
+      line-height: 1.8;
+      max-width: 500px;
+      margin-bottom: 36px;
+    }
+    .hero-cta { display:flex; flex-wrap:wrap; gap:14px; }
+
+    .hero-stats {
+      display: flex;
+      gap: 36px;
+      margin-top: 52px;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,.10);
+    }
+    .hero-stat-num {
+      font-family: var(--font-primary);
+      font-weight: 800;
+      font-size: 2rem;
+      color: #fff;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .hero-stat-num span { color: var(--crimson); }
+    .hero-stat-label {
+      font-size: .8rem;
+      color: rgba(255,255,255,.5);
+      font-weight: 400;
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+
+    .hero-cert-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-cert-bg {
+      position: absolute;
+      width: 420px; height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,4,82,.12), transparent 70%);
+      filter: blur(40px);
+    }
+    .hero-cert-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.15);
+      box-shadow: 0 40px 80px rgba(0,0,0,.5), 0 0 0 1px rgba(217,4,82,.15);
+      transform: rotate(-2deg);
+      transition: transform 1s var(--ease);
+      max-width: 420px;
+      width: 100%;
+    }
+    .hero-cert-card:hover { transform: rotate(0deg) scale(1.02); }
+    .hero-cert-card img { width:100%; height:auto; display:block; }
+
+    .cert-authentic-badge {
+      position: absolute;
+      top: 16px; right: 16px;
+      background: rgba(14,14,14,.85);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(12px);
+      border-radius: 12px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: .03em;
+    }
+    .cert-authentic-badge::before {
+      content: "✓";
+      width: 20px; height: 20px;
+      border-radius: 50%;
+      background: #22c55e;
+      display: grid; place-items: center;
+      font-size: .7rem;
+      flex-shrink: 0;
+    }
+
+    /* ═══════════════ FLOATING TRUST TICKER ═══════════════ */
+    .trust-ticker-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--crimson-ink);
+      border-bottom: 1px solid rgba(217,4,82,.2);
+      padding: 14px 0;
+    }
+    .trust-ticker-wrap::before,
+    .trust-ticker-wrap::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 80px;
+      z-index: 2;
+    }
+    .trust-ticker-wrap::before { left: 0; background: linear-gradient(90deg, var(--crimson-ink), transparent); }
+    .trust-ticker-wrap::after  { right: 0; background: linear-gradient(-90deg, var(--crimson-ink), transparent); }
+
+    .trust-ticker {
+      display: flex;
+      gap: 0;
+      animation: ticker 30s linear infinite;
+      width: max-content;
+    }
+    .trust-ticker:hover { animation-play-state: paused; }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 36px;
+      color: rgba(255,255,255,.75);
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .04em;
+      white-space: nowrap;
+    }
+    .ticker-item .dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--crimson);
+      flex-shrink: 0;
+    }
+    .ticker-item strong { color: #fff; }
+
+    /* ═══════════════ EYEBROW / DIVIDER ═══════════════ */
+    .eyebrow {
+      display: inline-block;
+      font-weight: 700;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      color: var(--crimson);
+      margin-bottom: 12px;
+    }
+    .divider {
+      height: 3px;
+      width: 48px;
+      border-radius: var(--r-pill);
+      background: linear-gradient(90deg, var(--crimson), var(--crimson-dark));
+      margin-bottom: 24px;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+      letter-spacing: -1.5px;
+      line-height: 1.06;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+    .section-sub {
+      font-weight: 400;
+      font-size: 1.02rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      max-width: 640px;
+    }
+
+    /* ═══════════════ ABOUT SPLIT ═══════════════ */
+    .split { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+    .split.rev { direction: rtl; }
+    .split.rev > * { direction: ltr; }
+
+    .about-body { display: flex; flex-direction: column; gap: 20px; }
+    .about-body p { color: var(--text-muted); font-size: .98rem; line-height: 1.85; }
+    .about-body p strong { color: var(--text); font-weight: 700; }
+
+    .check-list { list-style:none; display:grid; gap:14px; margin-top:8px; }
+    .check-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-weight: 500;
+      font-size: .95rem;
+      color: var(--text);
+    }
+    .check-list li::before {
+      content: "✓";
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: rgba(217,4,82,.08);
+      border: 1px solid rgba(217,4,82,.15);
+      color: var(--crimson);
+      font-weight: 800;
+      font-size: .75rem;
+      display: grid; place-items: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .img-frame {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      min-height: 560px;
+      box-shadow: var(--shadow);
+    }
+    .img-frame img {
+      width: 100%; height: 100%;
+      min-height: 560px;
+      object-fit: cover;
+      transition: transform 1.2s ease;
+    }
+    .img-frame:hover img { transform: scale(1.04); }
+    .img-frame::after {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(26,1,15,.45), transparent 40%);
+    }
+    .img-tag {
+      position: absolute;
+      bottom: 20px; left: 20px;
+      z-index: 2;
+      padding: 9px 16px;
+      border-radius: var(--r-pill);
+      background: rgba(12,6,8,.75);
+      border: 1px solid rgba(255,255,255,.10);
+      color: rgba(255,255,255,.9);
+      font-weight: 500;
+      font-size: .82rem;
+      backdrop-filter: blur(12px);
+      letter-spacing: .02em;
+    }
+    .img-accent {
+      position: absolute;
+      top: 24px; right: -20px;
+      z-index: 3;
+      background: #fff;
+      border-radius: 18px;
+      padding: 16px 20px;
+      box-shadow: 0 20px 50px rgba(0,0,0,.15);
+      min-width: 160px;
+    }
+    html[data-theme="dark"] .img-accent { background: #1e1215; border: 1px solid var(--border); }
+    .img-accent-num {
+      font-weight: 800;
+      font-size: 2rem;
+      color: var(--crimson);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .img-accent-label { font-size: .78rem; color: var(--text-muted); font-weight: 500; margin-top: 4px; }
+
+    /* ═══════════════ TRUST LAYER ═══════════════ */
+    .trust-section {
+      background: var(--bg-soft);
+      padding: 70px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-intro {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+    .trust-intro p {
+      font-size: .88rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .trust-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: var(--t);
+    }
+    .trust-card::before {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--crimson), var(--crimson-dark));
+      transform: scaleX(0);
+      transition: transform .4s ease;
+    }
+    .trust-card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(217,4,82,.10); border-color: rgba(217,4,82,.18); }
+    .trust-card:hover::before { transform: scaleX(1); }
+
+    .trust-badge-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(217,4,82,.1), rgba(217,4,82,.05));
+      border: 1px solid rgba(217,4,82,.15);
+      display: grid; place-items: center;
+      font-size: 1.5rem;
+      margin: 0 auto 16px;
+    }
+    .trust-card h4 {
+      font-weight: 700;
+      font-size: .97rem;
+      color: var(--text);
+      margin-bottom: 8px;
+      letter-spacing: -.3px;
+    }
+    .trust-card p {
+      font-size: .85rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+    .trust-card .trust-tag {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      background: rgba(217,4,82,.07);
+      border: 1px solid rgba(217,4,82,.12);
+      color: var(--crimson);
+      font-size: .73rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    /* Social proof row */
+    .social-proof-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 44px;
+      padding: 28px 36px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+    }
+    .sp-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .sp-num {
+      font-weight: 800;
+      font-size: 1.8rem;
+      color: var(--crimson);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+    .sp-label {
+      font-size: .78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+    }
+    .sp-divider { width: 1px; height: 48px; background: var(--border); }
+
+    /* Star rating */
+    .star-row { display: flex; gap: 4px; margin-bottom: 6px; }
+    .star-row span { color: #F59E0B; font-size: 1rem; }
+
+    /* ═══════════════ MISSION CARDS ═══════════════ */
+    .bg-soft { background: var(--bg-soft); }
+
+    .grid-3 { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .grid-4 { display:grid; grid-template-columns:repeat(4,1fr); gap:24px; }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 36px 32px;
+      box-shadow: var(--shadow-card);
+      transition: var(--t);
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute; inset: 0;
+      background: linear-gradient(145deg, rgba(217,4,82,.04), transparent 50%);
+      opacity: 0;
+      transition: opacity .4s ease;
+    }
+    .card:hover { transform: translateY(-10px); border-color: rgba(217,4,82,.20); box-shadow: 0 28px 60px rgba(26,1,15,.10); }
+    .card:hover::before { opacity: 1; }
+
+    .card-icon {
+      width: 60px; height: 60px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(217,4,82,.10), rgba(108,167,27,.08));
+      border: 1px solid var(--border);
+      display: grid; place-items: center;
+      font-size: 1.6rem;
+      margin-bottom: 22px;
+      position: relative; z-index: 1;
+    }
+    .card h3 {
+      font-weight: 700;
+      font-size: 1.08rem;
+      letter-spacing: -.5px;
+      color: var(--text);
+      margin-bottom: 10px;
+      position: relative; z-index: 1;
+    }
+    .card p {
+      color: var(--text-muted);
+      font-size: .93rem;
+      line-height: 1.75;
+      position: relative; z-index: 1;
+    }
+
+    /* ═══════════════ PROOF OF AUTHENTICITY ═══════════════ */
+    .auth-section { background: var(--crimson-ink); color: #fff; overflow: hidden; position: relative; }
+    .auth-section::before {
+      content: "";
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+    .auth-section .eyebrow { color: var(--lime); }
+    .auth-section .section-title { color: #fff; }
+    .auth-section .section-sub { color: rgba(255,255,255,.65); }
+    .auth-section .divider { background: linear-gradient(90deg, var(--lime), var(--green)); }
+
+    .auth-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; margin-top: 56px; }
+
+    .auth-cert-display { position: relative; }
+    .auth-cert-glow {
+      position: absolute; inset: -40px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(217,4,82,.15), transparent 70%);
+      filter: blur(30px);
+      pointer-events: none;
+    }
+    .auth-cert-img {
+      position: relative;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid rgba(255,255,255,.12);
+      box-shadow: 0 40px 80px rgba(0,0,0,.6);
+    }
+    .auth-cert-img img { width: 100%; height: auto; }
+
+    .auth-verified-ribbon {
+      position: absolute;
+      bottom: -1px; left: -1px; right: -1px;
+      background: linear-gradient(90deg, rgba(34,197,94,.90), rgba(22,163,74,.90));
+      backdrop-filter: blur(10px);
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-radius: 0 0 18px 18px;
+    }
+    .auth-verified-ribbon .check-circle {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.20);
+      border: 2px solid rgba(255,255,255,.5);
+      display: grid; place-items: center;
+      font-size: .8rem;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .auth-verified-ribbon span {
+      font-weight: 600;
+      font-size: .85rem;
+      color: #fff;
+      letter-spacing: .02em;
+    }
+
+    .auth-credentials { display: flex; flex-direction: column; gap: 28px; }
+    .auth-credentials h3 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 1.9rem;
+      letter-spacing: -1px;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .auth-credentials > p { font-size: .97rem; color: rgba(255,255,255,.65); line-height: 1.8; }
+
+    .credential-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      padding: 20px 24px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
+      transition: var(--t);
+    }
+    .credential-item:hover { background: rgba(255,255,255,.08); border-color: rgba(217,4,82,.25); }
+    .credential-icon {
+      width: 48px; height: 48px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(217,4,82,.25), rgba(217,4,82,.12));
+      border: 1px solid rgba(217,4,82,.25);
+      display: grid; place-items: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .credential-text h4 { font-weight: 700; font-size: .97rem; color: #fff; margin-bottom: 4px; }
+    .credential-text p { font-size: .85rem; color: rgba(255,255,255,.55); line-height: 1.65; }
+
+    /* ═══════════════ TESTIMONIALS ═══════════════ */
+    .testimonials-section { background: var(--bg); padding: 110px 0; }
+
+    .testimonials-track-wrap {
+      overflow: hidden;
+      position: relative;
+      margin-top: 52px;
+    }
+    .testimonials-track-wrap::before,
+    .testimonials-track-wrap::after {
+      content: "";
+      position: absolute;
+      top: 0; bottom: 0;
+      width: 100px;
+      z-index: 2;
+      pointer-events: none;
+    }
+    .testimonials-track-wrap::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+    .testimonials-track-wrap::after  { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+
+    .testimonials-track {
+      display: flex;
+      gap: 24px;
+      animation: testimonialScroll 28s linear infinite;
+      width: max-content;
+    }
+    .testimonials-track:hover { animation-play-state: paused; }
+    @keyframes testimonialScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    .testimonial-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px 28px 24px;
+      width: 340px;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-card);
+      transition: var(--t);
+    }
+    .testimonial-card:hover { transform: translateY(-6px); border-color: rgba(217,4,82,.18); }
+
+    .testimonial-stars { display: flex; gap: 4px; margin-bottom: 12px; }
+    .testimonial-stars span { color: #F59E0B; font-size: .95rem; }
+
+    .testimonial-text {
+      font-size: .9rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--crimson), var(--crimson-dark));
+      display: grid; place-items: center;
+      color: #fff;
+      font-weight: 800;
+      font-size: .9rem;
+      flex-shrink: 0;
+    }
+    .testimonial-name { font-weight: 700; font-size: .88rem; color: var(--text); letter-spacing: -.3px; }
+    .testimonial-role { font-size: .78rem; color: var(--text-muted); margin-top: 2px; }
+
+    /* ═══════════════ FOUNDER ═══════════════ */
+    .founder-quote {
+      font-family: var(--font-script);
+      font-size: 2.2rem;
+      color: var(--crimson);
+      line-height: 1.35;
+      margin: 24px 0;
+      padding-left: 24px;
+      border-left: 3px solid var(--crimson);
+    }
+
+    .mini-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 28px; }
+    .mini-card {
+      padding: 22px;
+      border-radius: 20px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      transition: var(--t);
+    }
+    .mini-card:hover { transform: translateY(-6px); border-color: rgba(217,4,82,.18); }
+    .mini-card h4 { font-weight: 700; font-size: .95rem; color: var(--text); margin-bottom: 6px; letter-spacing: -.3px; }
+    .mini-card p { font-size: .88rem; color: var(--text-muted); line-height: 1.65; }
+
+    /* ═══════════════ STATS ROW ═══════════════ */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      overflow: hidden;
+      background: var(--bg-card);
+      box-shadow: var(--shadow-card);
+      margin-top: 56px;
+    }
+    .stat-item { padding: 36px; text-align: center; position: relative; }
+    .stat-item + .stat-item::before {
+      content: "";
+      position: absolute;
+      left: 0; top: 20%; bottom: 20%;
+      width: 1px;
+      background: var(--border);
+    }
+    .stat-num {
+      font-weight: 800;
+      font-size: 3rem;
+      letter-spacing: -2px;
+      line-height: 1;
+      color: var(--crimson);
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-size: .82rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    /* ═══════════════ WHY CARDS ═══════════════ */
+    .why-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--r);
+      padding: 30px;
+      transition: var(--t);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      position: relative;
+      overflow: hidden;
+    }
+    .why-card::after {
+      content: "";
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--crimson), var(--crimson-dark));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s ease;
+    }
+    .why-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-card); }
+    .why-card:hover::after { transform: scaleX(1); }
+    .why-icon {
+      width: 54px; height: 54px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(217,4,82,.09), rgba(108,167,27,.07));
+      border: 1px solid var(--border);
+      display: grid; place-items: center;
+      font-size: 1.5rem;
+    }
+    .why-card h3 { font-weight: 700; font-size: 1.02rem; color: var(--text); letter-spacing: -.3px; }
+    .why-card p { font-size: .9rem; color: var(--text-muted); line-height: 1.72; }
+
+    /* ═══════════════ FAQ ═══════════════ */
+    .faq-section { padding: 110px 0; }
+    .faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 52px; }
+
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      overflow: hidden;
+      transition: border-color .3s ease;
+    }
+    .faq-item.open { border-color: rgba(217,4,82,.25); }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 20px 24px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .faq-q span {
+      font-weight: 600;
+      font-size: .95rem;
+      color: var(--text);
+      letter-spacing: -.3px;
+    }
+    .faq-arrow {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: rgba(217,4,82,.07);
+      border: 1px solid rgba(217,4,82,.12);
+      display: grid; place-items: center;
+      color: var(--crimson);
+      font-size: .9rem;
+      flex-shrink: 0;
+      transition: transform .35s var(--ease);
+    }
+    .faq-item.open .faq-arrow { transform: rotate(45deg); background: var(--crimson); color: #fff; border-color: var(--crimson); }
+
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .4s ease, padding .4s ease;
+    }
+    .faq-item.open .faq-a { max-height: 200px; }
+    .faq-a-inner {
+      padding: 0 24px 20px;
+      font-size: .9rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+    }
+
+    /* ═══════════════ CTA ═══════════════ */
+    .cta-wrap {
+      border-radius: 36px;
+      padding: 80px 60px;
+      background: linear-gradient(135deg, var(--crimson-ink), #3A0118 60%, var(--crimson-deep));
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cta-wrap::before {
+      content: "";
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(circle at 15% 50%, rgba(217,4,82,.2), transparent 40%),
+        radial-gradient(circle at 85% 20%, rgba(155,216,53,.1), transparent 35%);
+    }
+    .cta-wrap::after {
+      content: "";
+      position: absolute; inset: 0;
+      background-image: linear-gradient(rgba(255,255,255,.015) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(255,255,255,.015) 1px, transparent 1px);
+      background-size: 44px 44px;
+    }
+    .cta-wrap > * { position: relative; z-index: 1; }
+    .cta-wrap .section-title { color: #fff; margin-bottom: 14px; }
+    .cta-wrap .section-sub { color: rgba(255,255,255,.65); margin: 0 auto 36px; }
+    .cta-wrap .eyebrow { color: var(--lime); }
+    .cta-wrap .divider { margin: 0 auto 24px; background: linear-gradient(90deg, var(--lime), var(--green)); }
+    .cta-btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+
+    /* ═══════════════ FOOTER ═══════════════ */
+    footer {
+      background: #080306;
+      color: rgba(255,255,255,.7);
+      padding: 64px 0 28px;
+    }
+    .footer-top { display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px; margin-bottom:40px; }
+    .footer-col h4 { font-weight: 700; font-size: .9rem; color: #fff; margin-bottom: 18px; letter-spacing: -.3px; }
+    .footer-col a, .footer-col p {
+      display: block;
+      font-weight: 400;
+      font-size: .88rem;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 10px;
+      transition: var(--t);
+    }
+    .footer-col a:hover { color: #fff; transform: translateX(4px); }
+    .footer-bottom {
+      padding-top: 22px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: .82rem;
+      color: rgba(255,255,255,.35);
+    }
+    .footer-logo { display: inline-flex; align-items: center; gap: 14px; margin-bottom: 16px; }
+    .footer-logo-mark {
+      width: 44px; height: 44px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--crimson), var(--crimson-dark));
+      display: grid; place-items: center;
+      font-weight: 800;
+      font-size: .85rem;
+      color: #fff;
+    }
+
+    /* ═══════════════ WHATSAPP ═══════════════ */
+    .wa-float {
+      position: fixed;
+      right: 24px; bottom: 24px;
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      display: grid; place-items: center;
+      font-size: 26px;
+      box-shadow: 0 10px 30px rgba(37,211,102,.35);
+      z-index: 9999;
+      transition: var(--t);
+    }
+    .wa-float:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 18px 40px rgba(37,211,102,.45); }
+
+    /* ═══════════════ SCROLL REVEAL ═══════════════ */
+    .reveal { opacity:0; transform:translateY(32px); transition:opacity .85s ease,transform .85s ease; }
+    .reveal.active { opacity:1; transform:translateY(0); }
+    .reveal-left { opacity:0; transform:translateX(-32px); transition:opacity .85s ease,transform .85s ease; }
+    .reveal-left.active { opacity:1; transform:translateX(0); }
+    .reveal-right { opacity:0; transform:translateX(32px); transition:opacity .85s ease,transform .85s ease; }
+    .reveal-right.active { opacity:1; transform:translateX(0); }
+
+    /* ═══════════════ RESPONSIVE ═══════════════ */
+    @media (max-width: 1100px) {
+      .hero-inner, .split, .auth-grid, .grid-3, .grid-4, .footer-top, .trust-grid, .faq-grid { grid-template-columns: 1fr; }
+      .split.rev > *:first-child { order:2; }
+      .split.rev > *:last-child { order:1; }
+      .img-frame, .img-frame img { min-height: 400px; }
+      .img-accent { right: 16px; }
+      .hero { padding: 170px 0 100px; }
+      .hero-inner { gap: 50px; }
+    }
+    @media (max-width: 860px) {
+      /* Hide desktop nav links on mobile */
+      .nav-links { display: none; }
+      .menu-toggle { display: flex; }
+      .mobile-menu { display: block; }
+      .desktop-btn { display:none; }
+      .mini-cards, .stats-bar { grid-template-columns: 1fr 1fr; }
+      .cta-wrap { padding: 50px 28px; }
+      .section { padding: 80px 0; }
+      .social-proof-row { flex-wrap: wrap; gap: 24px; }
+      .sp-divider { display: none; }
+    }
+    @media (max-width: 560px) {
+      .section-title { font-size: 2rem; letter-spacing: -1px; }
+      .stats-bar, .mini-cards { grid-template-columns: 1fr; }
+      .stat-item + .stat-item::before { display:none; }
+      .hero-stats { flex-direction: column; gap: 20px; }
+      .trust-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 420px) {
+      .trust-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11103825256"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11103825256');
+</script>
+</head>
+<body>
+
+  <!-- Custom cursor -->
+
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- Progress bar -->
+
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+
+  <header id="siteHeader">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-logo">LCS</div>
+        <div class="brand-text">
+          <strong>LYNDISHES</strong>
+          <span>
+</span>
+        </div>
+      </a>
+
+
+  <!-- Desktop nav links (hidden on mobile) -->
+  <nav class="nav-links" id="navLinks">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="program.html">Programs</a>
+    <a href="blog.html">Blog</a>
+    <a href="register.html">Register</a>
+  </nav>
+
+  <div class="nav-actions">
+    <!-- Theme toggle on desktop -->
+    <button class="desktop-theme-btn" id="themeBtn" aria-label="Toggle theme">☀️</button>
+    <a href="register.html" class="btn btn-primary desktop-btn">Apply Now</a>
+    <!-- Hamburger for mobile -->
+    <button class="menu-toggle" id="menuBtn" aria-label="Open menu">☰</button>
+  </div>
+</div>
+
+<!-- Mobile dropdown (outside .nav so it overlays below header) -->
+<div class="mobile-menu" id="mobileMenu">
+  <!-- Theme toggle row INSIDE dropdown -->
+  <div class="mob-theme-row">
+    <span>Appearance</span>
+    <button class="mob-theme-pill" id="mobThemeBtn">☀️ Light</button>
+  </div>
+
+  <div class="mob-divider"></div>
+
+  <nav class="mob-links">
+    <a href="index.html">Home</a>
+    <a href="about.html" class="active">About</a>
+    <a href="program.html">Programs</a>
+    <a href="blog.html">Blog</a>
+    <a href="register.html">Register</a>
+  </nav>
+
+  <div class="mob-divider"></div>
+
+  <a href="register.html" class="btn btn-primary mob-cta">Apply Now →</a>
+</div>
+
+
+  </header>
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+
+  <section class="hero">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+
+
+<div class="container">
+  <div class="hero-inner">
+    <div class="reveal-left">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Established 2020 · Gwarimpa, Abuja
+      </div>
+      <h1>Where culinary <em>passion</em> becomes career.</h1>
+      <p class="hero-sub">Lyndishes Culinary School equips aspiring chefs, bakers, and food entrepreneurs with the skills, discipline, and confidence to build successful careers in the food industry.</p>
+      <div class="hero-cta">
+        <a href="register.html" class="btn btn-primary">Apply Now →</a>
+        <a href="program.html" class="btn btn-white">View Programs</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-num">1<span>,000+</span></div>
+          <div class="hero-stat-label">Students Trained</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">100<span>%</span></div>
+          <div class="hero-stat-label">Hands-On Curriculum</div>
+        </div>
+        <div>
+          <div class="hero-stat-num">6<span>+</span></div>
+          <div class="hero-stat-label">Professional Programs</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-cert-wrap reveal-right">
+      <div class="hero-cert-bg"></div>
+      <div class="hero-cert-card">
+        <img src="cert.jpeg" alt="LCS Certificate of Achievement — Official">
+        <div class="cert-authentic-badge">Verified Certificate</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- ═══════════════ TRUST TICKER ═══════════════ -->
+
+  <div class="trust-ticker-wrap">
+    <div class="trust-ticker" id="trustTicker">
+      <!-- Items duplicated for seamless loop -->
+      <div class="ticker-item"><span class="dot"></span><strong>1,000+</strong> Graduates Since 2020</div>
+      <div class="ticker-item"><span class="dot"></span>City &amp; Guilds Certified Founder</div>
+      <div class="ticker-item"><span class="dot"></span><strong>ICCA Dubai</strong> Training Pedigree</div>
+      <div class="ticker-item"><span class="dot"></span>100% Hands-On Curriculum</div>
+      <div class="ticker-item"><span class="dot"></span>Official Certificates Issued</div>
+      <div class="ticker-item"><span class="dot"></span>Abuja's Premier Culinary Institute</div>
+      <div class="ticker-item"><span class="dot"></span>Food Entrepreneurship Training</div>
+      <div class="ticker-item"><span class="dot"></span><strong>6+</strong> Professional Programs</div>
+      <div class="ticker-item"><span class="dot"></span>Internationally Recognised Standards</div>
+      <!-- Duplicates for infinite scroll -->
+      <div class="ticker-item"><span class="dot"></span><strong>1,000+</strong> Graduates Since 2020</div>
+      <div class="ticker-item"><span class="dot"></span>City &amp; Guilds Certified Founder</div>
+      <div class="ticker-item"><span class="dot"></span><strong>ICCA Dubai</strong> Training Pedigree</div>
+      <div class="ticker-item"><span class="dot"></span>100% Hands-On Curriculum</div>
+      <div class="ticker-item"><span class="dot"></span>Official Certificates Issued</div>
+      <div class="ticker-item"><span class="dot"></span>Abuja's Premier Culinary Institute</div>
+      <div class="ticker-item"><span class="dot"></span>Food Entrepreneurship Training</div>
+      <div class="ticker-item"><span class="dot"></span><strong>6+</strong> Professional Programs</div>
+      <div class="ticker-item"><span class="dot"></span>Internationally Recognised Standards</div>
+    </div>
+  </div>
+
+  <!-- ═══════════════ ABOUT ═══════════════ -->
+
+  <section class="section">
+    <div class="container split">
+      <div class="reveal-left">
+        <span class="eyebrow">About Lyndishes</span>
+        <div class="divider"></div>
+        <h2 class="section-title">A culinary institute built for the next generation.</h2>
+        <div class="about-body">
+          <p>A professional culinary institute based in <strong>Gwarimpa, Abuja</strong>, dedicated to training the next generation of chefs and food entrepreneurs across Nigeria.</p>
+          <p>Founded by <strong>Lynda Chinasa Ewalefoh</strong>, a City &amp; Guilds certified chef trained at the <strong>International Centre for Culinary Arts (ICCA), Dubai</strong>, Lyndishes was built to bridge the gap between culinary skill and real food business knowledge.</p>
+          <p>Students receive hands-on training in professional cooking techniques, kitchen management, food presentation, and entrepreneurial strategy, all while building a profitable food business mindset.</p>
+        </div>
+        <ul class="check-list" style="margin-top:28px;">
+          <li>Hands-on professional culinary education</li>
+          <li>Pastry, baking &amp; kitchen management training</li>
+          <li>Entrepreneurship-focused business curriculum</li>
+          <li>Career pathways in Nigeria's growing food industry</li>
+        </ul>
+      </div>
+
+
+  <div class="img-frame reveal-right" style="position:relative;">
+    <img src="13.jpeg" alt="Lyndishes Culinary Training">
+    <div class="img-tag">Training with Purpose · Abuja, Nigeria</div>
+    <div class="img-accent">
+      <div class="img-accent-num">2020</div>
+      <div class="img-accent-label">Est. in Abuja</div>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- ═══════════════ TRUST LAYER ═══════════════ */
+  <section class="trust-section">
+    <div class="container">
+      <div class="trust-intro reveal">
+        <p>Trusted by 1,000+ students across Nigeria</p>
+      </div>
+
+      <div class="trust-grid reveal">
+        <div class="trust-card">
+          <div class="trust-badge-icon">🏛️</div>
+          <h4>City &amp; Guilds Certified</h4>
+          <p>Our founder holds certification from one of the world's oldest and most respected vocational qualification bodies, established 1878.</p>
+          <span class="trust-tag">Est. 1878</span>
+        </div>
+        <div class="trust-card">
+          <div class="trust-badge-icon">🌐</div>
+          <h4>ICCA Dubai Trained</h4>
+          <p>Training rooted in the International Centre for Culinary Arts, Dubai, a globally ranked institution known for rigorous professional standards.</p>
+          <span class="trust-tag">Global Standard</span>
+        </div>
+        <div class="trust-card">
+          <div class="trust-badge-icon">📜</div>
+          <h4>Verified Certificates</h4>
+          <p>Every graduate receives an officially issued LCS certificate documenting their course, completion date, and specialisation.</p>
+          <span class="trust-tag">Professionally Issued</span>
+        </div>
+        <div class="trust-card">
+          <div class="trust-badge-icon">🇳🇬</div>
+          <h4>1,000+ Graduates</h4>
+          <p>Since 2020, over a thousand students have graduated and launched bakeries, catering services, restaurants, and food brands.</p>
+          <span class="trust-tag">Since 2020</span>
+        </div>
+      </div>
+
+      <!-- Social proof strip -->
+
+
+  <div class="social-proof-row reveal">
+    <div class="sp-item">
+      <div class="star-row"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <div class="sp-num">4.9</div>
+      <div class="sp-label">Average Rating</div>
+    </div>
+    <div class="sp-divider"></div>
+    <div class="sp-item">
+      <div class="sp-num">1,000+</div>
+      <div class="sp-label">Alumni Nationwide</div>
+    </div>
+    <div class="sp-divider"></div>
+    <div class="sp-item">
+      <div class="sp-num">6+</div>
+      <div class="sp-label">Programmes Offered</div>
+    </div>
+    <div class="sp-divider"></div>
+    <div class="sp-item">
+      <div class="sp-num">100%</div>
+      <div class="sp-label">Practical Training</div>
+    </div>
+    <div class="sp-divider"></div>
+    <div class="sp-item">
+      <div class="sp-num">4+</div>
+      <div class="sp-label">Years of Excellence</div>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- ═══════════════ MISSION / VISION / STANDARD ═══════════════ -->
+
+  <section class="section bg-soft">
+    <div class="container">
+      <div class="reveal" style="max-width:760px;margin-bottom:52px;">
+        <span class="eyebrow">Our Foundation</span>
+        <div class="divider"></div>
+        <h2 class="section-title">What drives Lyndishes.</h2>
+        <p class="section-sub">Our institution is built on the belief that culinary education should create both skill and lasting opportunity.</p>
+      </div>
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="card-icon">🎯</div>
+          <h3>Our Mission</h3>
+          <p>To empower people with culinary skills and business knowledge that transform passion into profitable, sustainable careers.</p>
+        </div>
+        <div class="card reveal" style="transition-delay:.1s">
+          <div class="card-icon">🌍</div>
+          <h3>Our Vision</h3>
+          <p>To raise a new generation of skilled chefs and successful food entrepreneurs across Nigeria and beyond.</p>
+        </div>
+        <div class="card reveal" style="transition-delay:.2s">
+          <div class="card-icon">🏆</div>
+          <h3>Our Standard</h3>
+          <p>We combine practical culinary excellence, discipline, creativity, and business readiness in every training experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ PROOF OF AUTHENTICITY ═══════════════ -->
+
+  <section class="section auth-section">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;">
+        <span class="eyebrow">Proof of Authenticity</span>
+        <div class="divider"></div>
+        <h2 class="section-title">Internationally certified. Genuinely trusted.</h2>
+        <p class="section-sub">Every graduate of Lyndishes receives a certificate backed by City &amp; Guilds international standards and the expertise of an ICCA Dubai-trained founder.</p>
+      </div>
+
+
+  <div class="auth-grid">
+    <div class="auth-cert-display reveal-left">
+      <div class="auth-cert-glow"></div>
+      <div class="auth-cert-img">
+        <img src="cert.jpeg" alt="Official Lyndishes Certificate of Achievement">
+        <div class="auth-verified-ribbon">
+          <div class="check-circle">✓</div>
+          <span>Authentic LCS Certificate · Issued to Adekunle Chisom · Introduction to Viennoiserie &amp; Pastry · June 30, 2023</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="auth-credentials reveal-right">
+      <div>
+        <h3>Why our credentials matter.</h3>
+        <p>Our training methodology is rooted in globally recognised culinary standards. Every course is designed to give students skills that translate directly to real world employment and entrepreneurship.</p>
+      </div>
+
+      <div class="credential-item">
+        <div class="credential-icon">🎓</div>
+        <div class="credential-text">
+          <h4>City &amp; Guilds Certified Founder</h4>
+          <p>Lynda Chinasa Ewalefoh holds City &amp; Guilds certification, one of the world's most respected vocational qualification bodies, established in 1878.</p>
+        </div>
+      </div>
+
+      <div class="credential-item">
+        <div class="credential-icon">🌐</div>
+        <div class="credential-text">
+          <h4>ICCA Dubai Training Pedigree</h4>
+          <p>Trained at the International Centre for Culinary Arts, Dubai, ranked among the world's top culinary institutions, known for its rigorous professional standards.</p>
+        </div>
+      </div>
+
+      <div class="credential-item">
+        <div class="credential-icon">📜</div>
+        <div class="credential-text">
+          <h4>Official Certificates Issued</h4>
+          <p>Every graduate receives a professionally designed, verified LCS certificate documenting the specific course, date, and completion of their programme.</p>
+        </div>
+      </div>
+
+      <div class="credential-item">
+        <div class="credential-icon">🇳🇬</div>
+        <div class="credential-text">
+          <h4>Proven Track Record in Nigeria</h4>
+          <p>Since 2020, over 1,000 students have graduated and gone on to launch successful catering services, bakeries, restaurants, and food brands across Nigeria.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- ═══════════════ TESTIMONIALS (AUTO-SCROLL) ═══════════════ -->
+
+  <section class="testimonials-section">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin-bottom:0;">
+        <span class="eyebrow">Student Stories</span>
+        <div class="divider"></div>
+        <h2 class="section-title">Graduates who made it happen.</h2>
+        <p class="section-sub">Real stories from real students who turned their culinary dreams into thriving businesses.</p>
+      </div>
+    </div>
+
+
+<div class="testimonials-track-wrap" style="margin-top:52px;">
+  <div class="testimonials-track" id="testimonialsTrack">
+    <!-- Set A -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testimonial-text">"Lyndishes didn't just teach me to cook, it taught me to run a kitchen like a business. I launched my catering service three months after graduating."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">AC</div>
+        <div>
+          <div class="testimonial-name">Adekunle Chisom</div>
+          <div class="testimonial-role">Pastry Graduate · Now runs Chisom's Bakes, Abuja</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testimonial-text">"Chef Lynda pushes you to be excellent. The hands-on curriculum is incredible, by week two I was making dishes I never imagined I could."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">NN</div>
+        <div>
+          <div class="testimonial-name">Ngozi Nwosu</div>
+          <div class="testimonial-role">Professional Diploma · Now Head Chef, Lagos restaurant</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testimonial-text">"The entrepreneurship module is what sets LCS apart. I didn't just learn recipes, I built a full pricing strategy and brand before I even graduated."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">TE</div>
+        <div>
+          <div class="testimonial-name">Tochukwu Eze</div>
+          <div class="testimonial-role">Cuisine & Patisserie · Founder, Sweet Tochi Brand</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testimonial-text">"I was skeptical at first, but the level of professionalism, from the certificates to the curriculum, is world class. Best investment I made."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">AF</div>
+        <div>
+          <div class="testimonial-name">Amaka Fulani</div>
+          <div class="testimonial-role">Pastry Classes · Wedding Cake Business, Abuja</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testimonial-text">"The LCS certificate opened doors for me immediately. My employer specifically mentioned it as a mark of quality. Cannot recommend enough."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">BM</div>
+        <div>
+          <div class="testimonial-name">Benson Makinde</div>
+          <div class="testimonial-role">Professional Diploma · Sous Chef, Transcorp Hilton</div>
+        </div>
+      </div>
+    </div>
+    <!-- Set B (duplicates for infinite scroll) -->
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testimonial-text">"Lyndishes didn't just teach me to cook, it taught me to run a kitchen like a business. I launched my catering service three months after graduating."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">AC</div>
+        <div>
+          <div class="testimonial-name">Adekunle Chisom</div>
+          <div class="testimonial-role">Pastry Graduate · Now runs Chisom's Bakes, Abuja</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testimonial-text">"Chef Lynda pushes you to be excellent. The hands-on curriculum is incredible, by week two I was making dishes I never imagined I could."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">NN</div>
+        <div>
+          <div class="testimonial-name">Ngozi Nwosu</div>
+          <div class="testimonial-role">Professional Diploma · Now Head Chef, Lagos restaurant</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testimonial-text">"The entrepreneurship module is what sets LCS apart. I didn't just learn recipes, I built a full pricing strategy and brand before I even graduated."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">TE</div>
+        <div>
+          <div class="testimonial-name">Tochukwu Eze</div>
+          <div class="testimonial-role">Cuisine & Patisserie · Founder, Sweet Tochi Brand</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testimonial-text">"I was skeptical at first, but the level of professionalism, from the certificates to the curriculum, is world class. Best investment I made."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">AF</div>
+        <div>
+          <div class="testimonial-name">Amaka Fulani</div>
+          <div class="testimonial-role">Pastry Classes · Wedding Cake Business, Abuja</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <div class="testimonial-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+      <p class="testimonial-text">"The LCS certificate opened doors for me immediately. My employer specifically mentioned it as a mark of quality. Cannot recommend enough."</p>
+      <div class="testimonial-author">
+        <div class="testimonial-avatar">BM</div>
+        <div>
+          <div class="testimonial-name">Benson Makinde</div>
+          <div class="testimonial-role">Professional Diploma · Sous Chef, Transcorp Hilton</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- ═══════════════ FOUNDER ═══════════════ -->
+
+  <section class="section">
+    <div class="container split rev">
+      <div class="img-frame reveal-left">
+        <img src="3.jpeg" alt="Lynda Chinasa Ewalefoh — Founder, Lyndishes Culinary School">
+        <div class="img-tag">Lynda Chinasa Ewalefoh · Founder</div>
+      </div>
+
+
+  <div class="reveal-right">
+    <span class="eyebrow">Meet the Founder</span>
+    <div class="divider"></div>
+    <h2 class="section-title">Lynda Chinasa Ewalefoh</h2>
+    <p class="section-sub">Founder &amp; Head Chef · Lyndishes Culinary School</p>
+
+    <blockquote class="founder-quote">"Passion is the ingredient — skill is what makes it profitable."</blockquote>
+
+    <div class="about-body">
+      <p>Lynda is a passionate culinary professional and educator committed to empowering aspiring chefs and food entrepreneurs with world-class skills.</p>
+      <p>A <strong>City &amp; Guilds certified chef</strong> trained at the <strong>International Centre for Culinary Arts (ICCA), Dubai</strong>, one of the world's most respected culinary institutions, she brings internationally influenced standards to every Lyndishes programme.</p>
+      <p>Through Lyndishes, she has trained thousands of students who have gone on to launch thriving catering services, restaurants, bakeries, and food brands across Nigeria.</p>
+    </div>
+
+    <div class="mini-cards">
+      <div class="mini-card">
+        <h4>🌐 International Training</h4>
+        <p>ICCA Dubai trained with City &amp; Guilds certification, bringing global standards to Nigeria.</p>
+      </div>
+      <div class="mini-card">
+        <h4>💼 Entrepreneurship Focus</h4>
+        <p>Teaching students to convert culinary talent into structured, profitable businesses.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- ═══════════════ WHY LYNDISHES ═══════════════ -->
+
+  <section class="section bg-soft">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin-bottom:52px;">
+        <span class="eyebrow">Why Lyndishes</span>
+        <div class="divider"></div>
+        <h2 class="section-title">More than a culinary school.</h2>
+        <p class="section-sub">Designed to help students not just learn, but build confidence, professionalism, and long-term success in the food industry.</p>
+      </div>
+      <div class="grid-4">
+        <div class="why-card reveal">
+          <div class="why-icon">👨‍🍳</div>
+          <h3>Hands-On Training</h3>
+          <p>Real practical sessions that build confidence and technical ability from day one.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.08s">
+          <div class="why-icon">🍰</div>
+          <h3>Culinary + Pastry</h3>
+          <p>Comprehensive learning across cuisine, baking, pastry, presentation, and kitchen operations.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.16s">
+          <div class="why-icon">💼</div>
+          <h3>Business Knowledge</h3>
+          <p>Food costing, branding, pricing, operations, and profitability, built into every programme.</p>
+        </div>
+        <div class="why-card reveal" style="transition-delay:.24s">
+          <div class="why-icon">🚀</div>
+          <h3>Career Growth</h3>
+          <p>Supporting both employment opportunities and entrepreneurship paths for every graduate.</p>
+        </div>
+      </div>
+
+
+  <div class="stats-bar reveal">
+    <div class="stat-item">
+      <div class="stat-num">2020</div>
+      <div class="stat-label">Established in Abuja</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">1,000+</div>
+      <div class="stat-label">Students Trained</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">100%</div>
+      <div class="stat-label">Hands-On Curriculum</div>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- ═══════════════ FAQ ═══════════════ -->
+
+  <section class="faq-section">
+    <div class="container">
+      <div class="reveal" style="max-width:700px;margin-bottom:0;">
+        <span class="eyebrow">FAQ</span>
+        <div class="divider"></div>
+        <h2 class="section-title">Questions we get a lot.</h2>
+        <p class="section-sub">Everything you need to know before enrolling at Lyndishes Culinary School.</p>
+      </div>
+
+
+  <div class="faq-grid reveal">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Do I need prior cooking experience to enrol?</span>
+        <div class="faq-arrow">+</div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">No prior experience is required. Our programmes are designed for complete beginners as well as those with some cooking background. You'll build from fundamentals up to professional-level techniques.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Are the certificates recognised by employers?</span>
+        <div class="faq-arrow">+</div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Yes. LCS certificates are professionally issued and backed by internationally recognised standards. Our graduates have used them to secure positions at hotels, restaurants, and catering firms across Nigeria.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>How long do the programmes run?</span>
+        <div class="faq-arrow">+</div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Programme lengths vary. Short courses run 1–4 weeks, while our Professional Diploma spans several months. Visit our Programs page for a full breakdown of each course duration.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Is there a focus on food business / entrepreneurship?</span>
+        <div class="faq-arrow">+</div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Absolutely. Entrepreneurship is woven into every Lyndishes programme. You'll learn food costing, pricing strategy, branding, and how to launch and run a profitable food business alongside your culinary skills.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Where is the school located?</span>
+        <div class="faq-arrow">+</div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Lyndishes Culinary School is located in Gwarimpa, Abuja, Nigeria. Contact us via WhatsApp or email for the precise address and directions before your first class.</div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>How do I apply or register?</span>
+        <div class="faq-arrow">+</div>
+      </div>
+      <div class="faq-a"><div class="faq-a-inner">Click the "Apply Now" button on any page to complete our registration form. You can also reach us directly via WhatsApp on +234 810 140 8693 or email us at culinary.school@lyndishes.com.</div></div>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
+
+  <section class="section">
+    <div class="container">
+      <div class="cta-wrap reveal">
+        <span class="eyebrow">Start Your Journey</span>
+        <div class="divider"></div>
+        <h2 class="section-title">Ready to build your culinary future?</h2>
+        <p class="section-sub">Join Lyndishes Culinary School and gain the practical skills and business knowledge needed to grow in today's food industry.</p>
+        <div class="cta-btns">
+          <a href="register.html" class="btn btn-primary">Apply Now →</a>
+          <a href="program.html" class="btn btn-white">View Courses</a>
+          <a href="index.html" class="btn btn-green">Back to Homepage</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-col">
+          <div class="footer-logo">
+            <div class="footer-logo-mark">LCS</div>
+            <div>
+              <strong style="color:#fff;font-weight:800;font-size:1rem;">LYNDISHES</strong><br>
+              <span style="font-size:.65rem;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.14em;">Culinary School</span>
+            </div>
+          </div>
+          <p>Premium culinary education for chefs, bakers, food entrepreneurs, and hospitality professionals across Nigeria.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="program.html">Programs</a>
+          <a href="register.html">Register</a>
+          <a href="blog.html">Blog</a>
+        </div>
+        <div class="footer-col">
+          <h4>Programs</h4>
+          <a href="program.html">Cuisine &amp; Patisserie</a>
+          <a href="program.html">Professional Diploma</a>
+          <a href="entrepreneurship.html">Entrepreneurship</a>
+          <a href="program.html">Pastry Classes</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:culinary.school@lyndishes.com">culinary.school@lyndishes.com</a>
+          <a href="tel:+2348101408693">+234 810 140 8693</a>
+          <p>Gwarimpa, Abuja, Nigeria</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Lyndishes Culinary School. All rights reserved.</p>
+        <p>Crafted with excellence for the Lyndishes brand.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float -->
+
+<a href="https://wa.me/2348101408693?text=Hello%20Lyndishes%20Culinary%20School%2C%20I%20would%20like%20to%20make%20an%20enquiry."
+class="wa-float" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+  <script>
+    /* ── Custom Cursor ── */
+    const cursor = document.getElementById('cursor');
+    const cursorRing = document.getElementById('cursorRing');
+    let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+
+    document.addEventListener('mousemove', e => {
+      mouseX = e.clientX; mouseY = e.clientY;
+      cursor.style.left = mouseX + 'px';
+      cursor.style.top  = mouseY + 'px';
+    });
+
+    // Smooth ring follow
+    function animateRing() {
+      ringX += (mouseX - ringX) * 0.12;
+      ringY += (mouseY - ringY) * 0.12;
+      cursorRing.style.left = ringX + 'px';
+      cursorRing.style.top  = ringY + 'px';
+      requestAnimationFrame(animateRing);
+    }
+    animateRing();
+
+    document.querySelectorAll('a, button, .card, .why-card, .trust-card, .faq-item, .testimonial-card').forEach(el => {
+      el.addEventListener('mouseenter', () => { cursor.classList.add('hovering'); cursorRing.classList.add('hovering'); });
+      el.addEventListener('mouseleave', () => { cursor.classList.remove('hovering'); cursorRing.classList.remove('hovering'); });
+    });
+
+    /* ── Progress Bar ── */
+    const progressBar = document.getElementById('progressBar');
+    function updateProgress() {
+      const scrollTop = document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      progressBar.style.width = pct + '%';
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+
+    /* ── Theme ── */
+    const html = document.documentElement;
+    const themeBtn    = document.getElementById('themeBtn');
+    const mobThemeBtn = document.getElementById('mobThemeBtn');
+
+    function applyTheme(t) {
+      html.setAttribute('data-theme', t);
+      const icon = t === 'light' ? '☀️' : '🌙';
+      themeBtn.textContent    = icon;
+      mobThemeBtn.textContent = icon + (t === 'light' ? ' Light' : ' Dark');
+      localStorage.setItem('lcs-theme', t);
+    }
+    const savedTheme = localStorage.getItem('lcs-theme') || 'light';
+    applyTheme(savedTheme);
+
+    themeBtn.addEventListener('click', () => applyTheme(html.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
+    mobThemeBtn.addEventListener('click', () => applyTheme(html.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
+
+    /* ── Mobile menu ── */
+    const menuBtn    = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      menuBtn.textContent = isOpen ? '✕' : '☰';
+    });
+
+    // Close on nav link click
+    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      menuBtn.textContent = '☰';
+    }));
+
+    // Close on outside click
+    document.addEventListener('click', e => {
+      if (!mobileMenu.contains(e.target) && e.target !== menuBtn) {
+        mobileMenu.classList.remove('open');
+        menuBtn.textContent = '☰';
+      }
+    });
+
+    /* ── Scroll effects ── */
+    const header = document.getElementById('siteHeader');
+    function onScroll() {
+      header.classList.toggle('scrolled', window.scrollY > 40);
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight - 80) el.classList.add('active');
+      });
+      updateProgress();
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('load', onScroll);
+
+    /* ── Staggered card reveal ── */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const cards = entry.target.querySelectorAll('.card, .why-card, .credential-item, .mini-card, .trust-card');
+          cards.forEach((c, i) => {
+            setTimeout(() => c.classList.add('active'), i * 90);
+          });
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.grid-3, .grid-4, .auth-credentials, .trust-grid').forEach(g => observer.observe(g));
+
+    /* ── FAQ accordion ── */
+    function toggleFaq(qEl) {
+      const item = qEl.closest('.faq-item');
+      const wasOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!wasOpen) item.classList.add('open');
+    }
+
+    /* ── Counter animation ── */
+    function animateCounter(el, target, suffix, duration) {
+      let start = 0;
+      const step = target / (duration / 16);
+      const timer = setInterval(() => {
+        start = Math.min(start + step, target);
+        el.textContent = Math.floor(start).toLocaleString() + suffix;
+        if (start >= target) clearInterval(timer);
+      }, 16);
+    }
+
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.querySelectorAll('.stat-num').forEach(el => {
+            const raw = el.textContent.trim();
+            if (raw === '2020') { animateCounter(el, 2020, '', 1200); }
+            else if (raw.includes('1,000')) { animateCounter(el, 1000, '+', 1000); }
+            else if (raw.includes('100')) { animateCounter(el, 100, '%', 800); }
+          });
+          counterObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.stats-bar').forEach(el => counterObs.observe(el));
+  </script>
+
+</body>
+</html>
