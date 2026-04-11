@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+
+<html lang="en" data-theme="dark">
+<head>
+<!-- Open Graph -->
+<meta property="og:title" content="Lyndishes Culinary School — Abuja">
+<meta property="og:description" content="Turn your passion for cooking into a profitable food business. Professional culinary training in Abuja — Next Batch Starts May 11.">
+<meta property="og:image" content="https://yourdomain.com/preview.jpg">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="keywords" content="culinary school Abuja, cooking school Nigeria, baking classes Abuja, food business training Nigeria">
+<meta name="author" content="Lyndishes Culinary School">
+<link rel="icon" href="favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lyndishes Culinary School — Abuja, Nigeria</title>
+<meta name="description" content="Turn your passion into a profitable food business. Hands-on cooking, pastry and food entrepreneurship programs in Abuja by Chef Lynda Chinasa Ewalefo. Next batch starts May 11.">
+
+<style>
+@font-face { font-family:'Campton'; src:url('fonts/Campton-Book.woff') format('woff'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'Campton'; src:url('fonts/Campton-BookItalic.woff') format('woff'); font-weight:400; font-style:italic; font-display:swap; }
+@font-face { font-family:'Campton'; src:url('fonts/Campton-SemiBold.woff') format('woff'); font-weight:600; font-style:normal; font-display:swap; }
+@font-face { font-family:'Campton'; src:url('fonts/Campton-Bold.woff') format('woff'); font-weight:700; font-style:normal; font-display:swap; }
+@font-face { font-family:'Campton'; src:url('fonts/Campton-ExtraBold.woff') format('woff'); font-weight:800; font-style:normal; font-display:swap; }
+@font-face { font-family:'Campton'; src:url('fonts/Campton-Black.woff') format('woff'); font-weight:900; font-style:normal; font-display:swap; }
+
+:root {
+  --red:   #D90452;
+  --deep:  #8C0335;
+  --wine:  #590222;
+  --noir:  #26010F;
+  --lime:  #9BD835;
+  --C: 'Campton','Century Gothic',sans-serif;
+  --NAV: 70px;
+  --MAX: 1220px;
+  --ease: cubic-bezier(.4,0,.2,1);
+  --T: all .3s var(--ease);
+}
+
+[data-theme="dark"] {
+  --bg:    #080007;
+  --bg2:   #100010;
+  --card:  rgba(255,255,255,.025);
+  --cardH: rgba(217,4,82,.055);
+  --brd:   rgba(255,255,255,.07);
+  --brdH:  rgba(217,4,82,.4);
+  --txt:   #FFFFFF;
+  --txts:  #E8D0DA;
+  --mut:   #9A7080;
+  --sh:    0 20px 60px rgba(0,0,0,.7);
+  --shr:   0 8px 28px rgba(217,4,82,.25);
+  --navbg: rgba(8,0,7,.94);
+  --navbd: rgba(217,4,82,.16);
+}
+
+[data-theme="light"] {
+  --bg:    #FAF4F6;
+  --bg2:   #F2E8EE;
+  --card:  #FFFFFF;
+  --cardH: #FFF4F8;
+  --brd:   rgba(140,3,53,.1);
+  --brdH:  rgba(217,4,82,.35);
+  --txt:   #1C0A12;
+  --txts:  #3A1020;
+  --mut:   #7A3048;
+  --sh:    0 8px 30px rgba(140,3,53,.09);
+  --shr:   0 6px 22px rgba(217,4,82,.16);
+  --navbg: rgba(250,244,246,.96);
+  --navbd: rgba(217,4,82,.12);
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family: var(--C);
+  background: var(--bg);
+  color: var(--txt);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  transition: background .4s, color .4s;
+}
+img { max-width:100%; display:block; }
+a  { text-decoration:none; color:inherit; }
+ul { list-style:none; }
+.wrap  { width: min(92%, var(--MAX)); margin: 0 auto; }
+.sec   { padding: 96px 0; }
+
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--deep); border-radius:9px; }
+
+/* ══ HEADER ══ */
+#hdr {
+  position: fixed; top:0; left:0; width:100%; z-index:1000;
+  background: var(--navbg);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border-bottom: 1px solid var(--navbd);
+  transition: background .4s, border-color .4s;
+}
+
+.nav {
+  height: var(--NAV);
+  display: flex; align-items: center; justify-content: space-between; gap:12px;
+}
+
+.brand { display:flex; align-items:center; gap:11px; flex-shrink:0; }
+.brand-mark {
+  width:42px; height:42px; border-radius:6px;
+  background: var(--red);
+  display:grid; place-items:center;
+  box-shadow: 0 0 0 1px var(--deep), var(--shr);
+  flex-shrink:0;
+}
+.brand-mark span { font-family:var(--C); font-weight:700; font-size:.88rem; color:#fff; letter-spacing:.04em; }
+.brand-copy { line-height:1.1; }
+.brand-copy strong { display:block; font-family:var(--C); font-weight:700; font-size:.94rem; letter-spacing:.06em; text-transform:uppercase; color:var(--txt); transition:color .4s; }
+.brand-copy small  { display:block; font-family:var(--C); font-weight:400; font-size:.48rem; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-top:2px; opacity:.7; }
+
+.nav-links { display:flex; align-items:center; gap:26px; flex:1; justify-content:center; }
+.nav-links a {
+  font-family:var(--C); font-weight:600; font-size:.7rem;
+  letter-spacing:.14em; text-transform:uppercase;
+  color:var(--mut); position:relative; transition:color .3s; white-space:nowrap;
+}
+.nav-links a:hover, .nav-links a.active { color:var(--txt); }
+.nav-links a::after {
+  content:''; position:absolute; left:0; bottom:-4px;
+  width:0; height:1.5px; background:var(--red); transition:width .3s var(--ease);
+}
+.nav-links a:hover::after, .nav-links a.active::after { width:100%; }
+
+#themeToggle { cursor:pointer; color:var(--mut); }
+#themeToggle:hover { color:var(--red); }
+
+.nav-end { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+
+.btn-apply {
+  display:inline-flex; align-items:center; justify-content:center; gap:6px;
+  height:38px; padding:0 20px; border-radius:999px;
+  font-family:var(--C); font-weight:700; font-size:.7rem;
+  letter-spacing:.1em; text-transform:uppercase;
+  background:var(--red); color:#fff; border:none;
+  box-shadow:var(--shr); cursor:pointer; white-space:nowrap; flex-shrink:0;
+  transition:var(--T);
+}
+.btn-apply:hover { background:var(--deep); transform:translateY(-1px); box-shadow:0 12px 32px rgba(217,4,82,.34); }
+
+.ham {
+  display:none; background:none; border:none;
+  color:var(--txt); font-size:1.35rem; cursor:pointer;
+  padding:4px 6px; line-height:1; flex-shrink:0; transition:color .3s;
+}
+
+@media(max-width:900px) {
+  .nav-links {
+    display:none; position:absolute;
+    top:calc(var(--NAV) + 1px); left:0; right:0;
+    background:var(--navbg); backdrop-filter:blur(22px);
+    border-bottom:1px solid var(--navbd);
+    flex-direction:column; align-items:flex-start;
+    gap:0; padding:6px 0;
+    box-shadow:0 14px 36px rgba(0,0,0,.2);
+  }
+  .nav-links.open { display:flex; }
+  .nav-links a { width:100%; padding:13px 5%; font-size:.76rem; border-bottom:1px solid var(--brd); }
+  .nav-links a::after { display:none; }
+  .ham { display:flex; }
+}
+@media(max-width:480px) {
+  :root { --NAV:62px; }
+  .btn-apply { height:34px; padding:0 14px; font-size:.66rem; }
+  .brand-copy small { display:none; }
+}
+
+/* ══ BUTTONS ══ */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:7px;
+  height:48px; padding:0 24px; border-radius:8px;
+  font-family:var(--C); font-weight:700; font-size:.78rem;
+  letter-spacing:.09em; text-transform:uppercase;
+  border:1.5px solid transparent; cursor:pointer;
+  white-space:nowrap; transition:var(--T);
+}
+.btn-red   { background:var(--red); color:#fff; border-color:var(--red); box-shadow:var(--shr); }
+.btn-red:hover   { background:var(--deep); border-color:var(--deep); transform:translateY(-2px); box-shadow:0 14px 36px rgba(217,4,82,.32); }
+.btn-ghost { background:rgba(255,255,255,.08); color:#fff; border-color:rgba(255,255,255,.35); backdrop-filter:blur(8px); }
+.btn-ghost:hover { background:rgba(255,255,255,.13); transform:translateY(-2px); }
+.btn-out   { background:transparent; color:var(--txt); border-color:var(--brd); }
+.btn-out:hover   { border-color:var(--red); color:var(--red); transform:translateY(-2px); }
+.btn-wht   { background:#fff; color:var(--red); border-color:#fff; }
+.btn-wht:hover   { background:rgba(255,255,255,.92); transform:translateY(-2px); }
+.btn-sm    { height:40px; padding:0 20px; font-size:.72rem; }
+.btn-full  { width:100%; }
+
+/* ══ URGENCY PILL — now used inline inside hero only ══ */
+.urgency-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(217,4,82,.12);
+  border: 1px solid rgba(217,4,82,.35);
+  border-radius: 999px;
+  padding: 5px 14px;
+  font-family: var(--C);
+  font-weight: 700;
+  font-size: .65rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 20px;
+}
+.urgency-pill::before {
+  content: '';
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--red);
+  animation: blink 1.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+@keyframes blink {
+  0%,100% { opacity:1; } 50% { opacity:.2; }
+}
+
+/* ══ HERO CAROUSEL ══ */
+.hero {
+  position:relative; height:100svh; min-height:660px;
+  overflow:hidden; margin-top:var(--NAV);
+}
+
+.h-track { display:flex; height:100%; transition:transform .9s cubic-bezier(.77,0,.175,1); }
+.h-slide { min-width:100%; height:100%; position:relative; flex-shrink:0; overflow:hidden; }
+.h-bg {
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+  transform:scale(1.05); transition:transform 5.5s ease;
+}
+.h-slide.on .h-bg { transform:scale(1); }
+
+.s1 .h-bg { background:linear-gradient(160deg,rgba(38,1,15,.8) 0%,rgba(89,2,34,.65) 0%,rgba(14,14,14,.9) 0%), url('carousel1.jpeg') center/cover; }
+.s2 .h-bg { background:linear-gradient(160deg,rgba(14,14,14,.75) 0%,rgba(14,14,14,.7) 100%), url('students.jpg') center/cover; }
+.s3 .h-bg { background:linear-gradient(160deg,rgba(38,1,15,.72) 0%,rgba(14,14,14,.88) 0%), url('cul.jpeg') center/cover; }
+.s4 .h-bg { background:linear-gradient(160deg,rgba(38,1,15,.75) 0%,rgba(14,14,14,.80) 0%), url('carousel4.jpeg') center/cover; }
+.s5 .h-bg { background:linear-gradient(160deg,rgba(38,1,15,.75) 0%,rgba(14,14,14,.85) 0%), url('carousel5.jpeg') center/cover; }
+
+.h-slide::before {
+  content:''; position:absolute; inset:0; z-index:1;
+  background-image:
+    linear-gradient(rgba(217,4,82,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(217,4,82,.03) 1px,transparent 1px);
+  background-size:80px 80px;
+  pointer-events:none;
+}
+
+/* Hero layout — text only, centered, no card */
+.h-inner { position:absolute; inset:0; display:flex; align-items:center; z-index:2; }
+
+.h-text {
+  color:#fff;
+  opacity:0; transform:translateY(28px);
+  transition:opacity .7s ease .18s, transform .7s ease .18s;
+  max-width:680px;
+}
+.h-slide.on .h-text { opacity:1; transform:none; }
+
+.h-chip {
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--C); font-size:.62rem; font-weight:700;
+  letter-spacing:.26em; text-transform:uppercase;
+  color:rgba(255,255,255,.5); margin-bottom:14px;
+}
+.h-chip::before { content:''; width:22px; height:2px; background:var(--red); border-radius:2px; }
+
+.h-h1 {
+  font-family:var(--C); font-weight:900;
+  font-size:clamp(2.6rem,5.5vw,4rem);
+  line-height:1.05; letter-spacing:-0.02em; color:#fff;
+  margin-bottom:16px; text-shadow:0 6px 32px rgba(0,0,0,.5);
+}
+.h-h1 em { font-style:italic; color:rgba(255,255,255,.7); }
+
+.h-p {
+  font-family:var(--C); font-size:.95rem; font-weight:400;
+  color:rgba(255,255,255,.7); max-width:480px; line-height:1.8; margin-bottom:28px;
+}
+
+.h-btns { display:flex; gap:12px; flex-wrap:wrap; }
+
+/* Trust line under buttons */
+.h-trust {
+  font-family:var(--C); font-size:.72rem; font-weight:600;
+  letter-spacing:.1em; text-transform:uppercase;
+  color:rgba(255,255,255,.90); margin-top:20px;
+  display:flex; align-items:center; gap:8px;
+}
+.h-trust::before { content:''; width:14px; height:1.5px; background:var(--red); flex-shrink:0; }
+
+.h-dots { position:absolute; bottom:30px; left:50%; transform:translateX(-50%); display:flex; gap:8px; z-index:20; }
+.hdot { width:7px; height:7px; border-radius:999px; background:rgba(255,255,255,.25); border:none; cursor:pointer; padding:0; transition:var(--T); }
+.hdot.on { width:26px; background:var(--red); }
+.h-arrows { position:absolute; bottom:22px; right:5%; display:flex; gap:9px; z-index:20; }
+.harrow {
+  width:44px; height:44px; border-radius:50%;
+  background:rgba(217,4,82,.14); border:1px solid rgba(217,4,82,.32);
+  color:#fff; font-size:1rem; cursor:pointer;
+  display:grid; place-items:center; transition:var(--T); backdrop-filter:blur(8px);
+}
+.harrow:hover { background:var(--red); border-color:var(--red); transform:scale(1.08); }
+.h-counter { position:absolute; top:24px; right:5%; font-family:var(--C); font-size:.68rem; font-weight:600; letter-spacing:.14em; color:rgba(255,255,255,.35); z-index:20; }
+.h-counter strong { color:rgba(255,255,255,.76); font-weight:700; }
+.h-bar-wrap { position:absolute; bottom:0; left:0; width:100%; height:3px; background:rgba(255,255,255,.07); z-index:20; }
+.h-bar { height:100%; width:0; background:var(--red); }
+
+@media(max-width:600px) {
+  .h-h1 { font-size:clamp(2rem,8vw,2.8rem); }
+  .h-p { font-size:.88rem; margin-bottom:22px; }
+  .h-btns { gap:10px; }
+  .btn { height:44px; padding:0 20px; font-size:.74rem; }
+}
+
+/* ══ STRIPE ══ */
+.stripe { height:3px; background:linear-gradient(90deg,var(--noir),var(--deep) 30%,var(--red) 50%,var(--deep) 70%,var(--noir)); }
+
+/* ══ TRUST BAR ══ */
+.trust { background:var(--card); border-bottom:1px solid var(--brd); position:relative; transition:background .4s; }
+.trust::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--red); }
+.trust-grid { display:grid; grid-template-columns:repeat(4,1fr); }
+.trust-cell { padding:26px 22px; border-right:1px solid var(--brd); transition:var(--T), background .4s; }
+.trust-cell:last-child { border-right:none; }
+.trust-cell:hover { background:rgba(217,4,82,.04); }
+.trust-icon { font-size:1.5rem; margin-bottom:8px; }
+.trust-cell h4 { font-family:var(--C); font-weight:700; font-size:1.05rem; letter-spacing:-.2px; color:var(--txt); margin-bottom:5px; transition:color .4s; }
+.trust-cell p  { font-family:var(--C); font-weight:400; font-size:.85rem; color:var(--mut); line-height:1.6; transition:color .4s; }
+@media(max-width:720px) {
+  .trust-grid { grid-template-columns:repeat(2,1fr); }
+  .trust-cell:nth-child(2) { border-right:none; }
+  .trust-cell:nth-child(-n+2) { border-bottom:1px solid var(--brd); }
+}
+@media(max-width:420px) {
+  .trust-grid { grid-template-columns:1fr; }
+  .trust-cell { border-right:none!important; border-bottom:1px solid var(--brd); }
+  .trust-cell:last-child { border-bottom:none; }
+}
+
+/* ══ STATS ══ */
+.stats {
+  display:grid; grid-template-columns:repeat(4,1fr);
+  background:linear-gradient(135deg,var(--red) 0%,var(--deep) 52%,var(--wine) 100%);
+  border-radius:6px; overflow:hidden;
+  box-shadow:0 16px 52px rgba(217,4,82,.26);
+}
+.stat { padding:38px 24px; text-align:center; border-right:1px solid rgba(255,255,255,.1); }
+.stat:last-child { border-right:none; }
+.stat h3 { font-family:var(--C); font-weight:900; font-size:2.5rem; letter-spacing:-2px; color:#fff; margin-bottom:7px; }
+.stat p  { font-family:var(--C); font-weight:600; font-size:.66rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(255,255,255,.58); }
+@media(max-width:620px) {
+  .stats { grid-template-columns:repeat(2,1fr); }
+  .stat:nth-child(2) { border-right:none; }
+  .stat:nth-child(-n+2) { border-bottom:1px solid rgba(255,255,255,.1); }
+}
+
+/* ══ EYEBROW ══ */
+.ey {
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--C); font-size:1.1rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.28em;
+  color:var(--red); margin-bottom:12px;
+}
+.ey::before { content:''; width:20px; height:1.5px; background:var(--red); flex-shrink:0; }
+
+/* ══ SECTION HEADINGS ══ */
+.sh {
+  font-family:var(--C); font-weight:800;
+  font-size:clamp(1.85rem,3.5vw,3rem);
+  line-height:1.06; letter-spacing:-1.5px;
+  color:var(--txt); margin-bottom:14px; transition:color .4s;
+}
+.sh em { font-style:italic; color:var(--red); }
+.sh-wht { color:#fff; }
+.sh-wht em { color:rgba(255,255,255,.68); }
+.sb { font-family:var(--C); font-weight:400; font-size:1.05rem; color:var(--mut); line-height:1.82; transition:color .4s; }
+.sec-hd { margin-bottom:52px; }
+.sec-hd.ctr { text-align:center; }
+.sec-hd.ctr .ey { justify-content:center; }
+.sec-hd.ctr .sb { max-width:540px; margin:0 auto; }
+
+/* ══ SPLIT ══ */
+.split { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+.split-r { direction:rtl; }
+.split-r > * { direction:ltr; }
+@media(max-width:860px) { .split { grid-template-columns:1fr; gap:40px; } .split-r { direction:ltr; } }
+
+.iframe { position:relative; border-radius:14px; overflow:hidden; min-height:480px; box-shadow:var(--sh); }
+.ifill  { position:absolute; inset:0; background-size:cover; background-position:center; transition:transform .7s ease; }
+.iframe:hover .ifill { transform:scale(1.04); }
+.iframe::after { content:''; position:absolute; inset:0; border-radius:14px; border:1px solid var(--brdH); pointer-events:none; }
+.ibadge {
+  position:absolute; bottom:18px; left:18px;
+  background:var(--card); border:1px solid var(--brd);
+  border-radius:10px; padding:11px 15px; box-shadow:var(--sh); transition:background .4s;
+}
+.ibadge strong { display:block; font-family:var(--C); font-weight:700; font-size:1.15rem; letter-spacing:-.4px; color:var(--red); }
+.ibadge span   { font-family:var(--C); font-weight:400; font-size:.7rem; color:var(--mut); }
+
+.bp { font-family:var(--C); font-weight:400; font-size:.95rem; color:var(--mut); line-height:1.82; margin-bottom:14px; transition:color .4s; }
+
+.chklist { display:grid; gap:11px; margin:18px 0 26px; }
+.chklist li { display:flex; align-items:flex-start; gap:12px; font-family:var(--C); font-weight:400; font-size:.92rem; color:var(--txts); transition:color .4s; }
+.chk { width:20px; height:20px; border-radius:50%; background:var(--red); display:grid; place-items:center; color:#fff; font-size:.56rem; flex-shrink:0; margin-top:2px; }
+
+/* ══ PROGRAMME GRID ══ */
+.prog-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
+.prog-card {
+  background:var(--card); border:1px solid var(--brd);
+  border-radius:6px; overflow:hidden;
+  display:flex; flex-direction:column;
+  box-shadow:var(--sh); transition:var(--T), background .4s;
+}
+.prog-card:hover { transform:translateY(-7px); border-color:var(--brdH); box-shadow:var(--sh), 0 6px 24px rgba(217,4,82,.14); }
+.prog-thumb { aspect-ratio:16/10; overflow:hidden; position:relative; }
+.prog-thumb img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.prog-card:hover .prog-thumb img { transform:scale(1.07); }
+.prog-thumb::after { content:''; position:absolute; inset:0; background:linear-gradient(to top,rgba(38,1,15,.55),transparent 55%); }
+.prog-tag { position:absolute; top:12px; left:12px; z-index:1; background:var(--red); color:#fff; font-family:var(--C); font-weight:700; font-size:.58rem; text-transform:uppercase; letter-spacing:.12em; padding:3px 11px; border-radius:999px; }
+.prog-body { padding:20px; flex:1; display:flex; flex-direction:column; }
+.prog-body h4 { font-family:var(--C); font-weight:700; font-size:.97rem; letter-spacing:-.25px; color:var(--txt); margin-bottom:8px; line-height:1.28; transition:color .4s; }
+.prog-body p  { font-family:var(--C); font-weight:400; font-size:.83rem; color:var(--mut); flex:1; margin-bottom:14px; line-height:1.66; transition:color .4s; }
+.ppills { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:14px; }
+.ppill  { padding:3px 10px; border-radius:999px; font-family:var(--C); font-weight:600; font-size:.65rem; background:var(--bg2); color:var(--txts); border:1px solid var(--brd); transition:background .4s, color .4s; }
+.ppill-r { background:rgba(217,4,82,.08); color:var(--red); border-color:rgba(217,4,82,.2); }
+@media(max-width:1000px) { .prog-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:540px)  { .prog-grid { grid-template-columns:1fr; } }
+
+/* ══ WHY CARDS ══ */
+.why-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.why-card {
+  padding:26px 22px; background:var(--card); border:1px solid var(--brd);
+  border-radius:6px; transition:var(--T), background .4s;
+  position:relative; overflow:hidden;
+}
+.why-card::after { content:''; position:absolute; bottom:0; left:0; right:0; height:2px; background:var(--red); transform:scaleX(0); transform-origin:left; transition:transform .4s ease; }
+.why-card:hover { transform:translateY(-5px); border-color:var(--brdH); box-shadow:var(--sh); }
+.why-card:hover::after { transform:scaleX(1); }
+.why-icon { width:46px; height:46px; border-radius:12px; background:rgba(217,4,82,.07); border:1px solid rgba(217,4,82,.13); display:grid; place-items:center; font-size:1.2rem; margin-bottom:14px; }
+.why-card h4 { font-family:var(--C); font-weight:700; font-size:.96rem; letter-spacing:-.25px; color:var(--txt); margin-bottom:8px; line-height:1.28; transition:color .4s; }
+.why-card p  { font-family:var(--C); font-weight:400; font-size:.83rem; color:var(--mut); line-height:1.66; transition:color .4s; }
+@media(max-width:860px) { .why-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:480px) { .why-grid { grid-template-columns:1fr; } }
+
+/* ══ SUCCESS ══ */
+.success { background:#08000A; position:relative; overflow:hidden; }
+.success::before {
+  content:''; position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse at 80% 10%,rgba(217,4,82,.15),transparent 44%),
+    radial-gradient(ellipse at 5% 88%,rgba(140,3,53,.1),transparent 40%);
+  pointer-events:none;
+}
+.outcome-list { display:grid; gap:9px; margin:22px 0 28px; }
+.outcome-row {
+  display:flex; align-items:center; gap:13px; padding:12px 16px;
+  background:rgba(255,255,255,.035); border:1px solid rgba(255,255,255,.06);
+  border-radius:10px; transition:var(--T);
+}
+.outcome-row:hover { background:rgba(217,4,82,.09); border-color:rgba(217,4,82,.22); }
+.outcome-row span  { font-family:var(--C); font-weight:400; font-size:.86rem; color:rgba(255,255,255,.8); }
+
+/* ══ STUDENT RESULTS STRIP ══ */
+.results-strip {
+  background: linear-gradient(135deg, rgba(217,4,82,.06), rgba(140,3,53,.04));
+  border: 1px solid rgba(217,4,82,.14);
+  border-radius: 14px;
+  padding: 28px 24px;
+  margin: 32px 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.result-item { text-align: center; }
+.result-item .r-num { font-family: var(--C); font-weight: 900; font-size: 2rem; letter-spacing: -1px; color: var(--red); display: block; }
+.result-item .r-lbl { font-family: var(--C); font-weight: 600; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-top: 4px; display: block; }
+@media(max-width:600px) { .results-strip { grid-template-columns: 1fr 1fr; } .result-item:last-child { grid-column: span 2; } }
+
+/* ══ TESTIMONIALS ══ */
+.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.testi-card {
+  background:var(--card); border:1px solid var(--brd);
+  border-radius:6px; padding:26px;
+  position:relative; overflow:hidden; transition:var(--T), background .4s;
+}
+.testi-card:hover { transform:translateY(-4px); border-color:var(--brdH); box-shadow:var(--sh); }
+.testi-card::before { content:'\201C'; position:absolute; top:-8px; right:16px; font-family:var(--C); font-size:5.5rem; color:rgba(217,4,82,.07); line-height:1; }
+.stars { display:flex; gap:3px; margin-bottom:12px; }
+.stars span { color:var(--red); font-size:.8rem; }
+.testi-card blockquote { font-family:var(--C); font-weight:400; font-size:.92rem; color:var(--txts); line-height:1.78; margin-bottom:16px; transition:color .4s; }
+.testi-author strong { display:block; font-family:var(--C); font-weight:700; font-size:.8rem; color:var(--txt); transition:color .4s; }
+.testi-author span   { font-family:var(--C); font-weight:600; font-size:.72rem; color:var(--red); }
+.testi-result {
+  display: inline-flex; align-items: center; gap: 5px;
+  background: rgba(74,222,128,.08); border: 1px solid rgba(74,222,128,.2);
+  border-radius: 999px; padding: 3px 10px; margin-bottom: 10px;
+  font-family: var(--C); font-size: .62rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: #4ade80;
+}
+@media(max-width:860px) { .testi-grid { grid-template-columns:repeat(2,1fr); } }
+@media(max-width:480px) { .testi-grid { grid-template-columns:1fr; } }
+
+/* ══ CTA BOX ══ */
+.cta-box {
+  background:linear-gradient(135deg,var(--red) 0%,var(--deep) 55%,var(--wine) 100%);
+  border-radius:6px; padding:80px 48px; text-align:center;
+  position:relative; overflow:hidden;
+  box-shadow:0 22px 64px rgba(217,4,82,.3);
+}
+.cta-box::before { content:''; position:absolute; inset:0; background:radial-gradient(ellipse at 88% 38%,rgba(255,255,255,.07),transparent 56%); }
+.cta-box::after  { content:''; position:absolute; top:0; left:0; right:0; height:1px; background:linear-gradient(90deg,transparent,rgba(255,255,255,.22),transparent); }
+.cta-bdg {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2);
+  border-radius:999px; padding:5px 18px;
+  font-family:var(--C); font-size:.62rem; font-weight:700;
+  text-transform:uppercase; letter-spacing:.2em; color:rgba(255,255,255,.72);
+  margin-bottom:20px; position:relative; z-index:1;
+}
+.cta-box h2 {
+  font-family:var(--C); font-weight:800;
+  font-size:clamp(1.85rem,3.5vw,2.9rem);
+  letter-spacing:-1.5px; color:#fff; margin-bottom:12px;
+  position:relative; z-index:1;
+}
+.cta-box h2 em { font-style:italic; color:rgba(255,255,255,.99); }
+.cta-box p {
+  font-family:var(--C); font-weight:400; font-size:1rem;
+  color:rgba(255,255,255,.82); max-width:500px; margin:0 auto 28px;
+  position:relative; z-index:1;
+}
+.cta-btns { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; position:relative; z-index:1; }
+.cta-note {
+  font-family: var(--C); font-size: .7rem; font-weight: 600;
+  color: rgba(255,255,255,.52); letter-spacing:.08em;
+  position: relative; z-index:1; margin-top: 16px;
+}
+.cta-note strong { color: rgba(255,255,255,.8); }
+@media(max-width:580px) { .cta-box { padding:52px 22px; } }
+
+/* ══ FOOTER ══ */
+footer { background:#07000A; padding:64px 0 28px; position:relative; }
+footer::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg,var(--noir),var(--deep) 30%,var(--red) 50%,var(--deep) 70%,var(--noir));
+}
+.foot-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px; margin-bottom:48px; }
+.foot-brand p { font-family:var(--C); font-weight:400; font-size:.84rem; color:rgba(255,255,255,.38); margin-top:14px; line-height:1.78; max-width:256px; }
+.foot-col h5  { font-family:var(--C); font-weight:700; font-size:.58rem; letter-spacing:.24em; text-transform:uppercase; color:rgba(255,255,255,.34); margin-bottom:16px; }
+.foot-col a   { display:block; font-family:var(--C); font-weight:400; font-size:.83rem; color:rgba(255,255,255,.44); margin-bottom:9px; transition:color .3s; }
+.foot-col a:hover { color:#fff; }
+.foot-col address { font-style:normal; font-family:var(--C); font-weight:400; font-size:.83rem; color:rgba(255,255,255,.42); line-height:1.78; }
+.foot-btm {
+  padding-top:22px; border-top:1px solid rgba(255,255,255,.06);
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  font-family:var(--C); font-weight:400; font-size:.74rem; color:rgba(255,255,255,.22);
+}
+.foot-btm span { color:var(--red); }
+@media(max-width:860px) { .foot-grid { grid-template-columns:1fr 1fr; gap:28px; } }
+@media(max-width:480px) { .foot-grid { grid-template-columns:1fr; } }
+
+/* ══ REVEAL ══ */
+.rv { opacity:0; transform:translateY(22px); transition:opacity .85s var(--ease), transform .85s var(--ease); }
+.rv.in { opacity:1; transform:none; }
+.d1 { transition-delay:.1s; } .d2 { transition-delay:.2s; } .d3 { transition-delay:.3s; }
+
+/* ══ WHATSAPP FLOAT ══ */
+.wa-float {
+  position:fixed; bottom:28px; right:28px; z-index:999;
+  display:flex; align-items:center; gap:10px; text-decoration:none;
+}
+.wa-bubble {
+  background:#25D366; width:56px; height:56px;
+  border-radius:50%; display:grid; place-items:center;
+  box-shadow:0 6px 22px rgba(37,211,102,.38), 0 2px 8px rgba(0,0,0,.22);
+  transition:transform .3s var(--ease), box-shadow .3s var(--ease);
+  position:relative; flex-shrink:0;
+}
+.wa-bubble:hover { transform:scale(1.1) translateY(-2px); box-shadow:0 12px 32px rgba(37,211,102,.48), 0 4px 12px rgba(0,0,0,.28); }
+.wa-bubble svg { width:28px; height:28px; fill:#fff; }
+.wa-bubble::before {
+  content:''; position:absolute; inset:-6px;
+  border-radius:50%; border:2px solid rgba(37,211,102,.4);
+  animation:wa-pulse 2.2s ease-out infinite;
+}
+@keyframes wa-pulse {
+  0%   { transform:scale(1); opacity:.7; }
+  70%  { transform:scale(1.22); opacity:0; }
+  100% { transform:scale(1.22); opacity:0; }
+}
+.wa-label {
+  background:#fff; color:#111;
+  font-family:var(--C); font-weight:700; font-size:.72rem;
+  letter-spacing:.04em; padding:7px 14px; border-radius:8px;
+  box-shadow:0 4px 18px rgba(0,0,0,.14);
+  white-space:nowrap; opacity:0; transform:translateX(8px);
+  transition:opacity .25s ease, transform .25s ease;
+  pointer-events:none; order:-1;
+}
+.wa-float:hover .wa-label { opacity:1; transform:translateX(0); }
+@media(max-width:480px) {
+  .wa-float { bottom:20px; right:16px; }
+  .wa-bubble { width:50px; height:50px; }
+  .wa-label { display:none; }
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Lyndishes Culinary School",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Abuja",
+    "addressCountry": "Nigeria"
+  },
+  "description": "Professional culinary and food business training in Abuja.",
+  "telephone": "+2348101408693"
+}
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11103825256"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-11103825256');
+</script>
+</head>
+<body>
+
+<!-- ════════ WHATSAPP FLOAT ════════ -->
+
+<a class="wa-float" href="https://wa.me/2348101408693?text=Hello%2C%20I%27m%20interested%20in%20applying%20to%20Lyndishes%20Culinary%20School." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="wa-label">Chat to secure your slot</span>
+  <div class="wa-bubble">
+    <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16.004 2.667C8.64 2.667 2.667 8.64 2.667 16c0 2.347.638 4.576 1.749 6.498L2.667 29.333l7.072-1.715A13.26 13.26 0 0 0 16.004 29.333C23.36 29.333 29.333 23.36 29.333 16S23.36 2.667 16.004 2.667zm0 2.4c6.03 0 10.93 4.9 10.93 10.933 0 6.032-4.9 10.933-10.93 10.933a10.89 10.89 0 0 1-5.514-1.493l-.393-.237-4.198 1.018 1.058-3.99-.258-.412A10.89 10.89 0 0 1 5.074 16c0-6.033 4.9-10.933 10.93-10.933zm-3.017 5.6c-.21 0-.55.079-.838.394-.288.315-1.1 1.075-1.1 2.62 0 1.547 1.127 3.044 1.284 3.254.157.21 2.178 3.456 5.36 4.71 2.65 1.047 3.184.84 3.76.787.576-.053 1.86-.76 2.123-1.494.264-.734.264-1.363.184-1.494-.079-.131-.288-.21-.602-.368-.314-.157-1.86-.917-2.148-1.022-.288-.104-.498-.157-.707.158-.21.314-.812 1.022-.994 1.232-.183.21-.366.236-.68.079-.314-.158-1.326-.488-2.526-1.557-.934-.832-1.564-1.859-1.747-2.173-.183-.314-.02-.485.137-.641.14-.14.314-.367.472-.55.157-.184.21-.315.314-.525.104-.21.052-.394-.026-.55-.079-.158-.692-1.712-.963-2.336-.254-.606-.516-.524-.707-.524z"/>
+    </svg>
+  </div>
+</a>
+
+<!-- ════════ HEADER ════════ -->
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#home" class="brand">
+      <div class="brand-mark"><span>LCS</span></div>
+      <div class="brand-copy">
+        <strong>Lyndishes</strong>
+        <small>Culinary School · Abuja</small>
+      </div>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="program.html">Programs</a>
+      <a href="blog.html">Blog</a>
+      <a href="register.html">Register</a>
+      <a href="#" id="themeToggle">🌙 Dark Mode</a>
+    </nav>
+    <div class="nav-end">
+      <a href="register.html" class="btn-apply">Apply for May 11</a>
+      <button class="ham" id="ham" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- ════════ HERO CAROUSEL ════════ -->
+
+<section class="hero" id="home">
+  <div class="h-track" id="hTrack">
+
+
+<!-- Slide 1 — OUTCOME / INCOME ANGLE -->
+<div class="h-slide s1 on">
+  <div class="h-bg"></div>
+  <div class="h-inner"><div class="wrap">
+    <div class="h-text">
+      <div class="h-chip">Lyndishes Culinary School · Abuja, Nigeria</div>
+      <div class="urgency-pill">Next Batch, May 11</div>
+      <h1 class="h-h1">Turn Your Passion Into<br>a Profitable Food Business</h1>
+      <p class="h-p">Professional hands-on training built to create real income and lasting culinary careers, in 8 weeks or less.</p>
+      <div class="h-btns">
+        <a href="register.html" class="btn btn-red">Secure Your Spot, May 11</a>
+        <a href="program.html" class="btn btn-ghost">Explore Courses</a>
+      </div>
+      <p class="h-trust">1,000+ graduates · Business + Culinary training · Gwarimpa, Abuja</p>
+    </div>
+  </div></div>
+</div>
+
+<!-- Slide 2 — SOCIAL PROOF -->
+<div class="h-slide s2">
+  <div class="h-bg"></div>
+  <div class="h-inner"><div class="wrap">
+    <div class="h-text">
+      <div class="h-chip">Proven Results · Abuja, Nigeria</div>
+      <h2 class="h-h1">1,000+ Students Now Running<br> Profitable Food Brands</h2>
+      <p class="h-p">Our graduates have launched catering businesses, baking brands, and restaurants across Nigeria, and you're next.</p>
+      <div class="h-btns">
+        <a href="register.html" class="btn btn-red">Start Your Journey, May 11</a>
+        <a href="program.html" class="btn btn-ghost">See What We Teach</a>
+      </div>
+      <p class="h-trust">Trusted by 1,000+ students trained right here in Abuja</p>
+    </div>
+  </div></div>
+</div>
+
+<!-- Slide 3 — OFFER CLARITY -->
+<div class="h-slide s3">
+  <div class="h-bg"></div>
+  <div class="h-inner"><div class="wrap">
+    <div class="h-text">
+      <div class="h-chip">Complete Culinary &amp; Business Training</div>
+      <h2 class="h-h1">Learn Cooking, Baking<br> How to Make Money From It</h2>
+      <p class="h-p">The only culinary school in Abuja that combines professional kitchen skills with the business knowledge to profit from them.</p>
+      <div class="h-btns">
+        <a href="register.html" class="btn btn-red">Apply Now</a>
+        <a href="program.html" class="btn btn-ghost">View Curriculum</a>
+      </div>
+      <p class="h-trust">Nigerian &amp; continental cuisine · Pastry &amp; baking · Food costing &amp; strategy</p>
+    </div>
+  </div></div>
+</div>
+
+<!-- Slide 4 — DIFFERENTIATOR -->
+<div class="h-slide s4">
+  <div class="h-bg"></div>
+  <div class="h-inner"><div class="wrap">
+    <div class="h-text">
+      <div class="h-chip">Why Lyndishes Is Different</div>
+      <h2 class="h-h1">We Don't Just Teach<br>Cooking. We Build Businesses.</h2>
+      <p class="h-p">Most cooking schools stop at technique. At Lyndishes, you also learn how to price your food, find customers, and run a profitable operation.</p>
+      <div class="h-btns">
+        <a href="register.html" class="btn btn-red">Apply for May 11</a>
+        <a href="program.html" class="btn btn-ghost">Explore Course</a>
+      </div>
+      <p class="h-trust">City &amp; Guilds Certified · ICCA Dubai Trained</p>
+    </div>
+  </div></div>
+</div>
+
+<!-- Slide 5 — URGENCY -->
+<div class="h-slide s5">
+  <div class="h-bg"></div>
+  <div class="h-inner"><div class="wrap">
+    <div class="h-text">
+      <div class="h-chip">Admissions Now Open, May 11 Cohort</div>
+      <div class="urgency-pill">Slots filling fast, apply today</div>
+      <h2 class="h-h1">Your Culinary Career<br>Starts <em>May 11</em></h2>
+      <p class="h-p">Don't miss the next cohort. Secure your place at Abuja's most career-focused culinary school before slots are gone.</p>
+      <div class="h-btns">
+        <a href="register.html" class="btn btn-red">Secure My Slot, May 11</a>
+        <a href="https://wa.me/2348101408693?text=Hello%2C%20I%20want%20to%20secure%20my%20slot%20for%20May%2011." target="_blank" class="btn btn-ghost">WhatsApp Us</a>
+      </div>
+      <p class="h-trust">Hands-on from Day 1 · Business skills included · Flexible payment</p>
+    </div>
+  </div></div>
+</div>
+
+
+  </div>
+
+  <div class="h-dots" id="hDots">
+    <button class="hdot on" data-i="0"></button>
+    <button class="hdot" data-i="1"></button>
+    <button class="hdot" data-i="2"></button>
+    <button class="hdot" data-i="3"></button>
+    <button class="hdot" data-i="4"></button>
+  </div>
+  <div class="h-arrows">
+    <button class="harrow" id="hPrev">&#8592;</button>
+    <button class="harrow" id="hNext">&#8594;</button>
+  </div>
+  <div class="h-counter"><strong id="hCur">01</strong> / 05</div>
+  <div class="h-bar-wrap"><div class="h-bar" id="hBar"></div></div>
+</section>
+
+<!-- ════════ TRUST BAR ════════ -->
+
+<section class="trust">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-cell rv">
+        <div class="trust-icon">📍</div>
+        <h4>Gwarimpa, Abuja</h4>
+        <p>Nigeria's capital city, structured culinary education in a professional kitchen environment.</p>
+      </div>
+      <div class="trust-cell rv d1">
+        <div class="trust-icon">👩‍🍳</div>
+        <h4>City &amp; Guilds Certified</h4>
+        <p>Founded by <strong>Lynda Chinasa Ewalefo</strong>, trained at <strong>ICCA Dubai</strong> professional expertise throughout.</p>
+      </div>
+      <div class="trust-cell rv d2">
+        <div class="trust-icon">💰</div>
+        <h4>Culinary + Business Skills</h4>
+        <p>Kitchen technique meets food business knowledge, pricing, branding, marketing included.</p>
+      </div>
+      <div class="trust-cell rv d3">
+        <div class="trust-icon">🎓</div>
+        <h4>1,000+ Students Trained</h4>
+        <p>Graduates now running catering businesses, food brands, and profitable culinary careers across Nigeria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ════════ STATS ════════ -->
+
+<section class="sec" style="background:var(--card);transition:background .4s;">
+  <div class="wrap">
+    <div class="stats rv">
+      <div class="stat"><h3>1,000+</h3><p>Students Trained</p></div>
+      <div class="stat"><h3>5+</h3><p>Core Programs</p></div>
+      <div class="stat"><h3>100%</h3><p>Practical Learning</p></div>
+      <div class="stat"><h3>May 11</h3><p>Next Batch Starts</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ════════ ABOUT ════════ -->
+
+<section class="sec" id="about" style="background:var(--bg2);transition:background .4s;">
+  <div class="wrap split">
+    <div class="iframe rv">
+      <div class="ifill" style="background-image:linear-gradient(rgba(38,1,15,.14),rgba(38,1,15,.36)),url('food4.jpeg');"></div>
+      <div class="ibadge"><strong>Since 2019</strong><span>Culinary Excellence in Abuja</span></div>
+    </div>
+    <div class="rv d2">
+      <span class="ey">About Lyndishes</span>
+      <h2 class="sh">The Fastest Way to Start a <em>Profitable Food Business</em> in Abuja</h2>
+      <p class="bp">Lyndishes Culinary School is a professional culinary institute based in Gwarimpa, Abuja. We train the next generation of chefs and food entrepreneurs, not just how to cook, but how to build a business from it.</p>
+      <p class="bp">Founded by <strong>Lynda Chinasa Ewalefo</strong>, a City &amp; Guilds certified chef trained at the International Centre for Culinary Arts (ICCA) Dubai, the school bridges culinary mastery with real food business knowledge.</p>
+      <ul class="chklist">
+        <li><span class="chk">✓</span>Hands-on culinary and pastry training from Day 1</li>
+        <li><span class="chk">✓</span>Food costing, pricing &amp; profit strategy included</li>
+        <li><span class="chk">✓</span>Designed to build profitable food careers fast</li>
+        <li><span class="chk">✓</span>Flexible payment, enquire via WhatsApp</li>
+      </ul>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="register.html" class="btn btn-red btn-sm">Apply for May 11</a>
+        <a href="https://wa.me/2348101408693?text=Hello%2C%20I%20want%20to%20know%20more%20about%20Lyndishes%20Culinary%20School." target="_blank" class="btn btn-out btn-sm">WhatsApp Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ════════ PROGRAMS ════════ -->
+
+<section class="sec" id="programs" style="background:var(--card);transition:background .4s;">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <span class="ey">Our Programs</span>
+      <h2 class="sh">Training That Builds Skills, <em>Income</em> &amp; Careers</h2>
+      <p class="sb" style="max-width:560px;">Structured programs to build culinary confidence, technical expertise, and profitable opportunities in Nigeria's booming food industry.</p>
+    </div>
+    <div class="prog-grid">
+      <div class="prog-card rv">
+        <div class="prog-thumb">
+          <img src="cul.jpeg" alt="Professional culinary training in Abuja" loading="lazy">
+          <span class="prog-tag">Diploma</span>
+        </div>
+        <div class="prog-body">
+          <h4>Professional Culinary Training</h4>
+          <p>Knife skills, stocks, African &amp; international cuisine, food presentation, and full kitchen operations — the complete chef program.</p>
+          <div class="ppills"><span class="ppill">Mon–Thu</span><span class="ppill ppill-r">₦1.7M</span></div>
+          <a href="program.html" class="btn btn-out btn-sm">View Details</a>
+        </div>
+      </div>
+      <div class="prog-card rv d1">
+        <div class="prog-thumb">
+          <img src="dessert.jpeg" alt="Pastry and Baking classes Abuja">
+          <span class="prog-tag">8 Weeks</span>
+        </div>
+        <div class="prog-body">
+          <h4>Pastry &amp; Baking Classes</h4>
+          <p>Master cakes, pastries, artisan bread, dessert plating, and the business of running a profitable baking brand.</p>
+          <div class="ppills"><span class="ppill">8 Weeks</span><span class="ppill ppill-r">₦1.3M</span></div>
+          <a href="program.html" class="btn btn-out btn-sm">View Details</a>
+        </div>
+      </div>
+      <div class="prog-card rv d2">
+        <div class="prog-thumb">
+          <img src="shortcourse.jpeg" alt="Short Culinary Courses Abuja">
+          <span class="prog-tag">Short Course</span>
+        </div>
+        <div class="prog-body">
+          <h4>Short Culinary Courses</h4>
+          <p>Soup masterclass, Chinese cuisine, African dishes, small chops, cake masterclass, focused and flexible.</p>
+          <div class="ppills"><span class="ppill">Flexible</span><span class="ppill ppill-r">Custom</span></div>
+          <a href="program.html" class="btn btn-out btn-sm">View Details</a>
+        </div>
+      </div>
+      <div class="prog-card rv d3">
+        <div class="prog-thumb">
+          <img src="foodint.jpeg" alt="Food Entrepreneurship Program Abuja">
+          <span class="prog-tag">Entrepreneurship</span>
+        </div>
+        <div class="prog-body">
+          <h4>Food Entrepreneurship Program</h4>
+          <p>Start and grow a profitable food business, costing, branding, marketing, kitchen workflow, and customer experience strategy.</p>
+          <div class="ppills"><span class="ppill">Ongoing</span><span class="ppill ppill-r">Enquire</span></div>
+          <a href="program.html" class="btn btn-out btn-sm">View Details</a>
+        </div>
+      </div>
+    </div>
+    <div style="margin-top:38px;" class="rv">
+      <a href="program.html" class="btn btn-red">View All Courses</a>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ════════ WHY LCS ════════ -->
+
+<section class="sec" style="background:var(--bg2);transition:background .4s;">
+  <div class="wrap">
+    <div class="sec-hd rv">
+      <span class="ey">Why Choose Lyndishes</span>
+      <h2 class="sh">More Than Cooking — <em>We Build Careers</em></h2>
+      <p class="sb" style="max-width:580px;">We combine culinary excellence with practical business knowledge so you're ready for real opportunities, not just a certificate.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rv">
+        <div class="why-icon">🍽️</div>
+        <h4>Hands-on From Day One</h4>
+        <p>Students learn by doing, gaining real kitchen confidence through guided daily practice with professional tools and techniques.</p>
+      </div>
+      <div class="why-card rv d1">
+        <div class="why-icon">👩‍🏫</div>
+        <h4>Industry-Experienced Instructor</h4>
+        <p>Learn from Chef Lyn, City &amp; Guilds certified, trained at ICCA Dubai, teaching in a structured professional environment.</p>
+      </div>
+      <div class="why-card rv d2">
+        <div class="why-icon">📊</div>
+        <h4>Business Education Included</h4>
+        <p>We teach not just how to cook, but how to price, brand, market, and grow a food business from zero.</p>
+      </div>
+      <div class="why-card rv">
+        <div class="why-icon">💳</div>
+        <h4>Flexible Payment Options</h4>
+        <p>We understand investment in your future. Enquire about our payment plan options to make your training accessible.</p>
+      </div>
+      <div class="why-card rv d1">
+        <div class="why-icon">🏆</div>
+        <h4>1,000+ Trained Graduates</h4>
+        <p>Our track record speaks, graduates running catering businesses, baking brands, restaurants, and online food businesses.</p>
+      </div>
+      <div class="why-card rv d2">
+        <div class="why-icon">🌍</div>
+        <h4>Local Relevance, Global Standards</h4>
+        <p>Nigerian culinary depth combined with international techniques and professional discipline for a globally competitive edge.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ════════ SUCCESS ════════ -->
+
+<section class="sec success" id="students">
+  <div class="wrap split split-r">
+    <div class="iframe rv">
+      <div class="ifill" style="background-image:linear-gradient(rgba(14,14,14,.22),rgba(14,14,14,.52)),url('students.jpg');"></div>
+      <div class="ibadge" style="background:rgba(12,0,10,.92);border-color:rgba(217,4,82,.3);">
+        <strong style="color:var(--red);">Our Graduates</strong>
+        <span style="color:rgba(255,255,255,.48);">Building Businesses Across Nigeria</span>
+      </div>
+    </div>
+    <div class="rv d1">
+      <span class="ey" style="color:rgba(217,4,82,.7);">Student Success</span>
+      <h2 class="sh sh-wht">Our Students, Our Pride</h2>
+      <p class="bp" style="color:rgba(255,255,255,.56);">Over 1,000 students have trained at Lyndishes and are now building successful careers across Nigeria's food industry.</p>
+      <div class="results-strip">
+        <div class="result-item">
+          <span class="r-num">1,000+</span>
+          <span class="r-lbl">Graduates Trained</span>
+        </div>
+        <div class="result-item">
+          <span class="r-num">5+</span>
+          <span class="r-lbl">Years of Training</span>
+        </div>
+        <div class="result-item">
+          <span class="r-num">100%</span>
+          <span class="r-lbl">Practical Learning</span>
+        </div>
+      </div>
+      <div class="outcome-list">
+        <div class="outcome-row"><span style="font-size:1.1rem;">🍽️</span><span>Launched catering businesses after graduating</span></div>
+        <div class="outcome-row"><span style="font-size:1.1rem;">🎂</span><span>Started successful baking brands from home</span></div>
+        <div class="outcome-row"><span style="font-size:1.1rem;">🏪</span><span>Opened restaurants and food outlets</span></div>
+        <div class="outcome-row"><span style="font-size:1.1rem;">👨‍🍳</span><span>Became private chefs for Abuja families</span></div>
+        <div class="outcome-row"><span style="font-size:1.1rem;">📱</span><span>Built thriving online food businesses</span></div>
+      </div>
+      <a href="register.html" class="btn btn-red">Start Your Story — Apply Now</a>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ TESTIMONIALS ════════ -->
+
+<section class="sec" style="background:var(--card);transition:background .4s;">
+  <div class="wrap">
+    <div class="sec-hd ctr rv">
+      <span class="ey">Testimonials</span>
+      <h2 class="sh">Real Students. <em>Real Results.</em></h2>
+      <p class="sb">From zero to profitable food businesses, hear directly from our graduates.</p>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card rv">
+        <div class="testi-result">✓ Started a catering business</div>
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>"Lyndishes changed my life. I started my catering business immediately after graduating and haven't looked back since. The business classes were the game changer."</blockquote>
+        <div class="testi-author"><strong>Adaeze O.</strong><span>Cuisine &amp; Patisserie Graduate</span></div>
+      </div>
+      <div class="testi-card rv d1">
+        <div class="testi-result">✓ Now runs a profitable food brand</div>
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>"The entrepreneurship classes helped me understand how to actually run my food business and make profit not just cook well. I wish I found this school sooner."</blockquote>
+        <div class="testi-author"><strong>Blessing A.</strong><span>Food Business Program</span></div>
+      </div>
+      <div class="testi-card rv d2">
+        <div class="testi-result">✓ Now a certified pastry chef</div>
+        <div class="stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <blockquote>"I came to learn cooking, but I left with confidence, structure, and a clear path forward. Lyndishes doesn't just teach you to cook, they set you up to win."</blockquote>
+        <div class="testi-author"><strong>Chiamaka E.</strong><span>Pastry Diploma Graduate</span></div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:center;margin-top:38px;" class="rv">
+      <a href="register.html" class="btn btn-red">Apply for May 11 Batch</a>
+    </div>
+  </div>
+</section>
+
+<div class="stripe"></div>
+
+<!-- ════════ CTA ════════ -->
+
+<section class="sec" id="apply" style="background:var(--bg);transition:background .4s;">
+  <div class="wrap">
+    <div class="cta-box rv">
+      <div class="cta-bdg">🔴 Admissions Now Open · May 11</div>
+      <h2>Ready to Start Your <em>Culinary Career?</em></h2>
+      <p>Join hundreds of aspiring chefs and food entrepreneurs at Lyndishes Culinary School. The next batch starts May 11 — slots are limited.</p>
+      <div class="cta-btns">
+        <a href="register.html" class="btn btn-wht">Secure My Spot, May 11</a>
+        <a href="https://wa.me/2348101408693?text=Hello%2C%20I%20want%20to%20secure%20my%20spot%20for%20the%20May%2011%20batch%20at%20Lyndishes." target="_blank" class="btn btn-ghost">💬 WhatsApp to Enquire</a>
+      </div>
+      <p class="cta-note">Questions? Call or WhatsApp <strong>+234 810 140 8693</strong> · Gwarimpa, Abuja</p>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ FOOTER ════════ -->
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <div class="brand">
+          <div class="brand-mark"><span>LCS</span></div>
+          <div class="brand-copy">
+            <strong style="color:#fff;">Lyndishes</strong>
+            <small>Culinary School · Abuja</small>
+          </div>
+        </div>
+        <p>Professional culinary education for chefs, bakers, food entrepreneurs, and hospitality professionals in Abuja. Next batch starts May 11.</p>
+      </div>
+      <div class="foot-col">
+        <h5>Explore</h5>
+        <a href="#home">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="program.html">All Programs</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <div class="foot-col">
+        <h5>Programs</h5>
+        <a href="program.html">Professional Culinary</a>
+        <a href="program.html">Pastry &amp; Baking</a>
+        <a href="program.html">Short Courses</a>
+        <a href="register.html">Register — May 11</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contact</h5>
+        <address>
+          <a href="mailto:culinary.school@lyndishes.com">culinary.school@lyndishes.com</a>
+          <a href="tel:+2348101408693">+234 810 140 8693</a>
+          <a href="https://wa.me/2348101408693" target="_blank">WhatsApp Us</a>
+          Gwarimpa, Abuja, Nigeria
+        </address>
+      </div>
+    </div>
+    <div class="foot-btm">
+      <p>© 2026 Lyndishes Culinary School. All rights reserved.</p>
+      <p>Est. 2019 · <span>Abuja, Nigeria</span></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ════ MOBILE NAV ════ */
+const ham = document.getElementById('ham');
+const nav = document.getElementById('navLinks');
+ham.addEventListener('click', () => {
+  const o = nav.classList.toggle('open');
+  ham.textContent = o ? '✕' : '☰';
+});
+nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open'); ham.textContent = '☰';
+}));
+
+/* ════ HERO CAROUSEL ════ */
+const DUR    = 5800;
+const track  = document.getElementById('hTrack');
+const slides = document.querySelectorAll('.h-slide');
+const dots   = document.querySelectorAll('.hdot');
+const hbar   = document.getElementById('hBar');
+const curEl  = document.getElementById('hCur');
+let cur = 0, timer, paused = false;
+
+function goto(n) {
+  slides[cur].classList.remove('on'); dots[cur].classList.remove('on');
+  cur = (n + slides.length) % slides.length;
+  slides[cur].classList.add('on'); dots[cur].classList.add('on');
+  track.style.transform = `translateX(-${cur * 100}%)`;
+  curEl.textContent = String(cur + 1).padStart(2, '0');
+  hbar.style.transition = 'none'; hbar.style.width = '0';
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    hbar.style.transition = `width ${DUR}ms linear`;
+    hbar.style.width = '100%';
+  }));
+}
+function play() { clearInterval(timer); timer = setInterval(() => { if (!paused) goto(cur + 1); }, DUR); }
+
+document.getElementById('hNext').onclick = () => { goto(cur + 1); play(); };
+document.getElementById('hPrev').onclick = () => { goto(cur - 1); play(); };
+dots.forEach(d => d.addEventListener('click', () => { goto(+d.dataset.i); play(); }));
+
+const heroEl = document.querySelector('.hero');
+heroEl.addEventListener('mouseenter', () => paused = true);
+heroEl.addEventListener('mouseleave', () => paused = false);
+let tx = 0;
+heroEl.addEventListener('touchstart', e => { tx = e.touches[0].clientX; }, {passive:true});
+heroEl.addEventListener('touchend',   e => {
+  const d = tx - e.changedTouches[0].clientX;
+  if (Math.abs(d) > 48) { goto(d > 0 ? cur + 1 : cur - 1); play(); }
+}, {passive:true});
+goto(0); play();
+
+/* ════ SCROLL REVEAL ════ */
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); } });
+}, {threshold: 0.08});
+document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+
+/* ════ THEME TOGGLE ════ */
+const toggleBtn = document.getElementById('themeToggle');
+const root = document.documentElement;
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) { root.setAttribute('data-theme', savedTheme); updateToggleText(savedTheme); }
+toggleBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  const current = root.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  updateToggleText(next);
+});
+function updateToggleText(theme) {
+  toggleBtn.textContent = theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode';
+}
+</script>
+
+</body>
+</html>
