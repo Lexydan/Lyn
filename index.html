@@ -3,7 +3,7 @@
 <head>
 <!-- Open Graph -->
 <meta property="og:title" content="Lyndishes Culinary School — Abuja">
-<meta property="og:description" content="Turn your passion for cooking into a profitable food business. Professional culinary training in Abuja — Next Batch Starts June 29.">
+<meta property="og:description" content="Turn your passion for cooking into a profitable food business. Professional culinary training in Abuja — Next Batch Starts August 10.">
 <meta property="og:image" content="https://yourdomain.com/preview.jpg">
 <meta property="og:url" content="https://yourdomain.com">
 <meta property="og:type" content="website">
@@ -14,7 +14,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Lyndishes Culinary School — Abuja, Nigeria</title>
-<meta name="description" content="Turn your passion into a profitable food business. Hands-on cooking, pastry and food entrepreneurship programs in Abuja by Chef Lynda Chinasa Ewalefo. Next batch starts June 29.">
+<meta name="description" content="Turn your passion into a profitable food business. Hands-on cooking, pastry and food entrepreneurship programs in Abuja by Chef Lynda Chinasa Ewalefo. Next batch starts August 10.">
 <style>
 @font-face { font-family:'Campton'; src:url('fonts/Campton-Book.woff') format('woff'); font-weight:400; font-style:normal; font-display:swap; }
 @font-face { font-family:'Campton'; src:url('fonts/Campton-BookItalic.woff') format('woff'); font-weight:400; font-style:italic; font-display:swap; }
@@ -209,44 +209,86 @@ ul { list-style:none; }
   0%,100% { opacity:1; } 50% { opacity:.2; }
 }
 
-/* ══ REGISTRATION COUNTER WIDGET ══ */
-.reg-counter-wrap {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: rgba(155, 216, 53, 0.07);
-  border: 1px solid rgba(155, 216, 53, 0.25);
-  border-radius: 10px;
-  padding: 9px 18px;
-  margin-bottom: 22px;
-  font-family: var(--C);
+/* ══ COUNTDOWN SECTION ══ */
+.cd-section {
+  background: linear-gradient(135deg, var(--red) 0%, var(--deep) 55%, var(--wine) 100%);
+  padding: 28px 0;
 }
-.reg-counter-wrap .rc-num {
+.cd-section-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.cd-section-left { flex: 1; min-width: 160px; }
+.cd-section-label {
+  display: block;
+  font-family: var(--C);
+  font-weight: 800;
+  font-size: .72rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.6);
+  margin-bottom: 4px;
+}
+.cd-section-date {
+  font-family: var(--C);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #fff;
+  letter-spacing: -.2px;
+}
+@media(max-width:700px) {
+  .cd-section-inner { justify-content: center; text-align: center; }
+  .cd-section-left { flex: 0 0 100%; }
+}
+
+/* ══ COUNTDOWN ══ */
+.countdown-wrap {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.cd-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 10px;
+  padding: 10px 16px;
+  min-width: 64px;
+}
+.cd-num {
+  font-family: var(--C);
   font-weight: 900;
-  font-size: 1.45rem;
-  color: #9BD835;
+  font-size: 1.7rem;
+  color: #fff;
   letter-spacing: -1px;
   line-height: 1;
-  transition: transform .25s var(--ease), color .25s;
 }
-.reg-counter-wrap .rc-num.bump {
-  transform: scale(1.3);
-  color: #fff;
-}
-.reg-counter-wrap .rc-label {
-  font-size: .65rem;
+.cd-lbl {
+  font-family: var(--C);
   font-weight: 700;
-  letter-spacing: .14em;
+  font-size: .48rem;
+  letter-spacing: .18em;
   text-transform: uppercase;
-  color: rgba(155, 216, 53, 0.7);
-  line-height: 1.3;
+  color: rgba(255,255,255,.6);
+  margin-top: 5px;
 }
-.reg-counter-wrap .rc-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: #9BD835;
-  animation: blink 1.4s ease-in-out infinite;
-  flex-shrink: 0;
+.cd-sep {
+  font-family: var(--C);
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: rgba(255,255,255,.5);
+  line-height: 1;
+  padding-top: 10px;
+}
+@media(max-width:480px) {
+  .cd-block { min-width:52px; padding:8px 10px; }
+  .cd-num { font-size:1.3rem; }
+  .countdown-wrap { gap:5px; }
 }
 
 /* ══ HERO CAROUSEL ══ */
@@ -297,10 +339,6 @@ ul { list-style:none; }
   margin-bottom:16px; text-shadow:0 6px 32px rgba(0,0,0,.5);
 }
 .h-h1 em { font-style:italic; color:rgba(255,255,255,.7); }
-.h-p {
-  font-family:var(--C); font-size:.95rem; font-weight:400;
-  color:rgba(255,255,255,.7); max-width:480px; line-height:1.8; margin-bottom:28px;
-}
 .h-btns { display:flex; gap:12px; flex-wrap:wrap; }
 .h-trust {
   font-family:var(--C); font-size:.72rem; font-weight:600;
@@ -326,7 +364,6 @@ ul { list-style:none; }
 .h-bar { height:100%; width:0; background:var(--red); }
 @media(max-width:600px) {
   .h-h1 { font-size:clamp(2rem,8vw,2.8rem); }
-  .h-p { font-size:.88rem; margin-bottom:22px; }
   .h-btns { gap:10px; }
   .btn { height:44px; padding:0 20px; font-size:.74rem; }
 }
@@ -491,30 +528,6 @@ ul { list-style:none; }
 .result-item .r-lbl { font-family: var(--C); font-weight: 600; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-top: 4px; display: block; }
 @media(max-width:600px) { .results-strip { grid-template-columns: 1fr 1fr; } .result-item:last-child { grid-column: span 2; } }
 
-/* ══ TESTIMONIALS ══ */
-.testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
-.testi-card {
-  background:var(--card); border:1px solid var(--brd);
-  border-radius:6px; padding:26px;
-  position:relative; overflow:hidden; transition:var(--T), background .4s;
-}
-.testi-card:hover { transform:translateY(-4px); border-color:var(--brdH); box-shadow:var(--sh); }
-.testi-card::before { content:'\201C'; position:absolute; top:-8px; right:16px; font-family:var(--C); font-size:5.5rem; color:rgba(217,4,82,.07); line-height:1; }
-.stars { display:flex; gap:3px; margin-bottom:12px; }
-.stars span { color:var(--red); font-size:.8rem; }
-.testi-card blockquote { font-family:var(--C); font-weight:400; font-size:.92rem; color:var(--txts); line-height:1.78; margin-bottom:16px; transition:color .4s; }
-.testi-author strong { display:block; font-family:var(--C); font-weight:700; font-size:.8rem; color:var(--txt); transition:color .4s; }
-.testi-author span { font-family:var(--C); font-weight:600; font-size:.72rem; color:var(--red); }
-.testi-result {
-  display: inline-flex; align-items: center; gap: 5px;
-  background: rgba(74,222,128,.08); border: 1px solid rgba(74,222,128,.2);
-  border-radius: 999px; padding: 3px 10px; margin-bottom: 10px;
-  font-family: var(--C); font-size: .62rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: #4ade80;
-}
-@media(max-width:860px) { .testi-grid { grid-template-columns:repeat(2,1fr); } }
-@media(max-width:480px) { .testi-grid { grid-template-columns:1fr; } }
-
 /* ══ CTA BOX ══ */
 .cta-box {
   background:linear-gradient(135deg,var(--red) 0%,var(--deep) 55%,var(--wine) 100%);
@@ -581,151 +594,58 @@ footer::before {
 
 /* ══ SPLASH SCREEN ══ */
 #splash {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
+  position: fixed; inset: 0; z-index: 9999;
   background: #FAF4F6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
   pointer-events: all;
   transition: opacity .55s cubic-bezier(.4,0,.2,1), transform .55s cubic-bezier(.4,0,.2,1);
 }
-#splash.hide {
-  opacity: 0;
-  transform: scale(1.04);
-  pointer-events: none;
-}
-.sp-logo {
-  position: relative;
-  width: 90px;
-  height: 90px;
-  margin-bottom: 22px;
-}
+#splash.hide { opacity: 0; transform: scale(1.04); pointer-events: none; }
+.sp-logo { position: relative; width: 90px; height: 90px; margin-bottom: 22px; }
 .sp-ring {
-  position: absolute;
-  inset: 0;
-  border-radius: 20px;
+  position: absolute; inset: 0; border-radius: 20px;
   border: 2.5px solid transparent;
   animation: sp-ring-spin 1.6s cubic-bezier(.6,0,.4,1) forwards;
 }
 .sp-ring-1 { border-top-color:#D90452; border-right-color:#D90452; animation-delay:0s; }
-.sp-ring-2 {
-  inset: 8px;
-  border-bottom-color: #8C0335;
-  border-left-color: #8C0335;
-  animation-delay: .15s;
-  animation-direction: reverse;
-  border-radius: 14px;
-}
-@keyframes sp-ring-spin {
-  0%   { transform: rotate(-180deg); opacity: 0; }
-  30%  { opacity: 1; }
-  100% { transform: rotate(0deg); opacity: 1; }
-}
+.sp-ring-2 { inset: 8px; border-bottom-color:#8C0335; border-left-color:#8C0335; animation-delay:.15s; animation-direction:reverse; border-radius:14px; }
+@keyframes sp-ring-spin { 0%{transform:rotate(-180deg);opacity:0;} 30%{opacity:1;} 100%{transform:rotate(0deg);opacity:1;} }
 .sp-mark {
-  position: absolute;
-  inset: 16px;
-  border-radius: 10px;
-  background: #D90452;
-  display: grid;
-  place-items: center;
-  opacity: 0;
-  transform: scale(.6);
+  position: absolute; inset: 16px; border-radius: 10px;
+  background: #D90452; display: grid; place-items: center;
+  opacity: 0; transform: scale(.6);
   animation: sp-mark-in .5s cubic-bezier(.34,1.56,.64,1) .55s forwards;
   box-shadow: 0 8px 28px rgba(217,4,82,.35);
 }
 @keyframes sp-mark-in { to { opacity:1; transform:scale(1); } }
-.sp-mark span {
-  font-family: 'Campton','Century Gothic',sans-serif;
-  font-weight: 700; font-size: 1.1rem; color: #fff; letter-spacing: .04em;
-}
-.sp-name {
-  font-family: 'Campton','Century Gothic',sans-serif;
-  font-weight: 800; font-size: 1.55rem;
-  letter-spacing: .08em; text-transform: uppercase; color: #1C0A12;
-  opacity: 0; transform: translateY(10px);
-  animation: sp-text-in .5s ease .75s forwards;
-}
-.sp-tagline {
-  font-family: 'Campton','Century Gothic',sans-serif;
-  font-weight: 400; font-size: .62rem;
-  letter-spacing: .32em; text-transform: uppercase; color: #D90452;
-  opacity: 0; transform: translateY(8px);
-  animation: sp-text-in .5s ease .9s forwards;
-  margin-top: 4px;
-}
+.sp-mark span { font-family:'Campton','Century Gothic',sans-serif; font-weight:700; font-size:1.1rem; color:#fff; letter-spacing:.04em; }
+.sp-name { font-family:'Campton','Century Gothic',sans-serif; font-weight:800; font-size:1.55rem; letter-spacing:.08em; text-transform:uppercase; color:#1C0A12; opacity:0; transform:translateY(10px); animation:sp-text-in .5s ease .75s forwards; }
+.sp-tagline { font-family:'Campton','Century Gothic',sans-serif; font-weight:400; font-size:.62rem; letter-spacing:.32em; text-transform:uppercase; color:#D90452; opacity:0; transform:translateY(8px); animation:sp-text-in .5s ease .9s forwards; margin-top:4px; }
 @keyframes sp-text-in { to { opacity:1; transform:none; } }
-.sp-bar-wrap {
-  width: 90px; height: 2px;
-  background: rgba(217,4,82,.12);
-  border-radius: 999px; margin-top: 28px; overflow: hidden;
-  opacity: 0; animation: sp-text-in .4s ease 1s forwards;
-}
-.sp-bar-fill {
-  height: 100%; width: 0;
-  background: linear-gradient(90deg, #D90452, #8C0335);
-  border-radius: 999px;
-  animation: sp-bar-grow 1.1s cubic-bezier(.4,0,.2,1) 1s forwards;
-}
+.sp-bar-wrap { width:90px; height:2px; background:rgba(217,4,82,.12); border-radius:999px; margin-top:28px; overflow:hidden; opacity:0; animation:sp-text-in .4s ease 1s forwards; }
+.sp-bar-fill { height:100%; width:0; background:linear-gradient(90deg,#D90452,#8C0335); border-radius:999px; animation:sp-bar-grow 1.1s cubic-bezier(.4,0,.2,1) 1s forwards; }
 @keyframes sp-bar-grow { to { width:100%; } }
 .sp-particles { position:absolute; inset:0; overflow:hidden; pointer-events:none; }
-.sp-dot {
-  position: absolute; border-radius: 50%;
-  background: #D90452; opacity: 0;
-  animation: sp-float 2s ease forwards;
-}
+.sp-dot { position:absolute; border-radius:50%; background:#D90452; opacity:0; animation:sp-float 2s ease forwards; }
 .sp-dot:nth-child(1){width:6px;height:6px;top:28%;left:22%;animation-delay:.3s;}
 .sp-dot:nth-child(2){width:4px;height:4px;top:65%;left:15%;animation-delay:.5s;background:#8C0335;}
 .sp-dot:nth-child(3){width:5px;height:5px;top:20%;right:20%;animation-delay:.4s;}
 .sp-dot:nth-child(4){width:3px;height:3px;top:72%;right:18%;animation-delay:.6s;background:#590222;}
 .sp-dot:nth-child(5){width:7px;height:7px;top:45%;left:8%;animation-delay:.35s;background:rgba(217,4,82,.3);}
 .sp-dot:nth-child(6){width:4px;height:4px;top:40%;right:10%;animation-delay:.55s;}
-@keyframes sp-float {
-  0%   { opacity:0; transform:translateY(12px) scale(0); }
-  40%  { opacity:.7; }
-  100% { opacity:.15; transform:translateY(-14px) scale(1); }
-}
+@keyframes sp-float { 0%{opacity:0;transform:translateY(12px) scale(0);} 40%{opacity:.7;} 100%{opacity:.15;transform:translateY(-14px) scale(1);} }
+
 /* ══ WHATSAPP FLOAT ══ */
-.wa-float {
-  position:fixed; bottom:28px; right:28px; z-index:999;
-  display:flex; align-items:center; gap:10px; text-decoration:none;
-}
-.wa-bubble {
-  background:#25D366; width:56px; height:56px;
-  border-radius:50%; display:grid; place-items:center;
-  box-shadow:0 6px 22px rgba(37,211,102,.38), 0 2px 8px rgba(0,0,0,.22);
-  transition:transform .3s var(--ease), box-shadow .3s var(--ease);
-  position:relative; flex-shrink:0;
-}
-.wa-bubble:hover { transform:scale(1.1) translateY(-2px); box-shadow:0 12px 32px rgba(37,211,102,.48), 0 4px 12px rgba(0,0,0,.28); }
+.wa-float { position:fixed; bottom:28px; right:28px; z-index:999; display:flex; align-items:center; gap:10px; text-decoration:none; }
+.wa-bubble { background:#25D366; width:56px; height:56px; border-radius:50%; display:grid; place-items:center; box-shadow:0 6px 22px rgba(37,211,102,.38),0 2px 8px rgba(0,0,0,.22); transition:transform .3s var(--ease),box-shadow .3s var(--ease); position:relative; flex-shrink:0; }
+.wa-bubble:hover { transform:scale(1.1) translateY(-2px); box-shadow:0 12px 32px rgba(37,211,102,.48),0 4px 12px rgba(0,0,0,.28); }
 .wa-bubble svg { width:28px; height:28px; fill:#fff; }
-.wa-bubble::before {
-  content:''; position:absolute; inset:-6px;
-  border-radius:50%; border:2px solid rgba(37,211,102,.4);
-  animation:wa-pulse 2.2s ease-out infinite;
-}
-@keyframes wa-pulse {
-  0% { transform:scale(1); opacity:.7; }
-  70% { transform:scale(1.22); opacity:0; }
-  100% { transform:scale(1.22); opacity:0; }
-}
-.wa-label {
-  background:#fff; color:#111;
-  font-family:var(--C); font-weight:700; font-size:.72rem;
-  letter-spacing:.04em; padding:7px 14px; border-radius:8px;
-  box-shadow:0 4px 18px rgba(0,0,0,.14);
-  white-space:nowrap; opacity:0; transform:translateX(8px);
-  transition:opacity .25s ease, transform .25s ease;
-  pointer-events:none; order:-1;
-}
+.wa-bubble::before { content:''; position:absolute; inset:-6px; border-radius:50%; border:2px solid rgba(37,211,102,.4); animation:wa-pulse 2.2s ease-out infinite; }
+@keyframes wa-pulse { 0%{transform:scale(1);opacity:.7;} 70%{transform:scale(1.22);opacity:0;} 100%{transform:scale(1.22);opacity:0;} }
+.wa-label { background:#fff; color:#111; font-family:var(--C); font-weight:700; font-size:.72rem; letter-spacing:.04em; padding:7px 14px; border-radius:8px; box-shadow:0 4px 18px rgba(0,0,0,.14); white-space:nowrap; opacity:0; transform:translateX(8px); transition:opacity .25s ease,transform .25s ease; pointer-events:none; order:-1; }
 .wa-float:hover .wa-label { opacity:1; transform:translateX(0); }
-@media(max-width:480px) {
-  .wa-float { bottom:20px; right:16px; }
-  .wa-bubble { width:50px; height:50px; }
-  .wa-label { display:none; }
-}
+@media(max-width:480px) { .wa-float { bottom:20px; right:16px; } .wa-bubble { width:50px; height:50px; } .wa-label { display:none; } }
 </style>
 
 <script type="application/ld+json">
@@ -760,12 +680,8 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
 <!-- ════════ SPLASH SCREEN ════════ -->
 <div id="splash" role="status" aria-label="Loading Lyndishes Culinary School">
   <div class="sp-particles">
-    <div class="sp-dot"></div>
-    <div class="sp-dot"></div>
-    <div class="sp-dot"></div>
-    <div class="sp-dot"></div>
-    <div class="sp-dot"></div>
-    <div class="sp-dot"></div>
+    <div class="sp-dot"></div><div class="sp-dot"></div><div class="sp-dot"></div>
+    <div class="sp-dot"></div><div class="sp-dot"></div><div class="sp-dot"></div>
   </div>
   <div class="sp-logo">
     <div class="sp-ring sp-ring-1"></div>
@@ -822,17 +738,10 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
       <div class="h-inner"><div class="wrap">
         <div class="h-text">
           <div class="h-chip">Lyndishes Culinary School · Abuja, Nigeria</div>
-          <div class="urgency-pill">Next Batch, August 10</div>
-          <!-- Live counter widget -->
-          <div class="reg-counter-wrap" id="heroCounter">
-            <div class="rc-dot"></div>
-            <span class="rc-num" id="heroCountNum">0</span>
-            <span class="rc-label">Students registered<br>for June 29 batch</span>
-          </div>
+          <div class="urgency-pill">Next Batch — August 10, 2026</div>
           <h1 class="h-h1">Turn Your Passion Into<br>a Profitable Food Business</h1>
-          <p class="h-p">Professional hands-on training built to create real income and lasting culinary careers, in 8 weeks or less.</p>
           <div class="h-btns">
-            <a href="register.html" class="btn btn-red reg-trigger">Secure Your Spot, June 29</a>
+            <a href="register.html" class="btn btn-red reg-trigger">Secure Your Spot — August 10</a>
             <a href="program.html" class="btn btn-ghost">Explore Courses</a>
           </div>
           <p class="h-trust">1,000+ graduates · Business + Culinary training · Gwarimpa, Abuja</p>
@@ -847,9 +756,8 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
         <div class="h-text">
           <div class="h-chip">Proven Results · Abuja, Nigeria</div>
           <h2 class="h-h1">1,000+ Students Now Running<br>Profitable Food Brands</h2>
-          <p class="h-p">Our graduates have launched catering businesses, baking brands, and restaurants across Nigeria, and you're next.</p>
           <div class="h-btns">
-            <a href="register.html" class="btn btn-red reg-trigger">Start Your Journey, August 10</a>
+            <a href="register.html" class="btn btn-red reg-trigger">Start Your Journey — August 10</a>
             <a href="program.html" class="btn btn-ghost">See What We Teach</a>
           </div>
           <p class="h-trust">Trusted by 1,000+ students trained right here in Abuja</p>
@@ -864,7 +772,6 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
         <div class="h-text">
           <div class="h-chip">Complete Culinary &amp; Business Training</div>
           <h2 class="h-h1">Learn Cooking, Baking<br>&amp; How to Make Money From It</h2>
-          <p class="h-p">The only culinary school in Abuja that combines professional kitchen skills with the business knowledge to profit from them.</p>
           <div class="h-btns">
             <a href="register.html" class="btn btn-red reg-trigger">Apply Now</a>
             <a href="program.html" class="btn btn-ghost">View Curriculum</a>
@@ -881,7 +788,6 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
         <div class="h-text">
           <div class="h-chip">Why Lyndishes Is Different</div>
           <h2 class="h-h1">We Don't Just Teach<br>Cooking. We Build Businesses.</h2>
-          <p class="h-p">Most cooking schools stop at technique. At Lyndishes, you also learn how to price your food, find customers, and run a profitable operation.</p>
           <div class="h-btns">
             <a href="register.html" class="btn btn-red reg-trigger">Apply for August 10</a>
             <a href="program.html" class="btn btn-ghost">Explore Course</a>
@@ -896,13 +802,12 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
       <div class="h-bg"></div>
       <div class="h-inner"><div class="wrap">
         <div class="h-text">
-          <div class="h-chip">Admissions Now Open, August 10 Cohort</div>
+          <div class="h-chip">Admissions Now Open — August 10 Cohort</div>
           <div class="urgency-pill">Registrations open — join today</div>
-          <h2 class="h-h1">Your Culinary Career<br>Starts <em>June 29</em></h2>
-          <p class="h-p">Don't miss the next cohort. Secure your place at Abuja's most career-focused culinary school.</p>
+          <h2 class="h-h1">Your Culinary Career<br>Starts <em>August 10</em></h2>
           <div class="h-btns">
-            <a href="register.html" class="btn btn-red reg-trigger">Secure My Slot, June 29</a>
-            <a href="https://wa.me/2348101408693?text=Hello%2C%20I%20want%20to%20secure%20my%20slot%20for%20June%2029." target="_blank" class="btn btn-ghost">WhatsApp Us</a>
+            <a href="register.html" class="btn btn-red reg-trigger">Secure My Slot — August 10</a>
+            <a href="https://wa.me/2348101408693?text=Hello%2C%20I%20want%20to%20secure%20my%20slot%20for%20August%2010." target="_blank" class="btn btn-ghost">WhatsApp Us</a>
           </div>
           <p class="h-trust">Hands-on from Day 1 · Business skills included · Flexible payment</p>
         </div>
@@ -910,7 +815,6 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
     </div>
 
   </div>
-
   <div class="h-dots" id="hDots">
     <button class="hdot on" data-i="0"></button>
     <button class="hdot" data-i="1"></button>
@@ -924,6 +828,28 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
   </div>
   <div class="h-counter"><strong id="hCur">01</strong> / 05</div>
   <div class="h-bar-wrap"><div class="h-bar" id="hBar"></div></div>
+</section>
+
+<!-- ════════ COUNTDOWN SECTION ════════ -->
+<section class="cd-section">
+  <div class="wrap">
+    <div class="cd-section-inner">
+      <div class="cd-section-left">
+        <span class="cd-section-label">Next Batch Starts In</span>
+        <p class="cd-section-date">August 10, 2026 · Gwarimpa, Abuja</p>
+      </div>
+      <div class="countdown-wrap">
+        <div class="cd-block"><span class="cd-num" id="cdDays">00</span><span class="cd-lbl">Days</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-block"><span class="cd-num" id="cdHours">00</span><span class="cd-lbl">Hours</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-block"><span class="cd-num" id="cdMins">00</span><span class="cd-lbl">Mins</span></div>
+        <span class="cd-sep">:</span>
+        <div class="cd-block"><span class="cd-num" id="cdSecs">00</span><span class="cd-lbl">Secs</span></div>
+      </div>
+      <a href="register.html" class="btn btn-red btn-sm reg-trigger">Apply Now</a>
+    </div>
+  </div>
 </section>
 
 <!-- ════════ TRUST BAR ════════ -->
@@ -963,7 +889,7 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
       <div class="stat"><h3>1,000+</h3><p>Students Trained</p></div>
       <div class="stat"><h3>5+</h3><p>Core Programs</p></div>
       <div class="stat"><h3>100%</h3><p>Practical Learning</p></div>
-      <div class="stat"><h3 id="statCountNum">0</h3><p>Registered for August 10</p></div>
+      <div class="stat"><h3>Aug 10</h3><p>Next Batch Start</p></div>
     </div>
   </div>
 </section>
@@ -989,7 +915,7 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
         <li><span class="chk">✓</span>Flexible payment, enquire via WhatsApp</li>
       </ul>
       <div style="display:flex;gap:12px;flex-wrap:wrap;">
-        <a href="register.html" class="btn btn-red btn-sm reg-trigger">Apply for June 29</a>
+        <a href="register.html" class="btn btn-red btn-sm reg-trigger">Apply for August 10</a>
         <a href="https://wa.me/2348101408693?text=Hello%2C%20I%20want%20to%20know%20more%20about%20Lyndishes%20Culinary%20School." target="_blank" class="btn btn-out btn-sm">WhatsApp Us</a>
       </div>
     </div>
@@ -1021,7 +947,7 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
       </div>
       <div class="prog-card rv d1">
         <div class="prog-thumb">
-          <img src="dessert.jpeg" alt="Pastry and Baking classes Abuja">
+          <img src="dessert.jpeg" alt="Pastry and Baking classes Abuja" loading="lazy">
           <span class="prog-tag">8 Weeks</span>
         </div>
         <div class="prog-body">
@@ -1033,7 +959,7 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
       </div>
       <div class="prog-card rv d2">
         <div class="prog-thumb">
-          <img src="shortcourse.jpeg" alt="Short Culinary Courses Abuja">
+          <img src="shortcourse.jpeg" alt="Short Culinary Courses Abuja" loading="lazy">
           <span class="prog-tag">Short Course</span>
         </div>
         <div class="prog-body">
@@ -1045,7 +971,7 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
       </div>
       <div class="prog-card rv d3">
         <div class="prog-thumb">
-          <img src="foodint.jpeg" alt="Food Entrepreneurship Program Abuja">
+          <img src="foodint.jpeg" alt="Food Entrepreneurship Program Abuja" loading="lazy">
           <span class="prog-tag">Entrepreneurship</span>
         </div>
         <div class="prog-body">
@@ -1133,8 +1059,8 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
           <span class="r-lbl">Programs Offered</span>
         </div>
         <div class="result-item">
-          <span class="r-num" id="resultCountNum">0</span>
-          <span class="r-lbl">Registered August 10</span>
+          <span class="r-num">Aug 10</span>
+          <span class="r-lbl">Next Batch Start</span>
         </div>
       </div>
       <ul class="outcome-list">
@@ -1158,10 +1084,10 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
       <h2>Ready to Start Your <em>Culinary Journey?</em></h2>
       <p>Join the August 10 cohort and gain the culinary skills and business knowledge to build a real income from food.</p>
       <div class="cta-btns">
-        <a href="register.html" class="btn btn-wht reg-trigger">Apply for June 29</a>
-        <a href="https://wa.me/2348101408693?text=Hello%2C%20I%20want%20to%20apply%20for%20the%20June%2029%20cohort." target="_blank" class="btn btn-ghost">WhatsApp Us</a>
+        <a href="register.html" class="btn btn-wht reg-trigger">Apply for August 10</a>
+        <a href="https://wa.me/2348101408693?text=Hello%2C%20I%20want%20to%20apply%20for%20the%20August%2010%20cohort." target="_blank" class="btn btn-ghost">WhatsApp Us</a>
       </div>
-      <p class="cta-note">Flexible payment available · <strong>June 29, 2026</strong> · Gwarimpa, Abuja</p>
+      <p class="cta-note">Flexible payment available · <strong>August 10, 2026</strong> · Gwarimpa, Abuja</p>
     </div>
   </div>
 </section>
@@ -1196,8 +1122,7 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
       <div class="foot-col">
         <h5>Contact</h5>
         <address>
-          Gwarimpa, Abuja<br>
-          Nigeria<br><br>
+          Gwarimpa, Abuja<br>Nigeria<br><br>
           <a href="tel:+2348101408693">+234 810 140 8693</a><br>
           <a href="https://wa.me/2348101408693">WhatsApp Us</a>
         </address>
@@ -1205,60 +1130,39 @@ gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
     </div>
     <div class="foot-btm">
       <span>© 2026 Lyndishes Culinary School. All rights reserved.</span>
-      <span>Next batch: <span>June 29, 2026</span></span>
+      <span>Next batch: <span>August 10, 2026</span></span>
     </div>
   </div>
 </footer>
 
 <script>
-/* ══════════════════════════════════════════
-   REGISTRATION COUNTER (localStorage-based)
-   Counts real clicks on any .reg-trigger link.
-   Persists across visits in the same browser.
-   For cross-device sync, swap localStorage
-   for your backend/Firebase endpoint.
-══════════════════════════════════════════ */
-const COUNTER_KEY = 'lcs_june29_registrations';
-
-function getCount() {
-  return parseInt(localStorage.getItem(COUNTER_KEY) || '0', 10);
-}
-
-function setCount(n) {
-  localStorage.setItem(COUNTER_KEY, n);
-}
-
-function updateAllCounters(n, animate) {
-  const targets = [
-    document.getElementById('heroCountNum'),
-    document.getElementById('statCountNum'),
-    document.getElementById('resultCountNum')
-  ];
-  targets.forEach(el => {
-    if (!el) return;
-    el.textContent = n;
-    if (animate) {
-      el.classList.add('bump');
-      setTimeout(() => el.classList.remove('bump'), 300);
+/* ══ COUNTDOWN TO AUGUST 10, 2026 ══ */
+(function() {
+  const target = new Date('2026-08-10T00:00:00+01:00');
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    const diff = target - Date.now();
+    const dDays  = document.getElementById('cdDays');
+    const dHours = document.getElementById('cdHours');
+    const dMins  = document.getElementById('cdMins');
+    const dSecs  = document.getElementById('cdSecs');
+    if (!dDays) return;
+    if (diff <= 0) {
+      dDays.textContent = dHours.textContent = dMins.textContent = dSecs.textContent = '00';
+      return;
     }
-  });
-}
-
-// Init on load
-document.addEventListener('DOMContentLoaded', () => {
-  updateAllCounters(getCount(), false);
-
-  // Intercept all register/apply buttons
-  document.querySelectorAll('.reg-trigger, .btn-apply, #navApplyBtn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-      // Increment count
-      const newCount = getCount() + 1;
-      setCount(newCount);
-      updateAllCounters(newCount, true);
-      // Navigation proceeds normally (href still works)
-    });
-  });
-});
+    const days  = Math.floor(diff / 86400000);
+    const hours = Math.floor((diff % 86400000) / 3600000);
+    const mins  = Math.floor((diff % 3600000) / 60000);
+    const secs  = Math.floor((diff % 60000) / 1000);
+    dDays.textContent  = pad(days);
+    dHours.textContent = pad(hours);
+    dMins.textContent  = pad(mins);
+    dSecs.textContent  = pad(secs);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
 
 /* ══ HERO CAROUSEL ══ */
 const slides = document.querySelectorAll('.h-slide');
@@ -1317,7 +1221,6 @@ applyTheme(localStorage.getItem('lcs_theme') || 'light');
 /* ══ SPLASH SCREEN ══ */
 (function() {
   const splash = document.getElementById('splash');
-  // Dismiss after animation completes (~2.3s), or on window load, whichever is later
   function dismissSplash() {
     splash.classList.add('hide');
     setTimeout(() => { if (splash.parentNode) splash.parentNode.removeChild(splash); }, 600);
@@ -1335,6 +1238,17 @@ const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
 }, { threshold: 0.12 });
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+/* ══ REGISTER CLICK TRACKING ══ */
+document.addEventListener('DOMContentLoaded', () => {
+  const KEY = 'lcs_registrations';
+  const getCount = () => parseInt(localStorage.getItem(KEY) || '0', 10);
+  document.querySelectorAll('.reg-trigger, .btn-apply, #navApplyBtn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      localStorage.setItem(KEY, getCount() + 1);
+    });
+  });
+});
 </script>
 </body>
 </html>
