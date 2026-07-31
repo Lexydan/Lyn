@@ -203,6 +203,27 @@
     .status-msg.success{background:rgba(37,211,102,.1);border:1px solid rgba(37,211,102,.3);color:#20BA56}
     .status-msg.error{background:rgba(217,4,82,.1);border:1px solid rgba(217,4,82,.3);color:var(--brand-red)}
 
+    /* ── TERMS & CONDITIONS ── */
+    .tc-section{display:none;margin-top:28px;padding-top:28px;border-top:1px solid var(--border-lcs)}
+    .tc-section.active{display:block}
+    .tc-header{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+    .tc-header-icon{width:36px;height:36px;border-radius:8px;background:var(--price-bg);border:1px solid var(--price-border);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+    .tc-header-text{font-size:1rem;font-weight:700;color:var(--text)}
+    .tc-header-sub{font-size:.78rem;color:var(--text-muted);margin-top:2px}
+    .tc-scroll{max-height:220px;overflow-y:auto;background:var(--bg-soft);border:1px solid var(--border-lcs);border-radius:var(--radius-sm-lcs);padding:18px 20px;margin-bottom:16px;font-size:.82rem;color:var(--text-muted);line-height:1.75;scrollbar-width:thin;scrollbar-color:var(--brand-red-dark) transparent}
+    .tc-scroll::-webkit-scrollbar{width:4px}
+    .tc-scroll::-webkit-scrollbar-track{background:transparent}
+    .tc-scroll::-webkit-scrollbar-thumb{background:var(--brand-red-dark);border-radius:99px}
+    .tc-scroll ol{padding-left:18px;display:flex;flex-direction:column;gap:10px}
+    .tc-scroll li{padding-left:4px}
+    .tc-scroll .tc-declaration{margin-top:16px;padding-top:14px;border-top:1px solid var(--border-lcs)}
+    .tc-scroll .tc-declaration strong{display:block;color:var(--text);font-weight:700;margin-bottom:6px;font-size:.84rem}
+    .tc-agree-row{display:flex;align-items:flex-start;gap:12px;padding:14px 16px;background:var(--bank-bg);border:1px solid var(--border-acc);border-radius:var(--radius-sm-lcs);cursor:pointer;transition:var(--transition-lcs)}
+    .tc-agree-row:hover{border-color:var(--brand-red)}
+    .tc-agree-row input[type="checkbox"]{width:18px;height:18px;min-width:18px;accent-color:var(--brand-red);margin-top:2px;cursor:pointer}
+    .tc-agree-label{font-size:.84rem;font-weight:600;color:var(--text);cursor:pointer;line-height:1.5}
+    .tc-agree-label span{color:var(--brand-red)}
+
     /* ── WHY SECTION ── */
     .why-section{padding:80px var(--section-pad);max-width:var(--max-lcs);margin:0 auto}
     .why-header{text-align:center;margin-bottom:56px}
@@ -553,6 +574,38 @@
         <div class="price-value" id="priceValue">₦0</div>
       </div>
 
+      <!-- Terms & Conditions -->
+      <div class="tc-section" id="tcSection">
+        <div class="tc-header">
+          <div class="tc-header-icon">📋</div>
+          <div>
+            <div class="tc-header-text">Terms &amp; Conditions</div>
+            <div class="tc-header-sub">Please read carefully before proceeding to payment</div>
+          </div>
+        </div>
+        <div class="tc-scroll">
+          <ol>
+            <li>Your registration is confirmed only after payment has been received and verified.</li>
+            <li>Course fees paid are non-refundable but may be transferred to another intake at the discretion of the school.</li>
+            <li>Students are expected to attend classes punctually and maintain a minimum attendance of 80% to qualify for certification.</li>
+            <li>The prescribed chef's uniform and closed-toe safety shoes must be worn during all practical sessions.</li>
+            <li>Students must follow all kitchen safety rules and conduct themselves professionally at all times.</li>
+            <li>Lyndishes Culinary School reserves the right to suspend or dismiss any student for misconduct, unsafe practices, or violation of school policies.</li>
+            <li>Certificates will only be issued to students who successfully complete all academic and practical requirements.</li>
+            <li>Photos and videos taken during classes may be used for promotional and educational purposes unless the student notifies the school in writing.</li>
+            <li>Lyndishes Culinary School is not responsible for the loss, theft, or damage of personal belongings.</li>
+          </ol>
+          <div class="tc-declaration">
+            <strong>Declaration</strong>
+            By selecting the checkbox below, you confirm that you have read, understood, and agree to abide by these Terms &amp; Conditions of Lyndishes Culinary School.
+          </div>
+        </div>
+        <label class="tc-agree-row" for="tcCheckbox">
+          <input type="checkbox" id="tcCheckbox" onchange="onTcChange(this)" />
+          <span class="tc-agree-label">I have read, understood, and agree to the <span>Terms &amp; Conditions</span> of Lyndishes Culinary School.</span>
+        </label>
+      </div>
+
       <!-- Payment section -->
       <div class="payment-section" id="paymentSection">
         <label style="display:block;font-weight:600;font-size:.875rem;margin-bottom:16px">Choose Payment Method</label>
@@ -793,7 +846,9 @@ function onProgramChange(sel){
   if(!val){
     selectedCourse = ''; selectedAmount = 0;
     document.getElementById('priceBox').classList.remove('active');
+    document.getElementById('tcSection').classList.remove('active');
     document.getElementById('paymentSection').classList.remove('active');
+    document.getElementById('tcCheckbox').checked = false;
     return;
   }
   var parts = val.split('|');
@@ -802,7 +857,17 @@ function onProgramChange(sel){
   document.getElementById('priceLabel').textContent = selectedCourse;
   document.getElementById('priceValue').textContent = fmtPrice(selectedAmount);
   document.getElementById('priceBox').classList.add('active');
-  document.getElementById('paymentSection').classList.add('active');
+  document.getElementById('tcSection').classList.add('active');
+  document.getElementById('paymentSection').classList.remove('active');
+  document.getElementById('tcCheckbox').checked = false;
+}
+
+function onTcChange(cb){
+  if(cb.checked){
+    document.getElementById('paymentSection').classList.add('active');
+  } else {
+    document.getElementById('paymentSection').classList.remove('active');
+  }
 }
 
 function fmtPrice(n){ return '₦' + n.toLocaleString('en-NG'); }
@@ -836,6 +901,10 @@ function validate(){
   }
   if(!/\S+@\S+\.\S+/.test(email)){
     showStatus('error','⚠️ Please enter a valid email address.');
+    return false;
+  }
+  if(!document.getElementById('tcCheckbox').checked){
+    showStatus('error','⚠️ Please read and accept the Terms & Conditions before proceeding.');
     return false;
   }
   return true;
