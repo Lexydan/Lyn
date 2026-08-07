@@ -1,1174 +1,383 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog & Gallery | Lyndishes Culinary School</title>
-  <meta name="description" content="Behind the scenes at Lyndishes — student stories, class moments, finished dishes, and culinary inspiration from Abuja's premier culinary school." />
+  <meta name="description" content="Behind the scenes at Lyndishes — student stories, class moments, finished dishes, and culinary inspiration from Abuja's premier culinary school.">
+  <meta name="theme-color" content="#D90452">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Nunito+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"><style>
-    :root {
-      --red:      #D90452;
-      --deep:     #8C0335;
-      --wine:     #590222;
-      --lime:     #9BD835;
-      --olive:    #6CA71B;
-      --bg:       #FAF7F4;
-      --bg-warm:  #F3EDE8;
-      --bg-card:  #FFFFFF;
-      --text:     #1A0A10;
-      --muted:    #8A6070;
-      --line:     rgba(217,4,82,0.1);
-      --sh:       0 4px 28px rgba(26,10,16,0.08);
-      --sh-h:     0 14px 48px rgba(217,4,82,0.13);
-      --sh-r:     0 8px 28px rgba(217,4,82,0.18);
-      --r:        16px;
-      --max:      1220px;
-      --t:        all 0.32s cubic-bezier(.4,0,.2,1);
-      --hh:       66px;
-    }
-
-    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-    html{scroll-behavior:smooth;}
-    body{font-family:'Nunito Sans',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;}
-    h1,h2,h3,h4{font-family:'Raleway',sans-serif;}
-    img,video{max-width:100%;display:block;width:100%;}
-    a{text-decoration:none;color:inherit;}
-    ul{list-style:none;}
-    .container{width:min(92%,var(--max));margin:0 auto;}
-    .section{padding:88px 0;}
-
-    /* ═══════════════════════════
-       HEADER / NAV
-    ═══════════════════════════ */
-    header{
-      position:fixed;top:0;left:0;width:100%;z-index:9000;
-      background:rgba(250,247,244,.95);
-      backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
-      border-bottom:1px solid rgba(217,4,82,.1);
-      transition:var(--t);
-    }
-    header.scrolled{
-      background:#faf7f4;
-      box-shadow:0 2px 20px rgba(26,10,16,.09);
-    }
-
-    .nav-wrap{
-      width:min(92%,var(--max));margin:0 auto;
-      height:var(--hh);
-      display:flex;align-items:center;justify-content:space-between;gap:16px;padding: 0 10px;
-    }
-
-.hero-proof {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 16px;
-  font-size: 0.85rem;
-  color: red;
-}
-
-    /* Brand */
-    .brand{display:flex;align-items:center;gap:10px;flex-shrink:0;text-decoration:none;}
-    .brand-logo{
-      width:38px;height:38px;object-fit:contain;border-radius:8px;
-      background:#fff;padding:3px;
-      box-shadow:0 0 0 2px var(--red),0 4px 14px rgba(217,4,82,.45);
-      flex-shrink:0;
-    }
-    .brand-text{display:flex;flex-direction:column;line-height:1.1;}
-    .brand-text strong{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);white-space:nowrap;}
-    .brand-text small{font-size:0.48rem;color:var(--red);letter-spacing:.2em;text-transform:uppercase;margin-top:2px;white-space:nowrap;}
-
-    /* Desktop nav links */
-    .nav-links{
-      display:flex;align-items:center;gap:6px;
-      list-style:none;
-    }
-    .nav-links li a{
-      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.78rem;
-      letter-spacing:.08em;text-transform:uppercase;
-      color:var(--muted);padding:8px 12px;border-radius:6px;
-      position:relative;transition:var(--t);display:block;
-    }
-    .nav-links li a:hover{ color:var(--red); background:rgba(217,4,82,.05); }
-    .nav-links li a.active{ color:var(--red); }
-    .nav-links li a::after{
-      content:"";position:absolute;left:12px;bottom:4px;
-      width:0;height:2px;background:var(--red);border-radius:2px;
-      transition:width .3s ease;
-    }
-    .nav-links li a:hover::after,
-    .nav-links li a.active::after{ width:calc(100% - 24px); }
-
-    /* CTA area */
-    .nav-right{display:flex;align-items:center;gap:16px;flex-shrink:0;}
-    .nav-apply{
-      background:var(--red);color:#fff;
-      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.78rem;
-      letter-spacing:.08em;text-transform:uppercase;
-      padding:10px 20px;border-radius:4px;border:2px solid var(--red);
-      transition:var(--t);white-space:nowrap;
-    }
-    .nav-apply:hover{background:var(--deep);border-color:var(--deep);transform:translateY(-2px);}
-
-    /* Hamburger */
-    .hamburger{
-      display:none;flex-direction:column;justify-content:center;
-      gap:5px;width:36px;height:36px;
-      background:none;border:none;cursor:pointer;padding:4px;flex-shrink:0;
-    }
-    .hamburger span{
-      display:block;height:2.5px;border-radius:2px;
-      background:var(--text);transition:var(--t);
-    }
-    .hamburger.open span:nth-child(1){transform:translateY(7.5px) rotate(45deg);}
-    .hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
-    .hamburger.open span:nth-child(3){transform:translateY(-7.5px) rotate(-45deg);}
-
-    /* Mobile drawer */
-    .mobile-nav{
-      position:fixed;top:var(--hh);left:0;width:100%;
-      background:#faf7f4;border-bottom:1px solid rgba(217,4,82,.12);
-      box-shadow:0 8px 32px rgba(26,10,16,.1);
-      padding:0;max-height:0;overflow:hidden;
-      transition:max-height .4s ease,padding .3s ease;
-      z-index:8999;
-    }
-    .mobile-nav.open{max-height:420px;padding:16px 0 20px;}
-    .mobile-nav ul{width:min(92%,var(--max));margin:0 auto;display:flex;flex-direction:column;gap:4px;}
-    .mobile-nav ul li a{
-      display:block;font-family:'Raleway',sans-serif;font-weight:700;
-      font-size:0.9rem;letter-spacing:.06em;text-transform:uppercase;
-      color:var(--muted);padding:12px 16px;border-radius:8px;transition:var(--t);
-    }
-    .mobile-nav ul li a:hover,.mobile-nav ul li a.active{color:var(--red);background:rgba(217,4,82,.06);}
-    .mobile-nav .mobile-apply{
-      display:block;margin:12px 16px 0;
-      background:var(--red);color:#fff;text-align:center;
-      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.88rem;
-      letter-spacing:.08em;text-transform:uppercase;
-      padding:14px;border-radius:4px;transition:var(--t);
-    }
-    .mobile-nav .mobile-apply:hover{background:var(--deep);}
-
-    /* ═══════════════════════════
-       BUTTONS
-    ═══════════════════════════ */
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:7px;
-      padding:12px 24px;border-radius:4px;
-      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.82rem;
-      letter-spacing:.08em;text-transform:uppercase;
-      border:2px solid transparent;cursor:pointer;transition:var(--t);white-space:nowrap;
-    }
-    .btn-red{background:var(--red);color:#fff;border-color:var(--red);box-shadow:var(--sh-r);}
-    .btn-red:hover{background:var(--deep);border-color:var(--deep);transform:translateY(-2px);}
-    .btn-outline{background:transparent;color:var(--text);border-color:rgba(26,10,16,.2);}
-    .btn-outline:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px);}
-    .btn-white{background:#fff;color:var(--red);border-color:#fff;font-weight:800;}
-    .btn-white:hover{background:rgba(255,255,255,.9);transform:translateY(-2px);}
-    .btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.4);}
-    .btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px);}
-
-    /* ═══════════════════════════
-       DIVIDER
-    ═══════════════════════════ */
-    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--red),rgba(155,216,53,.5),var(--deep),transparent);opacity:.3;margin:0;}
-
-    /* ═══════════════════════════
-       PAGE HERO
-    ═══════════════════════════ */
-    .page-hero{
-      padding:calc(var(--hh) + 72px) 0 64px;
-      background:var(--bg-warm);
-      position:relative;overflow:hidden;
-    }
-    .page-hero::before{
-      content:"";position:absolute;inset:0;
-      background-image:radial-gradient(rgba(217,4,82,.055) 1.5px,transparent 1.5px);
-      background-size:26px 26px;pointer-events:none;
-    }
-    .page-hero::after{
-      content:"";position:absolute;top:0;left:0;
-      width:5px;height:100%;
-      background:linear-gradient(to bottom,var(--red),var(--lime));
-    }
-    .hero-grid{display:grid;grid-template-columns:1fr 360px;gap:52px;align-items:center;position:relative;z-index:1;}
-    .kicker{
-      display:inline-flex;align-items:center;gap:9px;
-      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.7rem;
-      letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:16px;
-    }
-    .kicker::before{content:"";width:22px;height:2px;background:var(--red);border-radius:2px;}
-    .hero-h1{font-family:'Lora',serif;font-weight:700;font-size:clamp(2.6rem,5vw,4.4rem);line-height:1.08;color:var(--text);margin-bottom:14px;}
-    .hero-h1 em{font-style:italic;color:var(--red);}
-    .hero-p{color:var(--muted);font-size:1rem;max-width:520px;line-height:1.9;margin-bottom:28px;}
-    .hero-stats{display:flex;gap:12px;flex-wrap:wrap;}
-    .hs{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;box-shadow:var(--sh);}
-    .hs strong{display:block;font-family:'Raleway',sans-serif;font-weight:800;font-size:1.35rem;color:var(--red);letter-spacing:-.5px;}
-    .hs span{font-size:0.78rem;color:var(--muted);}
-
-    /* Hero collage */
-    .hero-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:190px 150px;gap:10px;}
-    .hc-cell{border-radius:12px;overflow:hidden;border:1px solid rgba(217,4,82,.08);box-shadow:var(--sh);}
-    .hc-cell:first-child{grid-column:span 2;}
-    .hc-cell img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
-    .hc-cell:hover img{transform:scale(1.05);}
-
-    /* ═══════════════════════════
-       CATEGORY BAR
-    ═══════════════════════════ */
-    .cat-bar{
-      background:#fff;border-bottom:1px solid rgba(217,4,82,.08);
-      position:sticky;top:var(--hh);z-index:500;
-    }
-    .cat-scroll{
-      width:min(92%,var(--max));margin:0 auto;
-      display:flex;gap:0;overflow-x:auto;scrollbar-width:none;
-    }
-    .cat-scroll::-webkit-scrollbar{display:none;}
-    .cat-btn{
-      flex-shrink:0;padding:16px 20px;
-      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.74rem;
-      letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
-      border:none;background:none;cursor:pointer;
-      border-bottom:3px solid transparent;transition:var(--t);
-    }
-    .cat-btn:hover{color:var(--red);}
-    .cat-btn.active{color:var(--red);border-bottom-color:var(--red);}
-
-    /* ═══════════════════════════
-       FEATURED POST
-    ═══════════════════════════ */
-    .featured{
-      display:grid;grid-template-columns:1.2fr 0.8fr;
-      border-radius:var(--r);overflow:hidden;
-      background:#fff;box-shadow:var(--sh-h);
-      border:1px solid rgba(217,4,82,.08);transition:var(--t);margin-bottom:44px;
-    }
-    .featured:hover{box-shadow:0 20px 60px rgba(217,4,82,.15);}
-    .feat-img-wrap{position:relative;overflow:hidden;min-height:380px;}
-
-    /* ── MEDIA PLACEHOLDER STYLE ── */
-    .media-slot{
-      width:100%;height:100%;
-      background:linear-gradient(135deg,#f0e8ed,#f5ece6);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      gap:10px;border:2px dashed rgba(217,4,82,.2);
-      color:var(--muted);text-align:center;padding:20px;
-      position:relative;
-    }
-    .media-slot .slot-icon{font-size:2.4rem;opacity:.5;}
-    .media-slot .slot-label{
-      font-family:'Raleway',sans-serif;font-weight:700;
-      font-size:0.7rem;letter-spacing:.14em;text-transform:uppercase;
-      color:var(--red);opacity:.7;
-    }
-    .media-slot .slot-hint{font-size:0.75rem;color:var(--muted);line-height:1.5;max-width:160px;}
-    /* When you add a real image it covers the slot styling */
-    .feat-img-wrap img{
-      width:100%;height:100%;object-fit:cover;
-      position:absolute;inset:0;
-      transition:transform .6s ease;
-    }
-    .featured:hover .feat-img-wrap img{transform:scale(1.04);}
-
-    .feat-badge{
-      position:absolute;top:16px;left:16px;z-index:2;
-      padding:5px 13px;border-radius:4px;
-      font-family:'Raleway',sans-serif;font-weight:800;font-size:0.66rem;
-      letter-spacing:.1em;text-transform:uppercase;
-    }
-    .b-photo{background:rgba(217,4,82,.92);color:#fff;}
-    .b-video{background:rgba(10,0,5,.85);color:#fff;}
-    .b-story{background:rgba(155,216,53,.92);color:#0a0005;}
-    .b-tip{background:rgba(140,3,53,.9);color:#fff;}
-    .b-event{background:rgba(38,1,15,.88);color:var(--lime);}
-
-    .feat-body{padding:40px 32px;display:flex;flex-direction:column;justify-content:center;}
-    .feat-cat{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:10px;}
-    .feat-title{font-family:'Lora',serif;font-weight:600;font-size:1.75rem;color:var(--text);line-height:1.25;margin-bottom:12px;}
-    .feat-excerpt{color:var(--muted);font-size:0.93rem;line-height:1.75;margin-bottom:20px;}
-    .feat-readmore{
-      display:inline-flex;align-items:center;gap:6px;
-      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.78rem;
-      letter-spacing:.08em;text-transform:uppercase;color:var(--red);transition:gap .25s ease;
-    }
-    .feat-readmore:hover{gap:12px;}
-    .feat-readmore::after{content:"→";}
-    .feat-meta{
-      display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-      margin-top:20px;padding-top:18px;border-top:1px solid rgba(217,4,82,.08);
-    }
-    .feat-date{font-size:0.8rem;color:var(--muted);}
-    .tag{
-      padding:4px 11px;border-radius:999px;
-      background:rgba(217,4,82,.07);border:1px solid rgba(217,4,82,.14);
-      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.68rem;
-      letter-spacing:.07em;text-transform:uppercase;color:var(--red);
-    }
-
-    /* ═══════════════════════════
-       POSTS GRID
-    ═══════════════════════════ */
-    .posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-
-    .post-card{
-      background:#fff;border:1px solid rgba(217,4,82,.07);
-      border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);
-      transition:var(--t);display:flex;flex-direction:column;
-    }
-    .post-card:hover{transform:translateY(-8px);box-shadow:var(--sh-h);border-color:rgba(217,4,82,.2);}
-
-    .card-media{
-      position:relative;overflow:hidden;
-      aspect-ratio:4/3;background:var(--bg-warm);flex-shrink:0;
-    }
-    .card-media img,.card-media video{
-      width:100%;height:100%;object-fit:cover;
-      transition:transform .55s ease;
-    }
-    .post-card:hover .card-media img{transform:scale(1.06);}
-    .card-badge{position:absolute;top:12px;left:12px;z-index:2;}
-
-    /* Play overlay for video */
-    .play-over{
-      position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-      background:rgba(26,10,16,.25);transition:background .3s;
-    }
-    .post-card:hover .play-over{background:rgba(26,10,16,.4);}
-    .play-btn{
-      width:54px;height:54px;border-radius:50%;
-      background:rgba(255,255,255,.94);display:grid;place-items:center;
-      font-size:1.1rem;color:var(--red);box-shadow:0 4px 18px rgba(0,0,0,.22);
-      transition:var(--t);
-    }
-    .post-card:hover .play-btn{transform:scale(1.12);}
-
-    .card-body{padding:20px 20px 22px;display:flex;flex-direction:column;flex:1;}
-    .card-cat{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:7px;}
-    .card-title{font-family:'Lora',serif;font-weight:600;font-size:1.05rem;color:var(--text);line-height:1.35;margin-bottom:9px;}
-    .card-excerpt{color:var(--muted);font-size:0.87rem;line-height:1.7;flex:1;margin-bottom:14px;}
-    .card-foot{display:flex;align-items:center;justify-content:space-between;padding-top:12px;border-top:1px solid rgba(217,4,82,.07);}
-    .card-date{font-size:0.76rem;color:var(--muted);}
-    .card-link{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--red);display:inline-flex;align-items:center;gap:4px;transition:gap .22s;}
-    .card-link:hover{gap:8px;}
-    .card-link::after{content:"→";}
-
-    /* ═══════════════════════════
-       INSTAGRAM FEED SECTION
-    ═══════════════════════════ */
-    .ig-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;flex-wrap:wrap;gap:14px;}
-    .ig-handle{
-      display:inline-flex;align-items:center;gap:10px;
-      font-family:'Raleway',sans-serif;font-weight:700;font-size:0.9rem;color:var(--text);
-    }
-    .ig-dot{
-      width:36px;height:36px;border-radius:50%;
-      background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);
-      display:grid;place-items:center;color:#fff;font-size:1rem;flex-shrink:0;
-    }
-    .ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
-
-    /* Each Instagram cell */
-    .ig-cell{
-      aspect-ratio:1;border-radius:10px;overflow:hidden;
-      border:1px solid rgba(217,4,82,.08);box-shadow:var(--sh);
-      position:relative;cursor:pointer;transition:var(--t);
-      background:linear-gradient(135deg,#f0e8ed,#f5ece6);
-    }
-    .ig-cell:hover{transform:scale(1.03);box-shadow:var(--sh-h);border-color:rgba(217,4,82,.22);}
-    .ig-cell img,.ig-cell video{width:100%;height:100%;object-fit:cover;}
-
-    /* Hover overlay */
-    .ig-over{
-      position:absolute;inset:0;
-      background:rgba(217,4,82,.72);
-      display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;
-      opacity:0;transition:opacity .3s ease;color:#fff;
-    }
-    .ig-cell:hover .ig-over{opacity:1;}
-    .ig-over span{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;}
-
-    /* Instagram media slot */
-    .ig-slot{
-      width:100%;height:100%;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      gap:6px;padding:12px;text-align:center;
-    }
-    .ig-slot-icon{font-size:1.6rem;opacity:.4;}
-    .ig-slot-text{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--red);opacity:.6;}
-
-    /* Video type indicator */
-    .media-type-dot{
-      position:absolute;top:8px;right:8px;z-index:2;
-      background:rgba(10,0,5,.7);color:#fff;border-radius:4px;
-      font-size:0.6rem;font-weight:700;padding:3px 7px;
-      font-family:'Raleway',sans-serif;letter-spacing:.06em;text-transform:uppercase;
-    }
-
-    /* ═══════════════════════════
-       VIDEO SECTION
-    ═══════════════════════════ */
-    .video-grid{display:grid;grid-template-columns:1.5fr 1fr;grid-template-rows:auto auto;gap:16px;}
-    .video-main-card{grid-row:span 2;}
-    .v-card{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid rgba(217,4,82,.07);box-shadow:var(--sh);transition:var(--t);}
-    .v-card:hover{transform:translateY(-5px);box-shadow:var(--sh-h);}
-    .v-thumb{position:relative;overflow:hidden;background:var(--bg-warm);}
-    .v-thumb img{width:100%;object-fit:cover;transition:transform .5s ease;}
-    .v-card:hover .v-thumb img{transform:scale(1.05);}
-    .v-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(26,10,16,.2);transition:background .3s;}
-    .v-card:hover .v-play{background:rgba(26,10,16,.38);}
-    .v-play-circle{width:62px;height:62px;border-radius:50%;background:rgba(255,255,255,.94);display:grid;place-items:center;font-size:1.3rem;color:var(--red);box-shadow:0 6px 22px rgba(0,0,0,.2);transition:var(--t);}
-    .v-card:hover .v-play-circle{transform:scale(1.1);}
-    .v-info{padding:16px 18px;}
-    .v-label{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--olive);margin-bottom:5px;}
-    .v-title{font-family:'Lora',serif;font-weight:600;font-size:0.98rem;color:var(--text);line-height:1.3;margin-bottom:4px;}
-    .v-date{font-size:0.76rem;color:var(--muted);}
-
-    /* ═══════════════════════════
-       MASONRY GALLERY
-    ═══════════════════════════ */
-    .masonry{columns:4;column-gap:12px;}
-    .m-item{
-      break-inside:avoid;margin-bottom:12px;
-      border-radius:12px;overflow:hidden;
-      border:1px solid rgba(217,4,82,.06);box-shadow:var(--sh);
-      position:relative;cursor:zoom-in;transition:var(--t);
-    }
-    .m-item:hover{transform:scale(1.02);box-shadow:var(--sh-h);border-color:rgba(217,4,82,.2);}
-    .m-item img{width:100%;display:block;transition:transform .5s ease;}
-    .m-item:hover img{transform:scale(1.04);}
-    .m-over{position:absolute;inset:0;background:linear-gradient(to top,rgba(217,4,82,.72),transparent 55%);opacity:0;transition:opacity .32s;display:flex;align-items:flex-end;padding:12px;}
-    .m-item:hover .m-over{opacity:1;}
-    .m-lbl{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;color:#fff;}
-
-    /* Lightbox */
-    .lightbox{position:fixed;inset:0;z-index:99999;background:rgba(26,10,16,.93);backdrop-filter:blur(8px);display:none;place-items:center;}
-    .lightbox.open{display:grid;}
-    .lb-img-wrap{position:relative;max-width:90vw;}
-    .lb-img-wrap img{max-width:90vw;max-height:88vh;border-radius:10px;box-shadow:0 24px 80px rgba(0,0,0,.5);}
-    .lb-x{position:absolute;top:-16px;right:-16px;width:36px;height:36px;border-radius:50%;background:var(--red);color:#fff;border:none;font-size:1rem;cursor:pointer;display:grid;place-items:center;transition:var(--t);}
-    .lb-x:hover{background:var(--deep);transform:scale(1.1);}
-
-    /* ═══════════════════════════
-       UPLOAD SECTION
-    ═══════════════════════════ */
-    .upload-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start;}
-    .upload-kicker{font-family:'Raleway',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--red);margin-bottom:14px;display:flex;align-items:center;gap:8px;}
-    .upload-kicker::before{content:"";width:22px;height:2px;background:var(--red);border-radius:2px;}
-    .upload-h2{font-family:'Lora',serif;font-weight:600;font-size:clamp(1.9rem,3.2vw,2.9rem);color:var(--text);line-height:1.1;margin-bottom:12px;}
-    .upload-h2 em{font-style:italic;color:var(--red);}
-    .upload-p{color:var(--muted);font-size:0.96rem;line-height:1.8;margin-bottom:22px;}
-    .upload-perks{display:grid;gap:10px;}
-    .perk{display:flex;align-items:center;gap:11px;color:#4a2030;font-size:0.91rem;}
-    .perk-dot{width:7px;height:7px;border-radius:50%;background:var(--red);flex-shrink:0;}
-
-    /* Drop zone */
-    .dropzone{
-      background:#fff;border:2px dashed rgba(217,4,82,.28);border-radius:var(--r);
-      padding:40px 28px;text-align:center;cursor:pointer;position:relative;
-      transition:var(--t);
-    }
-    .dropzone:hover,.dropzone.over{border-color:var(--red);background:rgba(217,4,82,.03);transform:scale(1.01);}
-    .dropzone input[type="file"]{position:absolute;inset:0;opacity:0;cursor:pointer;width:100%;height:100%;}
-    .dz-icon{width:68px;height:68px;border-radius:50%;background:rgba(217,4,82,.08);border:1px solid rgba(217,4,82,.15);display:grid;place-items:center;margin:0 auto 16px;font-size:1.9rem;transition:var(--t);}
-    .dropzone:hover .dz-icon{background:rgba(217,4,82,.15);transform:scale(1.08);}
-    .dz-title{font-family:'Raleway',sans-serif;font-weight:800;font-size:1.1rem;color:var(--text);margin-bottom:7px;}
-    .dz-sub{color:var(--muted);font-size:0.85rem;margin-bottom:18px;line-height:1.6;}
-    .dz-tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;}
-    .dz-tag{padding:5px 13px;border-radius:999px;background:rgba(217,4,82,.07);border:1px solid rgba(217,4,82,.14);font-family:'Raleway',sans-serif;font-weight:700;font-size:0.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);}
-
-    .preview-row{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px;}
-    .prev-slot{aspect-ratio:1;border-radius:9px;overflow:hidden;background:var(--bg-warm);border:1px solid rgba(217,4,82,.1);display:none;position:relative;}
-    .prev-slot.show{display:block;}
-    .prev-slot img,.prev-slot video{width:100%;height:100%;object-fit:cover;}
-    .prev-rm{position:absolute;top:5px;right:5px;width:22px;height:22px;border-radius:50%;background:rgba(217,4,82,.9);color:#fff;border:none;font-size:0.65rem;cursor:pointer;display:grid;place-items:center;transition:var(--t);}
-    .prev-rm:hover{background:var(--deep);}
-
-    /* Form */
-    .uf{margin-top:20px;display:grid;gap:13px;}
-    .uf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-    .fg label{display:block;font-family:'Raleway',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:6px;}
-    .fg input,.fg select,.fg textarea{
-      width:100%;background:#fff;border:1px solid rgba(217,4,82,.18);
-      border-radius:8px;padding:12px 14px;color:var(--text);
-      font-family:'Nunito Sans',sans-serif;font-size:0.92rem;
-      outline:none;transition:var(--t);
-    }
-    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--red);box-shadow:0 0 0 3px rgba(217,4,82,.09);}
-    .fg textarea{height:78px;resize:vertical;}
-    .uf-note{text-align:center;color:var(--muted);font-size:0.78rem;margin-top:9px;}
-
-    /* ═══════════════════════════
-       FOLLOW STRIP
-    ═══════════════════════════ */
-    .follow-wrap{background:linear-gradient(135deg,var(--red),var(--deep));border-radius:var(--r);padding:56px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;position:relative;overflow:hidden;}
-    .follow-wrap::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 80%,rgba(155,216,53,.12),transparent 55%);}
-    .follow-wrap::after{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);}
-    .fw-text{position:relative;z-index:1;}
-    .fw-text h2{font-family:'Raleway',sans-serif;font-weight:900;font-size:clamp(1.6rem,2.8vw,2.3rem);color:#fff;letter-spacing:-.5px;margin-bottom:6px;}
-    .fw-text p{color:rgba(255,255,255,.8);font-size:0.94rem;}
-    .fw-btns{display:flex;gap:12px;flex-wrap:wrap;position:relative;z-index:1;}
-
-    /* ═══════════════════════════
-       FOOTER
-    ═══════════════════════════ */
-    footer{padding:52px 0 28px;border-top:1px solid rgba(217,4,82,.1);background:var(--bg-warm);}
-    .ft-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:28px;margin-bottom:32px;}
-    .ft-brand p{color:var(--muted);font-size:0.87rem;margin-top:12px;line-height:1.72;max-width:250px;}
-    .ft-col h4{font-family:'Raleway',sans-serif;font-weight:700;color:var(--text);font-size:0.74rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:13px;}
-    .ft-col a{display:block;color:var(--muted);font-size:0.88rem;margin-bottom:9px;transition:color .28s;}
-    .ft-col a:hover{color:var(--red);}
-    .ft-bottom{padding-top:20px;border-top:1px solid rgba(217,4,82,.08);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:0.82rem;}
-
-    /* ═══════════════════════════
-       REVEAL
-    ═══════════════════════════ */
-    .reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1);}
-    .reveal.left{transform:translateX(-26px);}
-    .reveal.on{opacity:1;transform:translate(0);}
-
-    /* ═══════════════════════════
-       RESPONSIVE
-    ═══════════════════════════ */
-    @media(max-width:1080px){
-      .hero-grid,.featured,.upload-grid,.video-grid,.ft-grid{grid-template-columns:1fr;}
-      .feat-img-wrap{min-height:260px;}
-      .posts-grid{grid-template-columns:repeat(2,1fr);}
-      .ig-grid{grid-template-columns:repeat(3,1fr);}
-      .masonry{columns:3;}
-      .video-main-card{grid-row:span 1;}
-      .hamburger{display:flex;}
-      .nav-links{display:none;}
-      .nav-apply{display:none;}
-      .follow-wrap{flex-direction:column;text-align:center;}
-      .fw-btns{justify-content:center;}
-    }
-    @media(max-width:680px){
-      .posts-grid{grid-template-columns:1fr;}
-      .ig-grid{grid-template-columns:repeat(2,1fr);}
-      .masonry{columns:2;}
-      .uf-row{grid-template-columns:1fr;}
-      .preview-row{grid-template-columns:repeat(2,1fr);}
-      .hero-collage{grid-template-columns:1fr;grid-template-rows:auto auto auto;}
-      .hc-cell:first-child{grid-column:auto;}
-      .section{padding:68px 0;}
-    }
-  </style> <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-11103825256"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-11103825256');
-</script>
-
-<!-- Event snippet for Sign-up conversion page -->
-<script>
-  gtag('event', 'conversion', {'send_to': 'AW-11103825256/dLo4CMfX3ZkcEOja264p'});
-</script>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Nunito+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--red:#d90452;--deep:#8c0335;--wine:#590222;--lime:#9bd835;--olive:#6ca71b;--bg:#faf7f4;--warm:#f3ede8;--card:#fff;--ink:#1a0a10;--muted:#8a6070;--line:rgba(217,4,82,.12);--shadow:0 4px 28px rgba(26,10,16,.08);--hover:0 14px 48px rgba(217,4,82,.14);--radius:16px;--max:1220px;--header:68px;--ease:all .3s cubic-bezier(.4,0,.2,1)}
+    *,*:before,*:after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.7 "Nunito Sans",sans-serif;overflow-x:hidden}
+    body.menu-open,body.lightbox-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button,input,select,textarea{font:inherit}
+    button{cursor:pointer}
+    img,video{display:block;max-width:100%}
+    .site-shell{min-height:100vh}
+    .container{width:min(92%,var(--max));margin:auto}
+    .section{padding:88px 0}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--red),rgba(155,216,53,.6),var(--deep),transparent);opacity:.35}
+    h1,h2,h3,h4{margin:0;font-family:Raleway,sans-serif}
+    .serif{font-family:Lora,serif}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:9px;background:linear-gradient(135deg,var(--red),var(--deep));color:#fff;font:900 .72rem Raleway;box-shadow:0 0 0 2px var(--red),0 4px 14px rgba(217,4,82,.35)}
+    .brand-copy{display:flex;flex-direction:column;line-height:1.1}
+    .brand-copy strong{font:800 1.1rem Raleway;letter-spacing:.01em}
+    .brand-copy small{margin-top:3px;color:var(--red);font-size:.48rem;letter-spacing:.18em;text-transform:uppercase}
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(250,247,244,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(18px);transition:var(--ease)}
+    .site-header.scrolled{box-shadow:0 2px 20px rgba(26,10,16,.1)}
+    .nav-wrap{display:flex;align-items:center;justify-content:space-between;gap:18px;height:var(--header);padding:0 10px}
+    .nav-links{display:flex;align-items:center;gap:4px;margin:0;padding:0;list-style:none}
+    .nav-links a{display:block;padding:9px 12px;border-radius:6px;color:var(--muted);font:700 .76rem Raleway;letter-spacing:.09em;text-transform:uppercase;transition:var(--ease)}
+    .nav-links a:hover,.nav-links a.active{color:var(--red);background:rgba(217,4,82,.06)}
+    .nav-links a.active{position:relative}
+    .nav-links a.active:after{content:"";position:absolute;left:12px;right:12px;bottom:3px;height:2px;background:var(--red);border-radius:2px}
+    .nav-apply,.button{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:2px solid var(--red);border-radius:4px;padding:11px 21px;background:var(--red);color:#fff;font:700 .78rem Raleway;letter-spacing:.08em;text-transform:uppercase;transition:var(--ease)}
+    .nav-apply:hover,.button.primary:hover{background:var(--deep);border-color:var(--deep);transform:translateY(-2px)}
+    .button.outline{background:transparent;border-color:rgba(26,10,16,.2);color:var(--ink)}
+    .button.outline:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px)}
+    .button.white{background:#fff;border-color:#fff;color:var(--red)}
+    .button.ghost{background:transparent;border-color:rgba(255,255,255,.45);color:#fff}
+    .menu-toggle{display:none;width:38px;height:38px;padding:7px;border:0;background:none}
+    .menu-toggle span{display:block;height:2px;margin:5px 0;border-radius:4px;background:var(--ink);transition:var(--ease)}
+    .mobile-nav{display:none}
+    .kicker{display:inline-flex;align-items:center;gap:9px;margin-bottom:15px;color:var(--red);font:700 .7rem Raleway;letter-spacing:.24em;text-transform:uppercase}
+    .kicker:before{content:"";width:22px;height:2px;border-radius:2px;background:var(--red)}
+    .page-hero{position:relative;overflow:hidden;padding:78px 0 64px;background:var(--warm)}
+    .page-hero:before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(217,4,82,.055) 1.5px,transparent 1.5px);background-size:26px 26px}
+    .page-hero:after,.article-hero:after{content:"";position:absolute;left:0;top:0;width:5px;height:100%;background:linear-gradient(var(--red),var(--lime))}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 360px;align-items:center;gap:52px}
+    .hero-title{font:600 clamp(2.6rem,5vw,4.45rem)/1.08 Lora,serif;margin-bottom:15px}
+    .hero-title em,.section-title em,.upload-title em{color:var(--red);font-style:italic}
+    .hero-copy{max-width:530px;margin:0 0 27px;color:var(--muted);font-size:1rem;line-height:1.9}
+    .stats{display:flex;flex-wrap:wrap;gap:12px}
+    .stat{padding:13px 18px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:var(--shadow)}
+    .stat strong{display:block;color:var(--red);font:800 1.3rem Raleway}
+    .stat span{color:var(--muted);font-size:.78rem}
+    .hero-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:190px 150px;gap:10px}
+    .visual-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:100%;padding:18px;border:2px dashed rgba(217,4,82,.2);background:linear-gradient(135deg,#f2e8ed,#f6e7df);color:var(--red);text-align:center}
+    .visual-placeholder strong{font:800 .69rem Raleway;letter-spacing:.13em;text-transform:uppercase}
+    .visual-placeholder span{margin-top:7px;color:var(--muted);font-size:.75rem;line-height:1.45}
+    .hero-collage .visual-placeholder{border:1px solid rgba(217,4,82,.1);border-radius:12px;box-shadow:var(--shadow)}
+    .hero-collage .visual-placeholder:first-child{grid-column:span 2}
+    .category-bar{position:sticky;top:var(--header);z-index:20;border-bottom:1px solid var(--line);background:#fff}
+    .category-scroll{display:flex;overflow:auto;scrollbar-width:none}
+    .category-scroll::-webkit-scrollbar{display:none}
+    .category-button{flex-shrink:0;padding:16px 20px;border:0;border-bottom:3px solid transparent;background:none;color:var(--muted);font:700 .73rem Raleway;letter-spacing:.1em;text-transform:uppercase;transition:var(--ease)}
+    .category-button:hover,.category-button.active{color:var(--red)}
+    .category-button.active{border-bottom-color:var(--red)}
+    .featured{display:grid;grid-template-columns:1.2fr .8fr;overflow:hidden;border:1px solid var(--line);border-radius:var(--radius);background:#fff;box-shadow:var(--hover)}
+    .featured-media{position:relative;min-height:380px}
+    .featured-media .visual-placeholder{position:absolute;inset:0;border:0}
+    .badge{position:absolute;top:16px;left:16px;z-index:2;padding:5px 13px;border-radius:4px;background:var(--red);color:#fff;font:800 .65rem Raleway;letter-spacing:.1em;text-transform:uppercase}
+    .badge.lime{background:var(--lime);color:#0a0005}
+    .featured-body{display:flex;flex-direction:column;justify-content:center;padding:40px 32px}
+    .card-category{margin:0 0 9px;color:var(--red);font:700 .67rem Raleway;letter-spacing:.18em;text-transform:uppercase}
+    .featured-title{font:600 1.75rem/1.25 Lora,serif;margin-bottom:12px}
+    .featured-copy,.card-copy{margin:0;color:var(--muted);font-size:.92rem;line-height:1.75}
+    .text-link{display:inline-flex;align-items:center;gap:6px;width:max-content;margin-top:19px;color:var(--red);font:700 .76rem Raleway;letter-spacing:.08em;text-transform:uppercase;transition:gap .25s}
+    .text-link:hover{gap:12px}
+    .text-link:after{content:"→"}
+    .metadata{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-top:20px;padding-top:17px;border-top:1px solid var(--line);color:var(--muted);font-size:.78rem}
+    .tag{padding:4px 10px;border:1px solid rgba(217,4,82,.14);border-radius:999px;background:rgba(217,4,82,.06);color:var(--red);font:700 .65rem Raleway;letter-spacing:.07em;text-transform:uppercase}
+    .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+    .post-card{display:flex;flex-direction:column;overflow:hidden;border:1px solid rgba(217,4,82,.08);border-radius:var(--radius);background:#fff;box-shadow:var(--shadow);transition:var(--ease)}
+    .post-card:hover{transform:translateY(-7px);border-color:rgba(217,4,82,.22);box-shadow:var(--hover)}
+    .post-card.hidden{display:none}
+    .card-media{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--warm)}
+    .card-media .visual-placeholder{border:0}
+    .card-body{display:flex;flex:1;flex-direction:column;padding:20px}
+    .card-title{margin:0 0 8px;font:600 1.05rem/1.35 Lora,serif}
+    .card-copy{flex:1;margin-bottom:15px;font-size:.86rem}
+    .card-footer{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:12px;border-top:1px solid rgba(217,4,82,.08);color:var(--muted);font-size:.75rem}
+    .card-footer .text-link{margin:0;font-size:.68rem}
+    .center{text-align:center}
+    .section-heading{max-width:640px;margin-bottom:34px}
+    .section-title{font:600 clamp(1.9rem,3.2vw,3rem)/1.1 Lora,serif;margin-bottom:10px}
+    .section-copy{margin:0;color:var(--muted);font-size:.95rem;line-height:1.8}
+    .instagram-section,.gallery-section,.related-section{background:var(--warm)}
+    .instagram-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .instagram-handle{display:flex;align-items:center;gap:10px;font:700 .9rem Raleway}
+    .instagram-handle small{display:block;margin-top:2px;color:var(--muted);font:400 .78rem "Nunito Sans"}
+    .instagram-dot{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#f09433,#dc2743,#bc1888);color:#fff;font:800 .65rem Raleway}
+    .instagram-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    .instagram-grid .visual-placeholder{aspect-ratio:1;border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow)}
+    .video-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:16px}
+    .video-card .card-media{aspect-ratio:4/3}
+    .play-badge{position:absolute;top:14px;left:14px;padding:8px 11px;border-radius:999px;background:rgba(26,10,16,.8);color:#fff;font:700 .65rem Raleway;letter-spacing:.1em;text-transform:uppercase}
+    .masonry{columns:4;column-gap:12px}
+    .masonry-item{position:relative;break-inside:avoid;margin-bottom:12px;overflow:hidden;border-radius:12px;background:#fff;box-shadow:var(--shadow);cursor:zoom-in;transition:var(--ease)}
+    .masonry-item:hover{transform:scale(1.02);box-shadow:var(--hover)}
+    .masonry-item .visual-placeholder{aspect-ratio:4/5;border:0}
+    .masonry-caption{position:absolute;inset:0;display:flex;align-items:flex-end;padding:12px;background:linear-gradient(transparent 42%,rgba(217,4,82,.8));opacity:0;color:#fff;font:700 .68rem Raleway;letter-spacing:.1em;text-transform:uppercase;transition:opacity .3s}
+    .masonry-item:hover .masonry-caption{opacity:1}
+    .upload-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:52px;align-items:start}
+    .upload-title{font:600 clamp(1.9rem,3.2vw,2.9rem)/1.1 Lora,serif;margin-bottom:13px}
+    .upload-copy{margin:0 0 22px;color:var(--muted);font-size:.95rem;line-height:1.8}
+    .perks{display:grid;gap:10px;margin:0;padding:0;list-style:none;color:#4a2030;font-size:.9rem}
+    .perks li{display:flex;gap:11px;align-items:center}
+    .perks li:before{content:"";width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:var(--red)}
+    .dropzone{position:relative;padding:40px 28px;border:2px dashed rgba(217,4,82,.28);border-radius:var(--radius);background:#fff;text-align:center;transition:var(--ease)}
+    .dropzone.over{border-color:var(--red);background:rgba(217,4,82,.03);transform:scale(1.01)}
+    .dropzone input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
+    .drop-icon{display:grid;place-items:center;width:68px;height:68px;margin:0 auto 16px;border:1px solid rgba(217,4,82,.15);border-radius:50%;background:rgba(217,4,82,.08);color:var(--red);font:900 1.7rem Raleway}
+    .dropzone h3{margin-bottom:6px;font-size:1.1rem}
+    .dropzone p{margin:0 0 18px;color:var(--muted);font-size:.84rem;line-height:1.6}
+    .file-types{display:flex;justify-content:center;flex-wrap:wrap;gap:8px}
+    .file-types span{padding:5px 12px;border:1px solid rgba(217,4,82,.14);border-radius:999px;background:rgba(217,4,82,.06);color:var(--red);font:700 .65rem Raleway;letter-spacing:.1em}
+    .preview-list{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:14px}
+    .preview-item{position:relative;display:none;overflow:hidden;aspect-ratio:1;border-radius:9px;background:var(--warm)}
+    .preview-item.visible{display:block}
+    .preview-item img,.preview-item video{width:100%;height:100%;object-fit:cover}
+    .preview-item button{position:absolute;top:5px;right:5px;width:23px;height:23px;border:0;border-radius:50%;background:var(--red);color:#fff;font-size:.7rem}
+    .follow-banner{position:relative;display:flex;align-items:center;justify-content:space-between;gap:22px;overflow:hidden;padding:54px 48px;border-radius:var(--radius);background:linear-gradient(135deg,var(--red),var(--deep));color:#fff}
+    .follow-banner:after{content:"";position:absolute;right:-45px;top:-95px;width:250px;height:250px;border:35px solid rgba(155,216,53,.13);border-radius:50%}
+    .follow-banner h2{position:relative;z-index:1;margin-bottom:6px;font-size:clamp(1.55rem,2.7vw,2.25rem);font-weight:900}
+    .follow-banner p{position:relative;z-index:1;margin:0;color:rgba(255,255,255,.8)}
+    .follow-actions{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:12px}
+    .site-footer{padding:52px 0 28px;border-top:1px solid var(--line);background:var(--warm)}
+    .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px;margin-bottom:32px}
+    .footer-brand p{max-width:260px;margin:12px 0 0;color:var(--muted);font-size:.86rem;line-height:1.72}
+    .footer-column h4{margin-bottom:13px;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+    .footer-column a{display:block;margin-bottom:9px;color:var(--muted);font-size:.86rem}
+    .footer-column a:hover{color:var(--red)}
+    .footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;padding-top:20px;border-top:1px solid rgba(217,4,82,.08);color:var(--muted);font-size:.8rem}
+    .lightbox{position:fixed;inset:0;z-index:200;display:none;place-items:center;padding:30px;background:rgba(26,10,16,.93);backdrop-filter:blur(8px)}
+    .lightbox.open{display:grid}
+    .lightbox-panel{position:relative;width:min(90vw,820px);padding:22px;border-radius:14px;background:#fff}
+    .lightbox .visual-placeholder{min-height:55vh;border:0;border-radius:8px}
+    .lightbox-close{position:absolute;right:-13px;top:-13px;z-index:1;width:38px;height:38px;border:0;border-radius:50%;background:var(--red);color:#fff;font-size:1.15rem}
+    .article-view{display:none}
+    .article-view.active{display:block}
+    .blog-view.hidden{display:none}
+    .article-hero{position:relative;overflow:hidden;padding:78px 0 57px;background:var(--warm);text-align:center}
+    .article-hero-inner{max-width:920px;margin:auto}
+    .article-title{font:600 clamp(2.35rem,5vw,4.7rem)/1.08 Lora,serif;margin-bottom:20px}
+    .article-dek{max-width:740px;margin:0 auto 25px;color:var(--muted);font-size:1.03rem;line-height:1.85}
+    .article-meta{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:10px;color:var(--muted);font-size:.84rem}
+    .article-meta strong{color:var(--ink)}
+    .article-feature{width:min(92%,1080px);min-height:340px;margin:auto;border-radius:var(--radius);overflow:hidden;background:linear-gradient(135deg,#f0e8ed,#f5ece6);box-shadow:var(--hover)}
+    .article-feature .visual-placeholder{min-height:340px;border:0}
+    .article-layout{display:grid;grid-template-columns:220px minmax(0,720px);align-items:start;gap:56px;width:min(92%,1000px);margin:auto;padding:76px 0}
+    .toc{position:sticky;top:100px;padding:20px;border:1px solid var(--line);border-radius:12px;background:#fff;box-shadow:var(--shadow)}
+    .toc h3{margin-bottom:14px;color:var(--red);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase}
+    .toc a{display:block;padding:6px 0;border-bottom:1px solid rgba(217,4,82,.07);color:var(--muted);font-size:.77rem;line-height:1.4}
+    .toc a:last-child{border-bottom:0}
+    .article-author{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding:16px 0 27px;border-bottom:1px solid var(--line)}
+    .author-mark{display:grid;place-items:center;width:50px;height:50px;border-radius:50%;background:var(--red);color:#fff;font:900 .68rem Raleway}
+    .author-copy strong{display:block;font:700 .88rem Raleway}.author-copy span{color:var(--muted);font-size:.8rem}
+    .article-content p{margin:0 0 22px;color:#351b25;font:400 1.07rem/1.95 Lora,serif}
+    .article-content h2{margin:42px 0 14px;font:600 clamp(1.6rem,3vw,2.25rem)/1.2 Lora,serif}
+    .article-content ul{margin:0 0 25px;padding-left:24px;color:#351b25}
+    .article-content li{padding-left:5px;font:400 1.04rem/1.8 Lora,serif}
+    .article-cta{position:relative;overflow:hidden;margin:42px 0;padding:38px 34px;border-radius:var(--radius);background:linear-gradient(135deg,var(--red),var(--deep));color:#fff}
+    .article-cta:after{content:"";position:absolute;right:-22px;top:-65px;width:185px;height:185px;border:28px solid rgba(155,216,53,.14);border-radius:50%}
+    .article-cta h2{position:relative;z-index:1;margin:0 0 7px;color:#fff;font:800 1.65rem/1.2 Raleway}
+    .article-cta p{position:relative;z-index:1;max-width:560px;margin:0 0 20px;color:rgba(255,255,255,.82);font:400 .94rem/1.7 "Nunito Sans",sans-serif}
+    .share-row{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin:32px 0}
+    .share-row>span{margin-right:3px;color:var(--muted);font:700 .68rem Raleway;letter-spacing:.12em;text-transform:uppercase}
+    .share-button{padding:7px 13px;border:1px solid rgba(217,4,82,.2);border-radius:999px;background:#fff;color:var(--red);font:700 .68rem Raleway}
+    .related-section{margin:40px -20px 0;padding:34px 20px;border-radius:12px}
+    .related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .related-card{display:block;min-height:130px;padding:18px;border:1px solid var(--line);border-radius:12px;background:#fff;transition:var(--ease)}
+    .related-card:hover{transform:translateY(-4px);box-shadow:var(--hover)}
+    .related-card span{display:block;margin-bottom:10px;color:var(--red);font:800 .63rem Raleway;letter-spacing:.12em;text-transform:uppercase}
+    .related-card strong{font:600 1rem/1.35 Lora,serif}
+    .article-nav{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:46px;padding-top:24px;border-top:1px solid var(--line)}
+    .article-nav a{display:block;padding:18px;border:1px solid var(--line);border-radius:12px;background:#fff}
+    .article-nav a:last-child{text-align:right}
+    .article-nav small{display:block;margin-bottom:8px;color:var(--red);font:800 .64rem Raleway;letter-spacing:.12em;text-transform:uppercase}
+    .article-nav strong{font:600 1rem/1.35 Lora,serif}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+    @media(max-width:1080px){.hero-grid,.featured,.upload-grid{grid-template-columns:1fr}.featured-media{min-height:270px}.post-grid{grid-template-columns:repeat(2,1fr)}.instagram-grid{grid-template-columns:repeat(3,1fr)}.video-grid{grid-template-columns:1fr 1fr}.video-card:first-child{grid-column:span 2}.masonry{columns:3}.nav-links,.nav-apply{display:none}.menu-toggle{display:block}.mobile-nav{display:block;max-height:0;overflow:hidden;background:var(--bg);border-bottom:1px solid var(--line);transition:max-height .35s ease}.mobile-nav.open{max-height:400px}.mobile-nav ul{width:min(92%,var(--max));margin:0 auto;padding:12px 0 18px;list-style:none}.mobile-nav a{display:block;padding:11px 15px;color:var(--muted);font:700 .86rem Raleway;letter-spacing:.07em;text-transform:uppercase}.mobile-nav a.active{color:var(--red);background:rgba(217,4,82,.06);border-radius:7px}.mobile-nav .mobile-apply{margin:2px 15px 17px;border-radius:4px;background:var(--red);color:#fff;text-align:center}.footer-grid{grid-template-columns:1.3fr 1fr 1fr}.article-layout{grid-template-columns:1fr;gap:24px}.toc{position:static}.toc-links{display:grid;grid-template-columns:repeat(2,1fr);gap:0 18px}.related-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:680px){.section{padding:68px 0}.hero-collage{grid-template-columns:1fr;grid-template-rows:140px 140px 140px}.hero-collage .visual-placeholder:first-child{grid-column:auto}.post-grid,.video-grid{grid-template-columns:1fr}.video-card:first-child{grid-column:auto}.instagram-grid{grid-template-columns:repeat(2,1fr)}.masonry{columns:2}.upload-grid{gap:34px}.follow-banner{align-items:flex-start;flex-direction:column;padding:38px 24px}.footer-grid{grid-template-columns:1fr}.footer-bottom{display:block}.footer-bottom span{display:block;margin-bottom:5px}.article-hero{padding:62px 0 43px}.article-layout{padding:52px 0}.article-content p{font-size:1rem}.toc-links{grid-template-columns:1fr}.related-grid,.article-nav{grid-template-columns:1fr}.article-nav a:last-child{text-align:left}.article-feature,.article-feature .visual-placeholder{min-height:250px}.related-section{margin-left:-10px;margin-right:-10px}}
+  </style>
 </head>
-
-<body><!-- LIGHTBOX --><div class="lightbox" id="lightbox">
-  <div class="lb-img-wrap">
-    <img id="lbImg" src="" alt="Gallery image">
-    <button class="lb-x" id="lbClose">✕</button>
-  </div>
-</div><!-- ═══════════════════════════
-     HEADER
-═══════════════════════════ --><header id="siteHeader">
-  <div class="nav-wrap">
-
-<!-- Brand -->
-<a href="index.html" class="brand">
-  <img src="1.jpeg" alt="Lyndishes Logo" class="brand-logo">
-  <div class="brand-text">
-    <strong>LYNDISHES</strong>
-    <small></small>
-  </div>
-</a>
-
-<!-- Desktop Nav -->
-<ul class="nav-links">
-  <li><a href="index.html">Home</a></li>
-  <li><a href="about.html">About</a></li>
-  <li><a href="program.html">Programs</a></li>
-  <li><a href="blog.html" class="active">Blog</a></li>
-  <li><a href="register.html">Register</a></li>
-</ul>
-
-<!-- Right side -->
-<div class="nav-right">
-  <a href="register.html" class="nav-apply">Apply Now</a>
-  <!-- Hamburger -->
-  <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-    <span></span><span></span><span></span>
-  </button>
-</div>
-
-
-</div>
-</header><!-- Mobile Nav Drawer --><div class="mobile-nav" id="mobileNav">
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="program.html">Programs</a></li>
-    <li><a href="blog.html" class="active">Blog</a></li>
-    <li><a href="register.html">Register</a></li>
-  </ul>
-  <a href="register.html" class="mobile-apply">Apply Now →</a>
-</div><!-- ═══════════════════════════
-     PAGE HERO
-═══════════════════════════ --><section class="page-hero">
-  <div class="container hero-grid">
-    <div>
-      <div class="kicker">From Our Kitchen to Yours</div>
-      <h1 class="hero-h1">Stories, Classes<br>& <em>Culinary Moments</em></h1>
-      <p class="hero-p">Behind the scenes at Lyndishes, student wins, class highlights, recipe inspiration, and everything happening in our kitchen in Abuja.</p>
-      <div class="hero-stats">
-        <div class="hs"><strong>1,000+</strong><span>Students Trained</span></div>
-        <div class="hs"><strong>Weekly</strong><span>New Content</span></div>
-        <div class="hs"><strong>Real</strong><span>Kitchen Stories</span></div>
+<body>
+  <div class="site-shell">
+    <header class="site-header" id="siteHeader">
+      <div class="container nav-wrap">
+        <a class="brand" href="#blog" aria-label="Lyndishes Culinary School home">
+          <span class="brand-mark">LCS</span>
+          <span class="brand-copy"><strong>LYNDISHES</strong><small>Lyndishes Culinary School</small></span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="#blog">Home</a><a href="#blog">About</a><a href="#blog">Programs</a><a class="active" href="#blog">Blog</a><a href="register.html">Register</a>
+        </nav>
+        <a class="nav-apply" href="register.html">Apply Now</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span><span></span><span></span></button>
       </div>
-    </div>
-<div class="hero-proof">
-  <span>✔ City & Guilds Certified</span>
-  <span>✔ 1,000+ Students Trained</span>
-  <span>✔ Abuja’s Leading Culinary School</span>
-</div>
+      <div class="mobile-nav" id="mobileNav">
+        <ul><li><a href="#blog">Home</a></li><li><a href="#blog">About</a></li><li><a href="#blog">Programs</a></li><li><a class="active" href="#blog">Blog</a></li><li><a href="register.html">Register</a></li></ul>
+        <a class="mobile-apply button primary" href="register.html">Apply Now →</a>
+      </div>
+    </header>
 
-<!-- HERO COLLAGE — swap images below -->
-<div class="hero-collage">
-  <!-- SWAP: Hero collage top image -->
-  <div class="hc-cell" style="height:190px;">
-    <img src="6.jpeg" alt="LCS Class — replace with your Instagram photo">
-  </div>
-  <!-- SWAP: Hero collage bottom-left -->
-  <div class="hc-cell" style="height:150px;">
-    <img src="blog2.jpeg" alt="Pastry class — replace with your Instagram photo">
-  </div>
-  <!-- SWAP: Hero collage bottom-right -->
-  <div class="hc-cell" style="height:150px;">
-    <img src="kitchen2.jpeg" alt="Finished dish — replace with your Instagram photo">
-  </div>
-</div>
-
-
-</div>
-</section><!-- CATEGORY BAR --><div class="cat-bar">
-  <div class="cat-scroll">
-    <button class="cat-btn active" data-cat="all">All Posts</button>
-    <button class="cat-btn" data-cat="class">Class Moments</button>
-    <button class="cat-btn" data-cat="dishes">Finished Dishes</button>
-    <button class="cat-btn" data-cat="students">Student Stories</button>
-    <button class="cat-btn" data-cat="tips">Chef Tips</button>
-    <button class="cat-btn" data-cat="video">Videos</button>
-    <button class="cat-btn" data-cat="events">Events</button>
-  </div>
-</div><!-- ═══════════════════════════
-     BLOG POSTS
-═══════════════════════════ --><section class="section">
-  <div class="container">
-
-<!-- FEATURED POST -->
-<!-- SWAP: Replace src="6.jpeg" with your Instagram featured photo -->
-<div class="featured reveal" data-cat="class">
-  <div class="feat-img-wrap">
-    <img src="6.jpeg" alt="SWAP → Your Instagram featured photo here">
-    <span class="feat-badge b-photo">📸 Featured</span>
-  </div>
-  <div class="feat-body">
-    <p class="feat-cat">✦ Featured · Class Moments</p>
-    <h2 class="feat-title">Inside a Professional Kitchen: What a Day at Lyndishes Really Looks Like</h2>
-    <p class="feat-excerpt">From knife skills at 9am to plated perfection by afternoon a behind-the-scenes look at what our students experience every single day at Lyndishes Culinary School.</p>
-   
-    <div class="feat-meta">
-      <span class="feat-date">March 2026</span>
-      <span class="tag">Class Life</span>
-      <span class="tag">Training</span>
-    </div>
-  </div>
-</div>
-
-<!-- POSTS GRID -->
-<div class="posts-grid" id="postsGrid">
-
-  <!-- POST 1 — SWAP image -->
-  <div class="post-card reveal" data-cat="dishes">
-    <div class="card-media">
-      <!-- SWAP → Instagram photo: finished dishes / plating session -->
-      <img src="blog1.jpeg" alt="SWAP → Instagram plating photo">
-      <span class="card-badge"><span class="feat-badge b-photo">📸 Photo</span></span>
-    </div>
-    <div class="card-body">
-      <p class="card-cat">✦ Finished Dishes</p>
-      <h3 class="card-title">Our Diploma Students' Final Plating Session, The Results Were Stunning</h3>
-      <p class="card-excerpt">Weeks of training, discipline, and creativity all coming together in one unforgettable plating session.</p>
-      <div class="card-foot"><span class="card-date">Feb 2026</span></div>
-    </div>
-  </div>
-
-  <!-- POST 2 — VIDEO SWAP -->
-  <div class="post-card reveal" data-cat="video">
-    <div class="card-media">
-      <!-- SWAP → Instagram video thumbnail (screenshot of your video) -->
-     <video controls poster="kitchen1.jpeg">
-  <source src="video.mp4" type="video/mp4">
-</video>
-      <div class="play-over"><div class="play-btn">▶</div></div>
-      <span class="card-badge"><span class="feat-badge b-video">▶ Video</span></span>
-      <span class="media-type-dot">MP4</span>
-    </div>
-    <div class="card-body">
-      <p class="card-cat">✦ Video · Chef Demo</p>
-      <h3 class="card-title">Watch: Chef Lyn Demonstrates the Perfect Beurre Blanc Sauce</h3>
-      <p class="card-excerpt">A step-by-step video masterclass — one of the most requested techniques from our Continental Cuisine program.</p>
-      <div class="card-foot"><span class="card-date">Jan 2026</span><a href="https://www.instagram.com/reel/DV1Sm--jEQ4/?igsh=MW5uOHN5aTh2dm84Yg==" class="card-link">Watch Now</a></div>
-    </div>
-  </div>
-
-  <!-- POST 3 — SWAP image -->
-  <div class="post-card reveal" data-cat="students">
-    <div class="card-media">
-      <!-- SWAP → Instagram student story photo -->
-      <img src="students.jpg" alt="SWAP → Instagram student photo">
-      <span class="card-badge"><span class="feat-badge b-story">Student Story</span></span>
-    </div>
-    <div class="card-body">
-      <p class="card-cat">✦ Student Success</p>
-      <h3 class="card-title">From Zero to Catering Business: A Graduate's Story After Lyndishes</h3>
-      <p class="card-excerpt">One year after completing the Diploma program, she now runs a thriving catering business serving corporate events in Abuja.</p>
-      <div class="card-foot"><span class="card-date">Dec 2025</span></div>
-    </div>
-  </div>
-
-  <!-- POST 4 — SWAP image -->
-  <div class="post-card reveal" data-cat="tips">
-    <div class="card-media">
-      <!-- SWAP → Instagram pastry / tips photo -->
-      <img src="4.jpeg" alt="SWAP → Instagram tips photo">
-      <span class="card-badge"><span class="feat-badge b-tip">Chef Tip</span></span>
-    </div>
-    <div class="card-body">
-      <p class="card-cat">✦ Chef Tips</p>
-      <h3 class="card-title">5 Things Every Beginner Baker Gets Wrong (And How to Fix Them)</h3>
-      <p class="card-excerpt">Chef Lyn shares the most common mistakes she sees in beginner pastry students. and the easy fixes that change everything.</p>
-      <div class="card-foot"><span class="card-date">Nov 2025</span></div>
-    </div>
-  </div>
-
-  <!-- POST 5 — VIDEO SWAP -->
-  <div class="post-card reveal" data-cat="video class">
-    <div class="card-media">
-      <!-- SWAP → Instagram video thumbnail (patisserie class) -->
-      <img src="blog7.jpeg" alt="SWAP → Instagram patisserie video thumbnail">
-      <div class="play-over"><div class="play-btn">▶</div></div>
-      <span class="card-badge"><span class="feat-badge b-video">▶ Video</span></span>
-      <span class="media-type-dot">MOV</span>
-    </div>
-    <div class="card-body">
-      <p class="card-cat">✦ Video · Class Highlights</p>
-      <h3 class="card-title">Patisserie Class Highlights, Students Create Their First Tarte Tatin</h3>
-      <p class="card-excerpt">Watch our Diploma in Patisserie students tackle one of the most iconic French desserts for the very first time.</p>
-      <div class="card-foot"><span class="card-date">Oct 2025</span><a href="https://www.instagram.com/reel/DWeeLGXjOhj/?igsh=Z2IzNDR6Znlqems4" class="card-link">Watch Now</a></div>
-    </div>
-  </div>
-
-  <!-- POST 6 — SWAP image -->
-  <div class="post-card reveal" data-cat="events">
-    <div class="card-media">
-      <!-- SWAP → Instagram graduation / event photo -->
-      <img src="blog8.jpeg" alt="SWAP → Instagram graduation photo">
-      <span class="card-badge"><span class="feat-badge b-event">Event</span></span>
-    </div>
-    <div class="card-body">
-      <p class="card-cat">✦ Events & Graduation</p>
-      <h3 class="card-title">Graduation Day: Celebrating Our Latest Class of Culinary Professionals</h3>
-      <p class="card-excerpt">Smiles, aprons, and certificates — a look back at our most recent graduation ceremony and the incredible journeys behind it.</p>
-      <div class="card-foot"><span class="card-date">Sep 2025</span><a href="https://www.instagram.com/lyndishesculinaryschool?igsh=MWF5a2R0d2E4ajViZg==" class="card-link">See Gallery</a></div>
-    </div>
-  </div>
-
-</div><!-- /posts-grid -->
-
-<div style="display:flex;justify-content:center;margin-top:44px;" class="reveal">
-  <button class="btn btn-outline" style="min-width:200px;">Load More Posts</button>
-</div>
-
-
-</div>
-</section><div class="divider"></div><!-- ═══════════════════════════
-     INSTAGRAM FEED
-     Replace each ig-cell image with your real Instagram photos/videos
-═══════════════════════════ --><section class="section" style="background:var(--bg-warm);">
-  <div class="container">
-    <div class="ig-header reveal">
-      <div class="ig-handle">
-        <div class="ig-dot">📸</div>
-        <div>
-          <div style="font-family:'Raleway',sans-serif;font-weight:800;font-size:1rem;">@lyndishesculinaryschool</div>
-          <div style="font-size:0.8rem;color:var(--muted);">Follow us on Instagram for daily kitchen moments</div>
+    <main id="blogView" class="blog-view">
+      <section class="page-hero">
+        <div class="container hero-grid">
+          <div><div class="kicker">From Our Kitchen to Yours</div><h1 class="hero-title">Stories, Classes<br>&amp; <em>Culinary Moments</em></h1><p class="hero-copy">Behind the scenes at Lyndishes, student wins, class highlights, recipe inspiration, and everything happening in our kitchen in Abuja.</p><div class="stats"><div class="stat"><strong>1,000+</strong><span>Students Trained</span></div><div class="stat"><strong>Weekly</strong><span>New Content</span></div><div class="stat"><strong>Real</strong><span>Kitchen Stories</span></div></div></div>
+          <div class="hero-collage"><div class="visual-placeholder"><strong>6.jpeg</strong><span>Kitchen class moment</span></div><div class="visual-placeholder"><strong>blog2.jpeg</strong><span>Pastry class</span></div><div class="visual-placeholder"><strong>kitchen2.jpeg</strong><span>Finished dish</span></div></div>
         </div>
-      </div>
-      <a href="https://www.instagram.com/lyndishesculinaryschool" target="_blank" class="btn btn-outline">Follow on Instagram</a>
-    </div>
+      </section>
+      <div class="category-bar"><div class="container category-scroll" id="categoryScroll"><button class="category-button active" data-category="all">All Posts</button><button class="category-button" data-category="class">Class Moments</button><button class="category-button" data-category="dishes">Finished Dishes</button><button class="category-button" data-category="students">Student Stories</button><button class="category-button" data-category="tips">Chef Tips</button><button class="category-button" data-category="video">Videos</button><button class="category-button" data-category="events">Events</button></div></div>
 
-<!-- ══ INSTAGRAM GRID ══
-     HOW TO UPDATE:
-     1. Download your Instagram photos/videos
-     2. Upload them to your GitHub repo (name them ig1.jpeg, ig2.jpeg ... ig8.jpeg or whatever you like)
-     3. Replace each src="" value below with your file name
-     4. For videos: replace <img> with <video autoplay muted loop playsinline src="your-video.mp4"></video>
-════════════════════════ -->
-<div class="ig-grid reveal">
-
-  <!-- IG SLOT 1 — SWAP -->
-  <div class="ig-cell" onclick="openLB(this)">
-   <img src="6.jpeg" alt="Students practicing knife skills in Lyndishes kitchen">
-    <!-- To change: replace src="6.jpeg" with your Instagram photo -->
-    <div class="ig-over"><span>View</span></div>
-  </div>
-
-  <!-- IG SLOT 2 — SWAP -->
-  <div class="ig-cell" onclick="openLB(this)">
-    <img src="17.jpeg" alt="Instagram post 2 — SWAP with ig2.jpeg">
-    <div class="ig-over"><span>View</span></div>
-  </div>
-
-  <!-- IG SLOT 3 — VIDEO SWAP -->
-  <div class="ig-cell">
-    <!-- To add a video: remove the img tag and add:
-         <video autoplay muted loop playsinline src="your-ig-video.mp4"></video> -->
-    <img src="13.jpeg" alt="Instagram post 3 — SWAP with ig3.jpeg or video">
-    <span class="media-type-dot">Video</span>
-    <div class="ig-over"><span>▶ Play</span></div>
-  </div>
-
-  <!-- IG SLOT 4 — SWAP -->
-  <div class="ig-cell" onclick="openLB(this)">
-    <img src="blog3.jpeg" alt="Instagram post 4 — SWAP with ig4.jpeg">
-    <div class="ig-over"><span>View</span></div>
-  </div>
-
-  <!-- IG SLOT 5 — SWAP -->
-  <div class="ig-cell" onclick="openLB(this)">
-    <img src="blog6.jpeg" alt="Instagram post 5 — SWAP with ig5.jpeg">
-    <div class="ig-over"><span>View</span></div>
-  </div>
-
-  <!-- IG SLOT 6 — SWAP -->
-  <div class="ig-cell" onclick="openLB(this)">
-    <img src="blog9.jpeg" alt="Instagram post 6 — SWAP with ig6.jpeg">
-    <div class="ig-over"><span>View</span></div>
-  </div>
-
-  <!-- IG SLOT 7 — VIDEO SWAP -->
-  <div class="ig-cell">
-    <img src="8.jpeg" alt="Instagram post 7 — SWAP with ig7.jpeg or video">
-    <span class="media-type-dot">Video</span>
-    <div class="ig-over"><span>▶ Play</span></div>
-  </div>
-
-  <!-- IG SLOT 8 — SWAP -->
-  <div class="ig-cell" onclick="openLB(this)">
-    <img src="blog5.jpeg" alt="Instagram post 8 — SWAP with ig8.jpeg">
-    <div class="ig-over"><span>View</span></div>
-  </div>
-
-</div><!-- /ig-grid -->
-
-
-</div>
-</section><div class="divider"></div><!-- ═══════════════════════════
-     VIDEO SHOWCASE
-     SWAP each thumbnail with your real video cover images
-     Then link the play button to your actual video URL or file
-═══════════════════════════ --><section class="section">
-  <div class="container">
-    <div style="max-width:600px;margin-bottom:44px;" class="reveal">
-      <div class="kicker">Video Gallery</div>
-      <h2 style="font-family:'Lora',serif;font-weight:600;font-size:clamp(1.9rem,3.2vw,3rem);color:var(--text);line-height:1.1;margin-bottom:10px;">Watch Us <em style="font-style:italic;color:var(--red);">in Action</em></h2>
-      <p style="color:var(--muted);font-size:0.96rem;line-height:1.78;">Real classes. Real students. Real results — captured on video from our kitchen.</p>
-    </div>
-    <div class="video-grid reveal">
-
-  <!-- MAIN VIDEO — SWAP thumbnail + link video src -->
-  <div class="v-card video-main-card">
-    <div class="v-thumb" style="aspect-ratio:4/3;">
-      <!-- SWAP: Replace src with your main video cover photo -->
-      <img src="6.jpeg" alt="SWAP → Main video thumbnail (your Instagram/kitchen video cover)">
-      <!-- To embed a real video, replace img with:
-           <video controls poster="your-thumbnail.jpeg" src="your-video.mp4"></video> -->
-      <div class="v-play"><div class="v-play-circle">▶</div></div>
-    </div>
-    <div class="v-info">
-      <p class="v-label">✦ Featured Video</p>
-      <h3 class="v-title">A Full Day Inside Lyndishes Culinary School</h3>
-      <p class="v-date">March 2026 · Replace with real video length</p>
-    </div>
-  </div>
-
-  <!-- SIDE VIDEO 1 — SWAP -->
-  <div class="v-card">
-    <div class="v-thumb">
-      <!-- SWAP: Replace with your pastry video thumbnail -->
-      <img src="dessert.jpeg" alt="SWAP → Pastry video thumbnail">
-      <div class="v-play"><div class="v-play-circle" style="width:46px;height:46px;font-size:0.95rem;">▶</div></div>
-    </div>
-    <div class="v-info">
-      <p class="v-label">✦ Pastry Class</p>
-      <h3 class="v-title">Chocolate Ganache Masterclass</h3>
-      <p class="v-date">Feb 2026</p>
-    </div>
-  </div>
-
-  <!-- SIDE VIDEO 2 — SWAP -->
-  <div class="v-card">
-    <div class="v-thumb">
-      <!-- SWAP: Replace with your African cuisine video thumbnail -->
-      <img src="5.jpeg" alt="SWAP → African cuisine video thumbnail">
-      <div class="v-play"><div class="v-play-circle" style="width:46px;height:46px;font-size:0.95rem;">▶</div></div>
-    </div>
-    <div class="v-info">
-      <p class="v-label">✦ African Cuisine</p>
-      <h3 class="v-title">Nigerian Dishes, Professional Method</h3>
-      <p class="v-date">Jan 2026</p>
-    </div>
-  </div>
-
-</div>
-
-
-</div>
-</section><div class="divider"></div><!-- ═══════════════════════════
-     PHOTO GALLERY MASONRY
-     SWAP each image src with your real Instagram/school photos
-═══════════════════════════ --><section class="section" style="background:var(--bg-warm);">
-  <div class="container">
-    <div style="max-width:600px;margin-bottom:44px;" class="reveal">
-      <div class="kicker">Photo Gallery</div>
-      <h2 style="font-family:'Lora',serif;font-weight:600;font-size:clamp(1.9rem,3.2vw,3rem);color:var(--text);line-height:1.1;margin-bottom:10px;">Moments from <em style="font-style:italic;color:var(--red);">Our Kitchen</em></h2>
-      <p style="color:var(--muted);font-size:0.96rem;line-height:1.78;">Click any photo to view it in full. Every image is a story of a student growing into a professional.</p>
-    </div>
-
-<!-- MASONRY GALLERY
-     SWAP: Replace each src with your Instagram/school photos
-     Add more .m-item blocks to add more photos
--->
-<div class="masonry reveal">
-  <div class="m-item" onclick="openLB(this)"><img src="6.jpeg" alt="SWAP → Your photo 1"><div class="m-over"><span class="m-lbl">Professional Training</span></div></div>
-  <div class="m-item" onclick="openLB(this)"><img src="kitchen2.jpeg" alt="SWAP → Your photo 2"><div class="m-over"><span class="m-lbl">Pastry Class</span></div></div>
-  <div class="m-item" onclick="openLB(this)"><img src="kitchen3.jpeg" alt="SWAP → Your photo 3"><div class="m-over"><span class="m-lbl">Plated Dishes</span></div></div>
-  <div class="m-item" onclick="openLB(this)"><img src="kitchen4.jpeg" alt="SWAP → Your photo 4"><div class="m-over"><span class="m-lbl">Cake Decorating</span></div></div>
-  <div class="m-item" onclick="openLB(this)"><img src="kitchen5.jpeg" alt="SWAP → Your photo 5"><div class="m-over"><span class="m-lbl">African Cuisine</span></div></div>
-  <div class="m-item" onclick="openLB(this)"><img src="kitchen6.jpeg" alt="SWAP → Your photo 6"><div class="m-over"><span class="m-lbl">Diploma Class</span></div></div>
-  <div class="m-item" onclick="openLB(this)"><img src="kitchen7.jpeg" alt="SWAP → Your photo 7"><div class="m-over"><span class="m-lbl">Short Course</span></div></div>
-  <div class="m-item" onclick="openLB(this)"><img src="kitchen8.jpeg" alt="SWAP → Your photo 8"><div class="m-over"><span class="m-lbl">Patisserie</span></div></div>
-  <div class="m-item" onclick="openLB(this)"><img src="9.jpeg" alt="SWAP → Your photo 9"><div class="m-over"><span class="m-lbl">Kitchen Moments</span></div></div>
-</div>
-
-
-</div>
-</section><div class="divider"></div><!-- ═══════════════════════════
-     UPLOAD SECTION
-═══════════════════════════ --><section class="section">
-  <div class="container upload-grid">
-
-<div class="reveal left">
-  <div class="upload-kicker">Share Your Moment</div>
-  <h2 class="upload-h2">Upload Your Photos<br>& <em>Videos</em></h2>
-  <p class="upload-p">Student, graduate, or staff? Share your Lyndishes moments — class photos, finished dishes, graduation memories — and we'll feature them on our blog and gallery.</p>
-  <div class="upload-perks">
-    <div class="perk"><div class="perk-dot"></div>Photos from cooking classes & practical sessions</div>
-    <div class="perk"><div class="perk-dot"></div>Videos of dish preparation & techniques</div>
-    <div class="perk"><div class="perk-dot"></div>Graduation & event moments</div>
-    <div class="perk"><div class="perk-dot"></div>Finished dish presentations</div>
-    <div class="perk"><div class="perk-dot"></div>Behind-the-scenes kitchen life</div>
-  </div>
-</div>
-
-<div class="reveal">
-  <div class="dropzone" id="dropzone">
-    <input type="file" id="fileIn" multiple accept="image/*,video/*">
-    <div class="dz-icon">📸</div>
-    <p class="dz-title">Drop Photos & Videos Here</p>
-    <p class="dz-sub">Drag & drop, or click to browse.<br>JPG, PNG, MP4, MOV supported · Max 100MB per file</p>
-    <div class="dz-tags">
-      <span class="dz-tag">📸 JPG</span>
-      <span class="dz-tag">🖼 PNG</span>
-      <span class="dz-tag">🎬 MP4</span>
-      <span class="dz-tag">📹 MOV</span>
-    </div>
-  </div>
-
-  <div class="preview-row" id="prevRow">
-    <div class="prev-slot" id="ps0"></div>
-    <div class="prev-slot" id="ps1"></div>
-    <div class="prev-slot" id="ps2"></div>
-    <div class="prev-slot" id="ps3"></div>
-    <div class="prev-slot" id="ps4"></div>
-    <div class="prev-slot" id="ps5"></div>
-  </div>
-
-  <div class="uf">
-    <div class="uf-row">
-      <div class="fg"><label>Your Name</label><input type="text" placeholder="e.g. Chisom Adekunle"></div>
-      <div class="fg"><label>Your Program</label>
-        <select>
-          <option value="" disabled selected>Select program</option>
-          <option>Diploma in Cuisine & Patisserie</option>
-          <option>Professional Diploma Class</option>
-          <option>Diploma in Patisserie</option>
-          <option>Continental Cuisine</option>
-          <option>African Cuisine</option>
-          <option>Pastry & Baking</option>
-          <option>Short Course</option>
-          <option>Staff / Team</option>
-        </select>
-      </div>
-    </div>
-    <div class="fg"><label>Caption / Description</label><textarea placeholder="Tell us about this moment — what class, what you made, how you felt…"></textarea></div>
-    <div class="uf-row">
-      <div class="fg"><label>Category</label>
-        <select>
-          <option>Class Moments</option>
-          <option>Finished Dishes</option>
-          <option>Student Story</option>
-          <option>Graduation</option>
-          <option>Events</option>
-          <option>Behind the Scenes</option>
-        </select>
-      </div>
-      <div class="fg"><label>Email (optional)</label><input type="email" placeholder="For credit when published"></div>
-    </div>
-    <a href="mailto:culinary.school@lyndishes.com?subject=Blog Submission" class="btn btn-red" style="width:100%;min-height:50px;font-size:0.88rem;">Submit to Lyndishes Blog →</a>
-    <p class="uf-note">Or email files directly to <strong>culinary.school@lyndishes.com</strong></p>
-  </div>
-</div>
-
-
-</div>
-</section><div class="divider"></div><!-- FOLLOW STRIP --><section class="section" style="padding-bottom:0;">
-  <div class="container">
-    <div class="follow-wrap reveal">
-      <div class="fw-text">
-        <h2>Follow Our Kitchen Journey</h2>
-        <p>New posts, class highlights, and student stories — every week from Lyndishes.</p>
-      </div>
-      <div class="fw-btns">
-        <a href="register.html" class="btn btn-white">Enroll Today</a>
-        <a href="mailto:culinary.school@lyndishes.com" class="btn btn-ghost">Send Us Your Story</a>
-      </div>
-    </div>
-  </div>
-</section><!-- FOOTER --><footer>
-  <div class="container">
-    <div class="ft-grid">
-      <div class="ft-brand">
-        <div class="brand">
-          <img src="1.jpeg" alt="LCS" class="brand-logo">
-          <div class="brand-text"><strong>LCS</strong><small>Lyndishes Culinary School</small></div>
+      <section class="section"><div class="container">
+        <article class="featured"><div class="featured-media"><div class="visual-placeholder"><strong>Featured photo</strong><span>6.jpeg<br>Replace with your Lyndishes photo</span></div><span class="badge">Featured</span></div><div class="featured-body"><p class="card-category">✦ Featured · Class Moments</p><h2 class="featured-title">Inside a Professional Kitchen: What a Day at Lyndishes Really Looks Like</h2><p class="featured-copy">From knife skills at 9am to plated perfection by afternoon a behind-the-scenes look at what our students experience every single day at Lyndishes Culinary School.</p><a class="text-link" href="#blog">Read the story</a><div class="metadata"><span>March 2026</span><span class="tag">Class Life</span><span class="tag">Training</span></div></div></article>
+        <div class="post-grid" id="postGrid">
+          <a class="post-card" data-category="career" href="#article"><div class="card-media"><div class="visual-placeholder"><strong>Career Guide</strong><span>chef-guide-2026.jpg<br>Replace with your Lyndishes photo</span></div><span class="badge lime">Career Guide</span></div><div class="card-body"><p class="card-category">✦ Career Guide</p><h3 class="card-title">How to Become a Professional Chef in Nigeria (2026 Complete Guide)</h3><p class="card-copy">Learn the qualifications, skills, certifications, and career path needed to become a professional chef in Nigeria.</p><div class="card-footer"><span>August 2026 · 10 min read</span><span class="text-link">Read Guide</span></div></div></a>
+          <article class="post-card" data-category="dishes"><div class="card-media"><div class="visual-placeholder"><strong>Photo</strong><span>blog1.jpeg<br>Finished dishes</span></div><span class="badge">Photo</span></div><div class="card-body"><p class="card-category">✦ Finished Dishes</p><h3 class="card-title">Our Diploma Students' Final Plating Session, The Results Were Stunning</h3><p class="card-copy">Weeks of training, discipline, and creativity all coming together in one unforgettable plating session.</p><div class="card-footer"><span>Feb 2026</span></div></div></article>
+          <article class="post-card" data-category="video"><div class="card-media"><div class="visual-placeholder"><strong>Video</strong><span>kitchen1.jpeg<br>Chef demonstration</span></div><span class="play-badge">▶ Video</span></div><div class="card-body"><p class="card-category">✦ Video · Chef Demo</p><h3 class="card-title">Watch: Chef Lyn Demonstrates the Perfect Beurre Blanc Sauce</h3><p class="card-copy">A step-by-step video masterclass — one of the most requested techniques from our Continental Cuisine program.</p><div class="card-footer"><span>Jan 2026</span><a class="text-link" href="#blog">Watch Now</a></div></div></article>
+          <article class="post-card" data-category="students"><div class="card-media"><div class="visual-placeholder"><strong>Student Story</strong><span>students.jpg<br>Graduate journey</span></div><span class="badge lime">Student Story</span></div><div class="card-body"><p class="card-category">✦ Student Success</p><h3 class="card-title">From Zero to Catering Business: A Graduate's Story After Lyndishes</h3><p class="card-copy">One year after completing the Diploma program, she now runs a thriving catering business serving corporate events in Abuja.</p><div class="card-footer"><span>Dec 2025</span></div></div></article>
+          <article class="post-card" data-category="tips"><div class="card-media"><div class="visual-placeholder"><strong>Chef Tip</strong><span>4.jpeg<br>Pastry tips</span></div><span class="badge">Chef Tip</span></div><div class="card-body"><p class="card-category">✦ Chef Tips</p><h3 class="card-title">5 Things Every Beginner Baker Gets Wrong (And How to Fix Them)</h3><p class="card-copy">Chef Lyn shares the most common mistakes she sees in beginner pastry students. and the easy fixes that change everything.</p><div class="card-footer"><span>Nov 2025</span></div></div></article>
+          <article class="post-card" data-category="video class"><div class="card-media"><div class="visual-placeholder"><strong>Video</strong><span>blog7.jpeg<br>Patisserie class</span></div><span class="play-badge">▶ Video</span></div><div class="card-body"><p class="card-category">✦ Video · Class Highlights</p><h3 class="card-title">Patisserie Class Highlights, Students Create Their First Tarte Tatin</h3><p class="card-copy">Watch our Diploma in Patisserie students tackle one of the most iconic French desserts for the very first time.</p><div class="card-footer"><span>Oct 2025</span><a class="text-link" href="#blog">Watch Now</a></div></div></article>
+          <article class="post-card" data-category="events"><div class="card-media"><div class="visual-placeholder"><strong>Event</strong><span>blog8.jpeg<br>Graduation day</span></div><span class="badge">Event</span></div><div class="card-body"><p class="card-category">✦ Events &amp; Graduation</p><h3 class="card-title">Graduation Day: Celebrating Our Latest Class of Culinary Professionals</h3><p class="card-copy">Smiles, aprons, and certificates — a look back at our most recent graduation ceremony and the incredible journeys behind it.</p><div class="card-footer"><span>Sep 2025</span><a class="text-link" href="#blog">See Gallery</a></div></div></article>
         </div>
-        <p>Premium culinary education for chefs, bakers, food entrepreneurs, and future hospitality professionals. Est. 2020, Abuja Nigeria.</p>
+        <div class="center" style="margin-top:44px"><button class="button outline" id="loadMore" type="button">Load More Posts</button></div>
+      </div></section>
+      <div class="divider"></div>
+      <section class="section instagram-section"><div class="container"><div class="instagram-heading"><div class="instagram-handle"><span class="instagram-dot">IG</span><span>@lyndishesculinaryschool<small>Follow us on Instagram for daily kitchen moments</small></span></div><a class="button outline" href="#blog">Follow on Instagram</a></div><div class="instagram-grid"><div class="visual-placeholder" data-lightbox="6.jpeg"><strong>Instagram</strong><span>6.jpeg</span></div><div class="visual-placeholder" data-lightbox="17.jpeg"><strong>Instagram</strong><span>17.jpeg</span></div><div class="visual-placeholder" data-lightbox="13.jpeg"><strong>Instagram</strong><span>13.jpeg</span></div><div class="visual-placeholder" data-lightbox="blog3.jpeg"><strong>Instagram</strong><span>blog3.jpeg</span></div><div class="visual-placeholder" data-lightbox="blog6.jpeg"><strong>Instagram</strong><span>blog6.jpeg</span></div><div class="visual-placeholder" data-lightbox="blog9.jpeg"><strong>Instagram</strong><span>blog9.jpeg</span></div><div class="visual-placeholder" data-lightbox="8.jpeg"><strong>Instagram</strong><span>8.jpeg</span></div><div class="visual-placeholder" data-lightbox="blog5.jpeg"><strong>Instagram</strong><span>blog5.jpeg</span></div></div></div></section>
+      <div class="divider"></div>
+      <section class="section"><div class="container"><div class="section-heading"><div class="kicker">Video Gallery</div><h2 class="section-title">Watch Us <em>in Action</em></h2><p class="section-copy">Real classes. Real students. Real results — captured on video from our kitchen.</p></div><div class="video-grid"><article class="post-card video-card"><div class="card-media"><div class="visual-placeholder"><strong>Featured Video</strong><span>6.jpeg<br>A full day inside Lyndishes</span></div><span class="play-badge">▶ Play</span></div><div class="card-body"><p class="card-category">✦ Featured Video</p><h3 class="card-title">A Full Day Inside Lyndishes Culinary School</h3><p class="card-copy">March 2026</p></div></article><article class="post-card video-card"><div class="card-media"><div class="visual-placeholder"><strong>Pastry Class</strong><span>dessert.jpeg<br>Chocolate ganache</span></div><span class="play-badge">▶ Play</span></div><div class="card-body"><p class="card-category">✦ Pastry Class</p><h3 class="card-title">Chocolate Ganache Masterclass</h3><p class="card-copy">Feb 2026</p></div></article><article class="post-card video-card"><div class="card-media"><div class="visual-placeholder"><strong>African Cuisine</strong><span>5.jpeg<br>Professional method</span></div><span class="play-badge">▶ Play</span></div><div class="card-body"><p class="card-category">✦ African Cuisine</p><h3 class="card-title">Nigerian Dishes, Professional Method</h3><p class="card-copy">Jan 2026</p></div></article></div></div></section>
+      <div class="divider"></div>
+      <section class="section gallery-section"><div class="container"><div class="section-heading"><div class="kicker">Photo Gallery</div><h2 class="section-title">Moments from <em>Our Kitchen</em></h2><p class="section-copy">Click any photo to view it in full. Every image is a story of a student growing into a professional.</p></div><div class="masonry"><div class="masonry-item" data-lightbox="6.jpeg"><div class="visual-placeholder"><strong>Professional Training</strong><span>6.jpeg</span></div><span class="masonry-caption">Professional Training</span></div><div class="masonry-item" data-lightbox="kitchen2.jpeg"><div class="visual-placeholder"><strong>Pastry Class</strong><span>kitchen2.jpeg</span></div><span class="masonry-caption">Pastry Class</span></div><div class="masonry-item" data-lightbox="kitchen3.jpeg"><div class="visual-placeholder"><strong>Plated Dishes</strong><span>kitchen3.jpeg</span></div><span class="masonry-caption">Plated Dishes</span></div><div class="masonry-item" data-lightbox="kitchen4.jpeg"><div class="visual-placeholder"><strong>Cake Decorating</strong><span>kitchen4.jpeg</span></div><span class="masonry-caption">Cake Decorating</span></div><div class="masonry-item" data-lightbox="kitchen5.jpeg"><div class="visual-placeholder"><strong>African Cuisine</strong><span>kitchen5.jpeg</span></div><span class="masonry-caption">African Cuisine</span></div><div class="masonry-item" data-lightbox="kitchen6.jpeg"><div class="visual-placeholder"><strong>Diploma Class</strong><span>kitchen6.jpeg</span></div><span class="masonry-caption">Diploma Class</span></div><div class="masonry-item" data-lightbox="kitchen7.jpeg"><div class="visual-placeholder"><strong>Short Course</strong><span>kitchen7.jpeg</span></div><span class="masonry-caption">Short Course</span></div><div class="masonry-item" data-lightbox="kitchen8.jpeg"><div class="visual-placeholder"><strong>Patisserie</strong><span>kitchen8.jpeg</span></div><span class="masonry-caption">Patisserie</span></div><div class="masonry-item" data-lightbox="9.jpeg"><div class="visual-placeholder"><strong>Kitchen Moments</strong><span>9.jpeg</span></div><span class="masonry-caption">Kitchen Moments</span></div></div></div></section>
+      <div class="divider"></div>
+      <section class="section"><div class="container upload-grid"><div><div class="kicker">Share Your Moment</div><h2 class="upload-title">Upload Your Photos<br>&amp; <em>Videos</em></h2><p class="upload-copy">Student, graduate, or staff? Share your Lyndishes moments — class photos, finished dishes, graduation memories — and we'll feature them on our blog and gallery.</p><ul class="perks"><li>Photos from cooking classes &amp; practical sessions</li><li>Videos of dish preparation &amp; techniques</li><li>Graduation &amp; event moments</li><li>Finished dish presentations</li><li>Behind-the-scenes kitchen life</li></ul></div><div><div class="dropzone" id="dropzone"><input id="fileInput" type="file" multiple accept="image/*,video/*" aria-label="Upload photos and videos"><div class="drop-icon">+</div><h3>Drop Photos &amp; Videos Here</h3><p>Drag &amp; drop, or click to browse.<br>JPG, PNG, MP4, MOV supported · Max 100MB per file</p><div class="file-types"><span>JPG</span><span>PNG</span><span>MP4</span><span>MOV</span></div></div><div class="preview-list" id="previewList"></div><a class="button primary" style="width:100%;margin-top:20px" href="mailto:culinary.school@lyndishes.com?subject=Blog Submission">Submit to Lyndishes Blog →</a></div></div></section>
+      <section class="section" style="padding-bottom:0"><div class="container"><div class="follow-banner"><div><h2>Follow Our Kitchen Journey</h2><p>New posts, class highlights, and student stories — every week from Lyndishes.</p></div><div class="follow-actions"><a class="button white" href="register.html">Enroll Today</a><a class="button ghost" href="mailto:culinary.school@lyndishes.com">Send Us Your Story</a></div></div></div></section>
+    </main>
+
+    <main id="articleView" class="article-view">
+      <section class="article-hero"><div class="article-hero-inner"><div class="kicker">Career Guide</div><h1 class="article-title">How to Become a Professional Chef in Nigeria: A Complete 2026 Guide</h1><p class="article-dek">Learn how to become a professional chef in Nigeria. Discover the qualifications, skills, certifications, career opportunities, and training needed to build a successful culinary career.</p><div class="article-meta"><strong>By Lyndishes Culinary School</strong><span>·</span><span>August 2026</span><span>·</span><span>10 min read</span></div></div></section>
+      <div class="article-feature"><div class="visual-placeholder"><strong>Featured image placeholder</strong><span>chef-guide-2026.jpg<br>Replace with your Lyndishes photo</span></div></div>
+      <div class="article-layout"><aside class="toc"><h3>Table of Contents</h3><div class="toc-links"><a href="#what-does-a-professional-chef-do">What Does a Professional Chef Do?</a><a href="#step-1">Step 1: Decide What Type of Chef You Want to Become</a><a href="#step-2">Step 2: Enrol in a Reputable Culinary School</a><a href="#step-3">Step 3: Gain Hands-On Practical Experience</a><a href="#step-4">Step 4: Earn Professional Certification</a><a href="#step-5">Step 5: Build Your Portfolio</a><a href="#step-6">Step 6: Keep Learning</a><a href="#skills">Skills Every Professional Chef Should Develop</a><a href="#career-opportunities">Career Opportunities for Chefs in Nigeria</a><a href="#why-education">Why Professional Culinary Education Matters</a><a href="#start-your-journey">Start Your Culinary Journey with Lyndishes Culinary School</a></div></aside>
+        <article class="article-content"><div class="article-author"><div class="author-mark">LCS</div><div class="author-copy"><strong>Lyndishes Culinary School</strong><span>Professional culinary education in Abuja, Nigeria</span></div></div>
+          <p>Becoming a chef is about much more than learning recipes. Today’s chefs are entrepreneurs, innovators, leaders, and creators who shape dining experiences, build successful food businesses, and inspire others through food.</p>
+          <p>If you’ve ever dreamed of working in a five-star hotel, opening your own restaurant, launching a catering company, or becoming a private chef, this guide will show you how to start your journey.</p>
+          <h2 id="what-does-a-professional-chef-do">What Does a Professional Chef Do?</h2><p>A professional chef is trained in the art and science of cooking. Beyond preparing meals, chefs are responsible for:</p><ul><li>Planning and developing menus.</li><li>Maintaining food safety and hygiene standards.</li><li>Managing kitchen operations.</li><li>Controlling food costs and reducing waste.</li><li>Leading and training kitchen teams.</li><li>Creating dishes that balance flavour, presentation, and nutrition.</li></ul><p>Being a chef requires creativity, discipline, consistency, and a willingness to keep learning.</p>
+          <h2 id="step-1">Step 1: Decide What Type of Chef You Want to Become</h2><p>There are many career paths in the culinary industry, including:</p><ul><li>Restaurant Chef</li><li>Pastry Chef</li><li>Executive Chef</li><li>Private Chef</li><li>Hotel Chef</li><li>Catering Chef</li><li>Bakery Owner</li><li>Food Entrepreneur</li><li>Culinary Instructor</li><li>Food Content Creator</li></ul><p>Understanding your long-term goal will help you choose the right training and specialization.</p>
+          <h2 id="step-2">Step 2: Enrol in a Reputable Culinary School</h2><p>While some chefs learn through apprenticeships, professional culinary training provides a faster and more structured path to success.</p><p>A good culinary school teaches much more than cooking. Look for a school that covers:</p><ul><li>Knife skills</li><li>Food safety and hygiene</li><li>Stocks, soups, sauces, and cooking methods</li><li>Baking and pastry</li><li>African and international cuisines</li><li>Menu planning</li><li>Food costing</li><li>Kitchen management</li><li>Entrepreneurship</li><li>Customer service</li></ul><p>Choosing a school with internationally recognised qualifications can also improve your career opportunities.</p>
+          <h2 id="step-3">Step 3: Gain Hands-On Practical Experience</h2><p>Cooking is a practical skill.</p><p>Spend as much time as possible in the kitchen. Participate in practical classes, internships, restaurant placements, competitions, and catering events.</p><p>The more you cook, the more confident and skilled you become.</p>
+          <h2 id="step-4">Step 4: Earn Professional Certification</h2><p>Certification demonstrates that your skills meet recognised industry standards.</p><p>Many employers value internationally recognised qualifications because they provide evidence of competence and professionalism.</p><p>When choosing a culinary school, ask about the certifications offered and how they can support your career goals.</p>
+          <h2 id="step-5">Step 5: Build Your Portfolio</h2><p>Document your progress by taking high-quality photos and videos of your dishes.</p><p>Create a portfolio that includes:</p><ul><li>Signature dishes</li><li>Pastry creations</li><li>Plated meals</li><li>Buffets</li><li>Catering events</li><li>Certificates</li><li>Competition participation</li></ul><p>A strong portfolio can help you secure jobs and attract clients.</p>
+          <h2 id="step-6">Step 6: Keep Learning</h2><p>The culinary industry is constantly evolving.</p><p>Stay current by learning about:</p><ul><li>New cooking techniques</li><li>Food trends</li><li>International cuisines</li><li>Nutrition</li><li>Sustainable cooking</li><li>Restaurant technology</li><li>Business management</li></ul><p>The best chefs never stop learning.</p>
+          <h2 id="skills">Skills Every Professional Chef Should Develop</h2><p>Success in the kitchen requires both technical and personal skills.</p><p>Essential technical skills include:</p><ul><li>Knife skills</li><li>Food safety</li><li>Time management</li><li>Mise en place</li><li>Cooking methods</li><li>Sauce making</li><li>Plating and presentation</li><li>Baking fundamentals</li><li>Menu planning</li><li>Food costing</li></ul><p>Important personal skills include:</p><ul><li>Communication</li><li>Leadership</li><li>Teamwork</li><li>Creativity</li><li>Discipline</li><li>Attention to detail</li><li>Problem-solving</li><li>Adaptability</li></ul>
+          <h2 id="career-opportunities">Career Opportunities for Chefs in Nigeria</h2><p>Professional chefs can work in many settings, including:</p><ul><li>Hotels</li><li>Restaurants</li><li>Bakeries</li><li>Catering companies</li><li>Cruise ships</li><li>Airlines</li><li>Resorts</li><li>Hospitals</li><li>Schools</li><li>Event companies</li><li>Private households</li></ul><p>Many chefs also become entrepreneurs by opening restaurants, bakeries, cafés, food trucks, or catering businesses.</p>
+          <h2 id="why-education">Why Professional Culinary Education Matters</h2><p>Professional training provides structured learning, mentorship, industry exposure, and practical experience that are difficult to gain through self-teaching alone.</p><p>Students also learn kitchen discipline, food safety, costing, and business principles that are essential for long-term success.</p>
+          <h2 id="start-your-journey">Start Your Culinary Journey with Lyndishes Culinary School</h2><p>At Lyndishes Culinary School, we are committed to developing the next generation of professional chefs and food entrepreneurs.</p><p>Our students receive practical, hands-on training designed to prepare them for real-world kitchens and successful food businesses. Our programs cover professional cookery, pastry, entrepreneurship, and internationally recognised culinary standards, helping students build the confidence and skills to thrive in the food industry.</p><p>Whether your goal is to work in a professional kitchen, start your own catering business, or build a career in hospitality, the right training can make all the difference.</p><p>Your culinary journey starts with a single step—and there’s no better time to begin than today.</p>
+          <div class="article-cta"><h2>Ready to Begin Your Culinary Journey?</h2><p>Build the confidence, skills, and practical experience you need for a successful career in food.</p><a class="button white" href="register.html">Apply Now →</a></div>
+          <div class="share-row"><span>Share this guide</span><button class="share-button" data-share="facebook" type="button">Facebook</button><button class="share-button" data-share="whatsapp" type="button">WhatsApp</button><button class="share-button" data-share="copy" type="button">Copy link</button></div>
+          <section class="related-section"><div class="section-heading"><div class="kicker">Keep Reading</div><h2 class="section-title" style="font-size:2rem">Related <em>Articles</em></h2></div><div class="related-grid"><a class="related-card" href="#top"><span>Career Guide</span><strong>Chef Salary in Nigeria</strong></a><a class="related-card" href="#top"><span>Career Guide</span><strong>How Long Does Culinary School Take?</strong></a><a class="related-card" href="#top"><span>Certification</span><strong>What Is City &amp; Guilds Certification?</strong></a><a class="related-card" href="#top"><span>Business Guide</span><strong>How to Start a Catering Business</strong></a></div></section>
+          <div class="article-nav"><a href="#blog"><small>← Previous article</small><strong>Back to Blog &amp; Gallery</strong></a><a href="#blog"><small>Next article →</small><strong>More culinary stories coming soon</strong></a></div>
+        </article>
       </div>
-      <div class="ft-col">
-        <h4>Navigate</h4>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="programs.html">Programs</a>
-        <a href="blog.html">Blog</a>
-        <a href="register.html">Register</a>
-      </div>
-     
-      <div class="ft-col">
-        <h4>Contact</h4>
-        <a href="mailto:culinary.school@lyndishes.com">culinary.school@lyndishes.com</a>
-        <a href="tel:+234000000000">+234 8101408693</a>
-        <a href="#">Gwarimpa, Abuja, Nigeria</a>
-      </div>
-    </div>
-    <div class="ft-bottom">
-      <p>© 2026 Lyndishes Culinary School. All rights reserved.</p>
-      <p style="color:rgba(217,4,82,.55);">Est. 2020 · Abuja, Nigeria</p>
-    </div>
+    </main>
+
+    <footer class="site-footer"><div class="container"><div class="footer-grid"><div class="footer-brand"><div class="brand"><span class="brand-mark">LCS</span><span class="brand-copy"><strong>LCS</strong><small>Lyndishes Culinary School</small></span></div><p>Premium culinary education for chefs, bakers, food entrepreneurs, and future hospitality professionals. Est. 2020, Abuja Nigeria.</p></div><div class="footer-column"><h4>Navigate</h4><a href="#blog">Home</a><a href="#blog">About</a><a href="#blog">Programs</a><a href="#blog">Blog</a><a href="register.html">Register</a></div><div class="footer-column"><h4>Contact</h4><a href="mailto:culinary.school@lyndishes.com">culinary.school@lyndishes.com</a><a href="tel:+2348101408693">+234 8101408693</a><a href="#blog">Gwarimpa, Abuja, Nigeria</a></div></div><div class="footer-bottom"><span>© 2026 Lyndishes Culinary School. All rights reserved.</span><span>Est. 2020 · Abuja, Nigeria</span></div></div></footer>
   </div>
-</footer><script>
-  /* ── HAMBURGER ── */
-  const ham  = document.getElementById('hamburger');
-  const mob  = document.getElementById('mobileNav');
-  ham.addEventListener('click', () => {
-    ham.classList.toggle('open');
-    mob.classList.toggle('open');
-  });
-  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
-    ham.classList.remove('open');
-    mob.classList.remove('open');
-  }));
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Gallery preview"><div class="lightbox-panel"><button class="lightbox-close" id="lightboxClose" aria-label="Close gallery preview">×</button><div class="visual-placeholder" id="lightboxContent"></div></div></div>
 
-  /* ── HEADER SCROLL ── */
-  window.addEventListener('scroll', () => {
-    document.getElementById('siteHeader').classList.toggle('scrolled', scrollY > 60);
-  });
+  <script>
+    (() => {
+      const blogView = document.getElementById("blogView");
+      const articleView = document.getElementById("articleView");
+      const siteHeader = document.getElementById("siteHeader");
+      const menuToggle = document.getElementById("menuToggle");
+      const mobileNav = document.getElementById("mobileNav");
+      const pageDescription = "Learn how to become a professional chef in Nigeria. Discover the qualifications, skills, certifications, career opportunities, and training needed to build a successful culinary career.";
+      const defaultTitle = "Blog & Gallery | Lyndishes Culinary School";
 
-  /* ── CATEGORY FILTER ── */
-  document.querySelectorAll('.cat-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const cat = btn.dataset.cat;
-      document.querySelectorAll('.post-card, .featured').forEach(card => {
-        const cats = card.dataset.cat || '';
-        card.style.display = 'none';
-card.style.opacity = '0';
+      function updateView() {
+        const article = location.hash === "#article";
+        blogView.classList.toggle("hidden", article);
+        articleView.classList.toggle("active", article);
+        document.title = article ? "How to Become a Professional Chef in Nigeria (2026 Complete Guide) | Lyndishes Culinary School" : defaultTitle;
+        let meta = document.querySelector('meta[name="description"]');
+        if (!meta) { meta = document.createElement("meta"); meta.name = "description"; document.head.appendChild(meta); }
+        meta.content = article ? pageDescription : "Behind the scenes at Lyndishes — student stories, class moments, finished dishes, and culinary inspiration from Abuja's premier culinary school.";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        mobileNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        document.body.classList.remove("menu-open");
+      }
+      window.addEventListener("hashchange", updateView);
+      if (location.hash !== "#article") history.replaceState(null, "", "#blog");
+      updateView();
+
+      menuToggle.addEventListener("click", () => {
+        const open = mobileNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(open));
+        document.body.classList.toggle("menu-open", open);
       });
-    });
-  });
+      window.addEventListener("scroll", () => siteHeader.classList.toggle("scrolled", window.scrollY > 30), { passive: true });
 
-  /* ── FILE UPLOAD PREVIEW ── */
-  const dz = document.getElementById('dropzone');
-  const fi = document.getElementById('fileIn');
-  const slots = document.querySelectorAll('.prev-slot');
-  let filled = 0;
+      document.querySelectorAll("[data-category]").forEach(button => button.addEventListener("click", () => {
+        document.querySelectorAll(".category-button").forEach(item => item.classList.remove("active"));
+        button.classList.add("active");
+        const category = button.dataset.category;
+        document.querySelectorAll("#postGrid .post-card").forEach(card => {
+          const categories = (card.dataset.category || "").split(" ");
+          card.classList.toggle("hidden", category !== "all" && !categories.includes(category));
+        });
+      }));
 
-  function loadFiles(files) {
-    [...files].slice(0, 6 - filled).forEach((file, i) => {
-      const slot = slots[filled + i];
-      if (!slot) return;
-      slot.classList.add('show');
-      const reader = new FileReader();
-      reader.onload = e => {
-        const tag = file.type.startsWith('video/') ? 'video' : 'img';
-        slot.innerHTML = `<${tag} src="${e.target.result}" ${tag==='video'?'muted':''}></${tag}><button class="prev-rm" onclick="this.parentElement.classList.remove('show');this.parentElement.innerHTML='';filled=Math.max(0,filled-1);">✕</button>`;
-      };
-      reader.readAsDataURL(file);
-    });
-    filled = Math.min(filled + files.length, 6);
-  }
+      document.getElementById("loadMore").addEventListener("click", event => {
+        event.currentTarget.textContent = "You’re all caught up";
+        event.currentTarget.disabled = true;
+      });
 
-  fi.addEventListener('change', e => loadFiles(e.target.files));
-  dz.addEventListener('dragover', e => { e.preventDefault(); dz.classList.add('over'); });
-  dz.addEventListener('dragleave', () => dz.classList.remove('over'));
-  dz.addEventListener('drop', e => { e.preventDefault(); dz.classList.remove('over'); loadFiles(e.dataTransfer.files); });
+      const lightbox = document.getElementById("lightbox");
+      const lightboxContent = document.getElementById("lightboxContent");
+      const closeLightbox = () => { lightbox.classList.remove("open"); document.body.classList.remove("lightbox-open"); };
+      document.querySelectorAll("[data-lightbox]").forEach(item => item.addEventListener("click", () => {
+        const filename = item.dataset.lightbox;
+        lightboxContent.innerHTML = "<strong>Gallery preview</strong><span>" + filename + "<br>Replace with your Lyndishes photo</span>";
+        lightbox.classList.add("open");
+        document.body.classList.add("lightbox-open");
+      }));
+      document.getElementById("lightboxClose").addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", event => { if (event.target === lightbox) closeLightbox(); });
+      document.addEventListener("keydown", event => { if (event.key === "Escape") closeLightbox(); });
 
-  /* ── LIGHTBOX ── */
-  function openLB(cell) {
-    const img = cell.querySelector('img');
-    if (!img) return;
-    document.getElementById('lbImg').src = img.src;
-    document.getElementById('lightbox').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  document.getElementById('lbClose').addEventListener('click', closeLB);
-  document.getElementById('lightbox').addEventListener('click', e => { if(e.target===e.currentTarget) closeLB(); });
-  function closeLB() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+      const dropzone = document.getElementById("dropzone");
+      const fileInput = document.getElementById("fileInput");
+      const previewList = document.getElementById("previewList");
+      function renderFiles(files) {
+        Array.from(files).slice(0, 6).forEach(file => {
+          const item = document.createElement("div");
+          item.className = "preview-item visible";
+          const media = document.createElement(file.type.startsWith("video/") ? "video" : "img");
+          media.src = URL.createObjectURL(file);
+          if (media.tagName === "VIDEO") { media.muted = true; media.controls = true; }
+          media.alt = file.name;
+          const remove = document.createElement("button");
+          remove.type = "button"; remove.textContent = "×"; remove.setAttribute("aria-label", "Remove " + file.name);
+          remove.addEventListener("click", () => { URL.revokeObjectURL(media.src); item.remove(); });
+          item.append(media, remove); previewList.appendChild(item);
+        });
+      }
+      fileInput.addEventListener("change", event => renderFiles(event.target.files));
+      ["dragenter","dragover"].forEach(type => dropzone.addEventListener(type, event => { event.preventDefault(); dropzone.classList.add("over"); }));
+      ["dragleave","drop"].forEach(type => dropzone.addEventListener(type, event => { event.preventDefault(); dropzone.classList.remove("over"); }));
+      dropzone.addEventListener("drop", event => renderFiles(event.dataTransfer.files));
 
-  /* ── SCROLL REVEAL ── */
-  const ro = new IntersectionObserver(entries => {
-    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('on'); ro.unobserve(e.target); } });
-  }, { threshold: 0.06 });
-  document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
-</script></body>
+      document.querySelectorAll("[data-share]").forEach(button => button.addEventListener("click", async () => {
+        const type = button.dataset.share;
+        const url = location.href;
+        if (type === "copy") {
+          try { await navigator.clipboard.writeText(url); button.textContent = "Copied"; setTimeout(() => button.textContent = "Copy link", 1600); } catch { button.textContent = "Copy unavailable"; }
+        } else if (type === "whatsapp") {
+          window.open("https://wa.me/?text=" + encodeURIComponent(document.title + " " + url), "_blank", "noopener");
+        } else {
+          window.open("https://www.facebook.com/sharer/sharer.php?u=" + encodeURIComponent(url), "_blank", "noopener");
+        }
+      }));
+    })();
+  </script>
+</body>
 </html>
