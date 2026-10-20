@@ -120,6 +120,14 @@ img { max-width: 100%; display: block; }
 .c-cat { font-weight: 600; font-size: 0.6rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--red); margin-bottom: 8px; font-family: var(--font); }
 .c-title { font-weight: 700; font-size: 1.06rem; color: var(--text); line-height: 1.24; letter-spacing: -0.2px; margin-bottom: 11px; font-family: var(--font); }
 .c-desc { font-size: 0.88rem; font-weight: 400; color: var(--text-muted); line-height: 1.76; flex: 1 1 0%; margin-bottom: 18px; font-family: var(--font); }
+.course-outline { margin: 0 0 18px; padding-top: 12px; border-top: 1px solid var(--border); }
+.course-outline summary { cursor: pointer; color: var(--red); font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; list-style: none; }
+.course-outline summary::-webkit-details-marker { display: none; }
+.course-outline summary::after { content: '+'; float: right; font-size: 1rem; line-height: 1; }
+.course-outline[open] summary::after { content: '−'; }
+.course-outline summary:focus-visible { outline: 2px solid var(--red); outline-offset: 4px; }
+.course-outline ul { display: grid; gap: 5px; margin: 12px 0 0; padding-left: 19px; color: var(--text-body); font-size: .79rem; line-height: 1.55; }
+.course-outline li::marker { color: var(--red); }
 .c-meta { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px; }
 .pill { display: inline-flex; align-items: center; gap: 5px; padding: 5px 11px; border-radius: 1px; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.04em; font-family: var(--font); }
 .p-sched { background: rgba(217, 4, 82, 0.07); border: 1px solid rgba(217, 4, 82, 0.15); color: var(--red); }
@@ -349,7 +357,7 @@ footer::before { content: ""; position: absolute; top: 0px; left: 0px; right: 0p
     <div class="c-body">
       <p class="c-cat">Diploma Program</p>
       <h3 class="c-title">Diploma in Cuisine & Patisserie</h3>
-      <p class="c-desc">A comprehensive culinary program combining cooking and baking disciplines, equipping students with practical kitchen skills and the foundational knowledge needed to build a strong culinary brand and run a successful food business. City & Guilds certified — recognised in 80+ countries.</p>
+      <p class="c-desc">Practical training in core cookery, African and international cuisines, pastry foundations, food safety and professional kitchen skills.</p><details class="course-outline"><summary>View course outline</summary><ul><li>Introduction to hospitality</li><li>Food safety, hygiene and kitchen health and safety</li><li>Cooking methods and culinary techniques</li><li>Menu planning and costing</li><li>Knife skills</li><li>Preparation and cooking of stocks, soups and sauces</li><li>Salads and appetizers</li><li>Sandwiches and canapés</li><li>Preparation and cooking of poultry and meat</li><li>Asian, Italian and continental cuisines</li><li>Breakfast dishes</li><li>Seafood</li><li>African dishes: breakfast, soups, sauces, rice dishes and other specialties</li><li>Pastry foundations: cakes, choux pastry, bread and shortcrust pastry</li><li>Introduction to cocktails and mocktails (practical)</li><li>Introduction to grilling (practical)</li><li>Practical examination</li></ul></details>
       <div class="c-meta"><span class="pill p-start">Starts 14th September</span><span class="pill p-sched">Mon – Thu</span><span class="pill p-dur">3 Months</span><span class="pill p-fee">₦1,700,000</span></div>
       <a href="https://lyndishesculinaryschool.com/register.html"
          target="_blank" rel="noopener noreferrer" class="btn btn-primary">Apply Now</a>
@@ -379,8 +387,8 @@ footer::before { content: ""; position: absolute; top: 0px; left: 0px; right: 0p
     <div class="c-body">
       <p class="c-cat">Pastry Diploma</p>
       <h3 class="c-title">Diploma in Patisserie</h3>
-      <p class="c-desc">Intensive training across desserts, cakes, dough-based pastries, and artisan breads. Master tempering, sugar work, plating, and the science behind perfect bakes. NBTE accredited and internationally recognised.</p>
-      <div class="c-meta"><span class="pill p-start">Starts 14th September</span><span class="pill p-sched">Mon – Thu</span><span class="pill p-dur">1 Month</span><span class="pill p-fee">₦1,300,000</span></div>
+      <p class="c-desc">Training in pastry foundations, shortcrust and choux pastries, breads, cake methods, dessert presentation, café menu planning and finger foods.</p><details class="course-outline"><summary>View course outline</summary><ul><li>Introduction to pastry: ingredients, tools and measurement</li><li>Shortcrust pastries</li><li>Puff pastry and savoury pastries, including sausage rolls and palmiers</li><li>Choux pastry: éclairs, profiteroles and cream puffs</li><li>Bread-making: white loaf, brioche and baguette</li><li>Cake-mixing methods: creaming, whisking and rubbing-in</li><li>Sponge, pound and marble cakes</li><li>Fruit and chocolate cakes</li><li>Cookies and biscuits</li><li>Cheesecakes and mousse cakes</li><li>Plating and dessert presentation</li><li>Menu planning for cafés</li><li>Finger foods: puff-puff, spring rolls, samosas, beef and chicken snacks, chicken wings, skewers and kebabs</li></ul></details>
+      <div class="c-meta"><span class="pill p-start">Starts 14th September</span><span class="pill p-sched">Mon – Thu</span><span class="pill p-dur">8 Weeks</span><span class="pill p-fee">₦1,300,000</span></div>
       <a href="https://lyndishesculinaryschool.com/register.html"
          target="_blank" rel="noopener noreferrer" class="btn btn-primary">Apply Now</a>
     </div>
@@ -394,7 +402,7 @@ footer::before { content: ""; position: absolute; top: 0px; left: 0px; right: 0p
     <div class="c-body">
       <p class="c-cat">Cuisine</p>
       <h3 class="c-title">Continental Class</h3>
-      <p class="c-desc">A wide range of global cuisines beginning with the five mother sauces and their derivatives. Covers stocks, soups, salads, hors d'oeuvres, entrées, and desserts from European and global culinary traditions.</p>
+      <p class="c-desc">Develop skills in menu planning and costing, food safety, cooking methods, stocks, soups, sauces, meats, poultry, seafood and continental cuisine.</p><details class="course-outline"><summary>View course outline</summary><ul><li>Introduction to hospitality</li><li>Food safety, hygiene and HACCP</li><li>Cooking methods and culinary techniques</li><li>Menu planning and costing</li><li>Knife skills</li><li>Preparation and cooking of stocks, soups and sauces</li><li>Preparation and cooking of meat and poultry</li><li>Salads and appetizers</li><li>Sandwiches and canapés</li><li>Italian cuisine</li><li>Breakfast dishes</li><li>Seafood</li><li>Asian cuisine</li><li>Practical examination</li></ul></details>
       <div class="c-meta"><span class="pill p-start">Starts 14th September</span><span class="pill p-sched">Mon – Thu</span><span class="pill p-dur">6 Weeks</span><span class="pill p-fee">₦780,000</span></div>
       <a href="https://lyndishesculinaryschool.com/register.html"
          target="_blank" rel="noopener noreferrer" class="btn btn-primary">Apply Now</a>
@@ -409,8 +417,8 @@ footer::before { content: ""; position: absolute; top: 0px; left: 0px; right: 0p
     <div class="c-body">
       <p class="c-cat">Cuisine</p>
       <h3 class="c-title">African Class</h3>
-      <p class="c-desc">Focuses on African cuisine with special emphasis on Nigerian dishes across various geopolitical zones. A deep dive into indigenous flavours, techniques, and the art of presenting traditional recipes at a professional level.</p>
-      <div class="c-meta"><span class="pill p-start">Starts 10th August</span><span class="pill p-sched">Mon – Thu</span><span class="pill p-dur">1 Month</span><span class="pill p-fee">₦680,000</span></div>
+      <p class="c-desc">Explore African cooking, menu planning and costing, buffet presentation, regional dishes, and Senegalese and Ghanaian cuisines.</p><details class="course-outline"><summary>View course outline</summary><ul><li>Introduction to hospitality</li><li>Cooking methods, herbs and spices</li><li>Menu planning and costing</li><li>Buffet setup and presentation</li><li>African breakfast dishes</li><li>African sauces and stews</li><li>African soups</li><li>African rice dishes</li><li>Other African specialties</li><li>Senegalese cuisine</li><li>Ghanaian cuisine</li></ul></details>
+      <div class="c-meta"><span class="pill p-start">Starts 10th August</span><span class="pill p-sched">Mon – Thu</span><span class="pill p-dur">4 Weeks</span><span class="pill p-fee">₦680,000</span></div>
       <a href="https://lyndishesculinaryschool.com/register.html"
          target="_blank" rel="noopener noreferrer" class="btn btn-primary">Apply Now</a>
     </div>
